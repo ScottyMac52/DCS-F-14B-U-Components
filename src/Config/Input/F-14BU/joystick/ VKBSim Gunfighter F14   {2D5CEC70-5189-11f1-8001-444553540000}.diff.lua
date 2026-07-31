@@ -1,0 +1,111 @@
+local diff = {
+	["axisDiffs"] = {
+		["a2001cdnil"] = {
+			["name"] = "Pitch",
+			["removed"] = {
+				[1] = {
+					["key"] = "JOY_Y",
+				},
+			},
+		},
+		["a2002cdnil"] = {
+			["name"] = "Roll",
+			["removed"] = {
+				[1] = {
+					["key"] = "JOY_X",
+				},
+			},
+		},
+		["a2003cdnil"] = {
+			["name"] = "Rudder",
+			["removed"] = {
+				[1] = {
+					["key"] = "JOY_RZ",
+				},
+			},
+		},
+		["a2004cdnil"] = {
+			["name"] = "Throttle Both",
+			["removed"] = {
+				[1] = {
+					["key"] = "JOY_Z",
+				},
+			},
+		},
+		["a3083cd57"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_RX",
+				},
+			},
+			["name"] = "DLC / Maneuver Flaps",
+		},
+	},
+	["keyDiffs"] = {
+		["d3023pnilunilcd18vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN6",
+				},
+			},
+			["name"] = "Catapult Salute",
+		},
+		["d3078pnilu3078cd57vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN3",
+				},
+			},
+			["name"] = "Store Release",
+		},
+		["d3079pnilunilcd55vd-0.5vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN14",
+				},
+			},
+			["name"] = "Weapon Selector Sidewinder Missiles",
+		},
+		["d3079pnilunilcd55vd-1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN16",
+				},
+			},
+			["name"] = "Weapon Selector Off",
+		},
+		["d3079pnilunilcd55vd0.5vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN13",
+				},
+			},
+			["name"] = "Weapon Selector Sparrow or Phoenix Missiles",
+		},
+		["d3079pnilunilcd55vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN15",
+				},
+			},
+			["name"] = "Weapon Selector Gun",
+		},
+		["d3084pnilu3084cd57vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN5",
+				},
+			},
+			["name"] = "DLC Toggle / Countermeasure Dispense",
+		},
+		["d3087pnilu3087cd57vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN1",
+				},
+			},
+			["name"] = "Trigger",
+		},
+	},
+}
+return diff
