@@ -1,0 +1,10 @@
+# Changelog
+
+## 1.2.0 — 2026-07-31
+
+- Added eight VR-optimized OpenKneeboard control-reference pages.
+- Added the AutoHotKey v2 Warthog-to-VAICOM TX bridge.
+- Added reproducible OVGME build and validation scripts.
+- Corrected the Saved Games destination to `Config\\Input\\F-14BU`.
+- Included the complete authoritative control-profile set.
+

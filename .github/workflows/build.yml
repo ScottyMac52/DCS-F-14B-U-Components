@@ -1,0 +1,32 @@
+name: Build OVGME package
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Generate OpenKneeboard pages
+        shell: pwsh
+        run: |
+          npm ci
+          npm run build:kneeboard
+      - name: Build package
+        shell: pwsh
+        run: ./scripts/Build-OvGME.ps1
+      - name: Validate package
+        shell: pwsh
+        run: ./scripts/Test-Package.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: F-14BU-OVGME
+          path: dist/*.zip
