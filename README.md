@@ -21,18 +21,21 @@ Scott's DCS F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME pac
 | `docs` | Installation and complete mapping documentation |
 | `packaging/ovgme` | OVGME `README.TXT` and `VERSION.TXT` |
 | `scripts` | Kneeboard and OVGME build scripts |
-| `dist` | Validated OVGME distribution archive |
+| `dist` | Validated OVGME archive, complete release bundle, and checksums |
 
 ## Quick start
 
-1. Configure OVGME with this root:
+1. Download `Scott-F-14BU-Complete-Package-<version>.zip` from GitHub Releases and extract it.
+2. Configure OVGME with this root:
 
    `C:\\Users\\vyper\\Saved Games\\DCS.openbeta`
 
-2. Download the OVGME workflow artifact or run `scripts/Build-OvGME.ps1`, then place the ZIP from `dist` in that configuration's mod repository.
-3. Close DCS, enable the package, then start DCS.
-4. In OpenKneeboard, use the DCS Aircraft tab or add `KNEEBOARD\\F-14BU` as a Folder tab.
-5. Load the Warthog throttle profile manually once because its Windows device GUID was not available.
+3. Place the ZIP from the extracted `OVGME` folder in that configuration's mod repository.
+4. Close DCS, enable the package, then start DCS.
+5. In OpenKneeboard, use the DCS Aircraft tab or add `KNEEBOARD\\F-14BU` as a Folder tab.
+6. Load the Warthog throttle profile manually once because its Windows device GUID was not available.
+
+The release also provides the OVGME ZIP as a separate asset for users who only need the DCS profiles and kneeboard. Every push to `main` publishes or refreshes the release identified by `packaging/ovgme/VERSION.TXT`; pull requests build and validate the same assets without publishing them.
 
 See [Installation](docs/INSTALLATION.md), [Control mappings](docs/CONTROL-MAPPINGS.md), and [OpenKneeboard and VAICOM](docs/OPENKNEEBOARD-VAICOM.md).
 
