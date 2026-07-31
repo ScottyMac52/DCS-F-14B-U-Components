@@ -1,5 +1,16 @@
 # Installation
 
+## Release package
+
+Download `Scott-F-14BU-Complete-Package-<version>.zip` from the repository's GitHub Releases page. It contains:
+
+- `OVGME` — the directly installable DCS profiles and kneeboard ZIP
+- `AutoHotKey` — the VAICOM PRO transmit bridge
+- `Documentation` — installation, control mappings, and OpenKneeboard guidance
+- `SHA256SUMS.txt` — hashes for the included installable files
+
+The direct `Scott-F-14BU-Control-Profiles-<version>.zip` release asset is identical to the ZIP inside the complete package.
+
 ## OVGME
 
 Create an OVGME configuration with:
@@ -8,7 +19,7 @@ Create an OVGME configuration with:
 - Mods folder: any dedicated OVGME repository folder
 - Backup folder: OVGME default or a dedicated empty folder
 
-Copy `dist/Scott-F-14BU-Control-Profiles-1.2.0.zip` into the mods folder, refresh OVGME, close DCS, and enable the package.
+Copy `OVGME/Scott-F-14BU-Control-Profiles-<version>.zip` into the mods folder, refresh OVGME, close DCS, and enable the package.
 
 The package installs:
 
@@ -41,4 +52,3 @@ Do not edit OpenKneeboard's internal JSON settings directly.
 Run `autohotkey\\dcs-Warthog.ahk` with AutoHotKey v2.0. It bridges Warthog device 12 to the five VoiceAttack/VAICOM TX key chords.
 
 Close DCS before enabling or disabling the OVGME package.
-

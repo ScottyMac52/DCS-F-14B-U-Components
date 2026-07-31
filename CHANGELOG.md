@@ -5,6 +5,6 @@
 - Added eight VR-optimized OpenKneeboard control-reference pages.
 - Added the AutoHotKey v2 Warthog-to-VAICOM TX bridge.
 - Added reproducible OVGME build and validation scripts.
+- Added automated GitHub Releases with direct OVGME and complete-component bundles.
 - Corrected the Saved Games destination to `Config\\Input\\F-14BU`.
 - Included the complete authoritative control-profile set.
-
