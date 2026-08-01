@@ -31,6 +31,8 @@ These directional bindings use the F-14B(U) speed-brake extend/retract command. 
 
 The four bindings are explicit in the Saved Games profile so they remain present even if Heatblur changes its device-default VKB mapping.
 
+BTN7 explicitly maps to **Autopilot Reference / Nosewheel Steering Toggle**. It acts as a momentary HOTAS button: press sends value 1 and release returns value 0.
+
 ## MFD 1 — direct Jester
 
 | Button | Command | Button | Command |
