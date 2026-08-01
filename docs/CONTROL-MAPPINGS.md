@@ -20,6 +20,17 @@
 
 These directional bindings use the F-14B(U) speed-brake extend/retract command. BTN15 explicitly removes Heatblur's inherited CAGE-SEAM assignment before adding PLM, preventing both commands from firing together. None of these changes alter the AutoHotKey-managed MIC inputs on buttons 2–6.
 
+## VKB F-14 Gunfighter — trim HAT
+
+| HAT direction | Button | Command |
+|---|---:|---|
+| Up | 9 | Trim pitch up |
+| Left | 10 | Trim roll left wing down |
+| Right | 11 | Trim roll right wing down |
+| Down | 12 | Trim pitch down |
+
+The four bindings are explicit in the Saved Games profile so they remain present even if Heatblur changes its device-default VKB mapping.
+
 ## MFD 1 — direct Jester
 
 | Button | Command | Button | Command |

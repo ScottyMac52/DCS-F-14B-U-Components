@@ -71,4 +71,24 @@ if (-not $PlmMatch.Success -or
     throw 'Warthog JOY_BTN15 is not mapped exclusively to PLM as expected.'
 }
 
+$GunfighterProfile = Get-ChildItem $Joystick -Filter '*Gunfighter F14*.diff.lua'
+if ($GunfighterProfile.Count -ne 1) { throw 'Expected exactly one VKB F-14 Gunfighter profile.' }
+$Gunfighter = Get-Content $GunfighterProfile.FullName -Raw
+$TrimBindings = @(
+    @{ Command = 'dnilp2019u2019cdnilvdnilvp1vu0'; Button = 'JOY_BTN9'; Name = 'Trim Pitch Up' },
+    @{ Command = 'dnilp2020u2020cdnilvdnilvp-1vu0'; Button = 'JOY_BTN10'; Name = 'Trim Roll Left Wing Down' },
+    @{ Command = 'dnilp2020u2020cdnilvdnilvp1vu0'; Button = 'JOY_BTN11'; Name = 'Trim Roll Right Wing Down' },
+    @{ Command = 'dnilp2019u2019cdnilvdnilvp-1vu0'; Button = 'JOY_BTN12'; Name = 'Trim Pitch Down' }
+)
+foreach ($Binding in $TrimBindings) {
+    $Pattern = '(?ms)^\t\t\["' + [regex]::Escape($Binding.Command) +
+        '"\]\s*=\s*\{(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+    $Match = [regex]::Match($Gunfighter, $Pattern)
+    if (-not $Match.Success -or
+        $Match.Groups['Block'].Value -notmatch ('\["added"\].*?"' + [regex]::Escape($Binding.Button) + '"') -or
+        $Match.Groups['Block'].Value -notmatch ('\["name"\]\s*=\s*"' + [regex]::Escape($Binding.Name) + '"')) {
+        throw "VKB trim binding $($Binding.Name) is not mapped to $($Binding.Button)."
+    }
+}
+
 Write-Host 'Package validation passed.'
