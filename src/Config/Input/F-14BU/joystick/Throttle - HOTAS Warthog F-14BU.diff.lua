@@ -14,6 +14,14 @@ local diff = {
 			["added"] = { [1] = { ["key"] = "JOY_BTN8" } },
 			["name"] = "Speed brake extend",
 		},
+		["d3126pnilu3126cd57vd1vpnilvu0"] = {
+			["removed"] = { [1] = { ["key"] = "JOY_BTN15" } },
+			["name"] = "CAGE-SEAM button",
+		},
+		["d3127pnilu3127cd57vd1vpnilvu0"] = {
+			["added"] = { [1] = { ["key"] = "JOY_BTN15" } },
+			["name"] = "PLM button",
+		},
 		["d3024pnilu3024cd17vd1vpnilvu0"] = {
 			["added"] = { [1] = { ["key"] = "JOY_BTN11" } },
 			["removed"] = { [1] = { ["key"] = "JOY_BTN3" } },

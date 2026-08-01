@@ -16,8 +16,9 @@
 |---:|---|
 | 7 | Speed brake retract |
 | 8 | Speed brake extend |
+| 15 | PLM button |
 
-These directional bindings use the F-14B(U) speed-brake extend/retract command. They do not alter the AutoHotKey-managed MIC inputs on buttons 2–6.
+These directional bindings use the F-14B(U) speed-brake extend/retract command. BTN15 explicitly removes Heatblur's inherited CAGE-SEAM assignment before adding PLM, preventing both commands from firing together. None of these changes alter the AutoHotKey-managed MIC inputs on buttons 2–6.
 
 ## MFD 1 — direct Jester
 
