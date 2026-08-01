@@ -10,6 +10,15 @@
 | TX4 — AUTO | `12Joy5` | `Ctrl+Alt+Shift+4` |
 | TX5 — Interphone | `12Joy2` | `Ctrl+Alt+Shift+5` |
 
+## Warthog throttle — speed brake
+
+| Button | Command |
+|---:|---|
+| 7 | Speed brake retract |
+| 8 | Speed brake extend |
+
+These directional bindings use the F-14B(U) speed-brake extend/retract command. They do not alter the AutoHotKey-managed MIC inputs on buttons 2–6.
+
 ## MFD 1 — direct Jester
 
 | Button | Command | Button | Command |
@@ -64,4 +73,3 @@
 | 14 | Slew left | 28 | Power OFF |
 
 The generated kneeboard pages contain the complete PDCP, PTO2, Gunfighter, Warthog, axis, and reserved-device tables.
-
