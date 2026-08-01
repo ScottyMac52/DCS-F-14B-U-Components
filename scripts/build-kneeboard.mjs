@@ -98,7 +98,9 @@ const pages = [
   {
     file: '04-PTO2', title: 'CARRIERACE PTO 2', kicker: 'CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING',
     items: [
-      item('BTN 2', 'Master caution reset'), item('BTN 4', 'Nose strut KNEEL; else OFF'),
+      item('BTN 2', 'Master caution reset'),
+      item('BTN 3', 'Launch bar RETRACT • nose strut EXTEND', 'gold'),
+      item('BTN 4', 'Launch bar EXTEND • nose strut KNEEL', 'gold'),
       item('BTN 5', 'Flaps UP; else HALF'), item('BTN 7', 'Flaps DOWN; else HALF'),
       item('BTN 8', 'Taxi lights ON'), item('BTN 9', 'Taxi lights OFF'),
       item('BTN 10', 'Antiskid / spoiler brakes BOTH'), item('BTN 11', 'Antiskid / spoiler brakes OFF'),
