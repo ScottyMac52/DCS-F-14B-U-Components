@@ -19,7 +19,7 @@ Scott's DCS F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME pac
 | `kneeboard/F-14BU` | Generated OpenKneeboard/DCS PNG pages |
 | `kneeboard/source` | Generated SVG sources |
 | `docs` | Installation and complete mapping documentation |
-| `packaging/ovgme` | OVGME `README.TXT` and `VERSION.TXT` |
+| `packaging/ovgme` | OVGME package metadata templates |
 | `scripts` | Kneeboard and OVGME build scripts |
 | `dist` | Validated OVGME archive, complete release bundle, and checksums |
 
@@ -35,7 +35,7 @@ Scott's DCS F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME pac
 5. In OpenKneeboard, use the DCS Aircraft tab or add `KNEEBOARD\\F-14BU` as a Folder tab.
 6. Load the Warthog throttle profile manually once because its Windows device GUID was not available.
 
-The release also provides the OVGME ZIP as a separate asset for users who only need the DCS profiles and kneeboard. Every push to `main` publishes or refreshes the release identified by `packaging/ovgme/VERSION.TXT`; pull requests build and validate the same assets without publishing them.
+The release also provides the OVGME ZIP as a separate asset for users who only need the DCS profiles and kneeboard. Pull requests and pushes to `main` build and validate CI packages without publishing them. Releases are created deliberately with the **Create tagged OVGME release** workflow.
 
 See [Installation](docs/INSTALLATION.md), [Control mappings](docs/CONTROL-MAPPINGS.md), and [OpenKneeboard and VAICOM](docs/OPENKNEEBOARD-VAICOM.md).
 
@@ -55,4 +55,6 @@ DCS bindings are intentionally removed from `JOY_BTN2` through `JOY_BTN6` in the
 
 ## Version
 
-Current package version: `1.2.0`
+Git tags in the form `vMAJOR.MINOR.PATCH` are the authoritative OVGME package versions. To publish a release, run the **Create tagged OVGME release** workflow from the Actions page and select a `patch`, `minor`, or `major` bump. The workflow calculates the next version from the newest stable tag, builds and validates that version, then creates the matching tag and GitHub Release from the exact same commit.
+
+Ordinary CI builds use a prerelease version such as `0.0.0-ci.42`. Local builds default to `0.0.0-local`; pass `-Version 1.3.0` to the PowerShell build and test scripts when a specific version is needed.

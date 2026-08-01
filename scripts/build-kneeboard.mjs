@@ -228,7 +228,7 @@ function render(page, index) {
   <line x1="54" y1="166" x2="1146" y2="166" stroke="#263a52" stroke-width="3"/>
   <g font-family="DejaVu Sans, Arial, sans-serif">${body}</g>
   <line x1="54" y1="1532" x2="1146" y2="1532" stroke="#263a52" stroke-width="2"/>
-  <text x="54" y="1570" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" fill="#8ea5bd">F-14B(U) • Scott's cockpit • VAICOM PRO • Package 1.2.0</text>
+  <text x="54" y="1570" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" fill="#8ea5bd">F-14B(U) • Scott's cockpit • VAICOM PRO • Version in package VERSION.TXT</text>
   <text x="1146" y="1570" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" fill="#8ea5bd">${index + 1} / ${pages.length}</text>
 </svg>`;
 }

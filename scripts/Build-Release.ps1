@@ -1,9 +1,12 @@
 [CmdletBinding()]
-param()
+param(
+    [string]$Version
+)
 
 $ErrorActionPreference = 'Stop'
 $RepoRoot = Split-Path -Parent $PSScriptRoot
-$Version = (Get-Content (Join-Path $RepoRoot 'packaging/ovgme/VERSION.TXT') -Raw).Trim()
+$Version = node (Join-Path $PSScriptRoot 'version.mjs') resolve $Version
+if ($LASTEXITCODE -ne 0) { throw 'Failed to resolve the release package version.' }
 $OvgmeName = "Scott-F-14BU-Control-Profiles-$Version.zip"
 $BundleName = "Scott-F-14BU-Complete-Package-$Version"
 $Dist = Join-Path $RepoRoot 'dist'
