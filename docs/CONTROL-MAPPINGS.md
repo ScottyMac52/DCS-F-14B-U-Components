@@ -65,23 +65,16 @@ The four bindings are explicit in the Saved Games profile so they remain present
 | 9 | Parking brake stow | 19 | Catapult salute |
 | 10 | Parking brake pull | 20 | DLC/countermeasure |
 
-## MFD 3 — LANTIRN
+## MFD 3 — pilot/Jester LANTIRN context
 
-| Button | Command | Button | Command |
-|---:|---|---:|---|
-| 1 | Video TCS/LANTIRN | 15 | Point track |
-| 2 | Power toggle | 16 | Area track |
-| 3 | OPER/STBY | 17 | WHOT/BHOT |
-| 4 | Mode toggle | 18 | QWP− |
-| 5 | Laser arm toggle | 19 | QWP+ |
-| 6 | Laser latched | 20 | S4 press |
-| 7 | Trigger half | 21 | S4 up |
-| 8 | Trigger full | 22 | S4 right |
-| 9 | Undesignate | 23 | S4 down |
-| 10 | Toggle FOV | 24 | S4 left |
-| 11 | Slew up | 25 | Slider AGC/MGC |
-| 12 | Slew right | 26 | Slider laser/focus |
-| 13 | Slew down | 27 | Power POD |
-| 14 | Slew left | 28 | Power OFF |
+| Button | Pilot command |
+|---:|---|
+| 1 | Jester Context Action — smart short/hold/double |
+| 2 | Jester Context Action SHORT — direct |
+| 3 | Jester Context Action HOLD — direct |
+| 4 | Jester Context Action DOUBLE — direct |
+| 5–28 | Intentionally unbound |
+
+In A/G mode, hold BTN1 while looking at a ground point and release it to ask Jester to slew the targeting pod and establish an area track. The same hold/look/release interaction on the VDI in LTS repeat tells Jester to move the pod to the indicated location. BTN2–BTN4 provide Heatblur's direct gesture fallbacks if the smart button has timing or hardware micro-interruption issues. No Jester wheel is required.
 
 The generated kneeboard pages contain the complete PDCP, PTO2, Gunfighter, Warthog, axis, and reserved-device tables.

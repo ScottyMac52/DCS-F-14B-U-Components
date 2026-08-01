@@ -91,4 +91,28 @@ foreach ($Binding in $TrimBindings) {
     }
 }
 
+$Mfd3 = Get-Content (Join-Path $Joystick 'F16 MFD 3 {C5BE49A0-2342-11ee-8001-444553540000}.diff.lua') -Raw
+if ($Mfd3 -match 'cd7v') { throw 'MFD3 contains direct RIO LANTIRN device bindings.' }
+$Mfd3Bindings = @(
+    @{ Command = 'd3934pnilu3934cd62vd1vpnilvu0'; Button = 'JOY_BTN1'; Name = 'Jester Context Action (short, hold, double click)' },
+    @{ Command = 'd3935pnilu3935cd62vd1vpnilvu0'; Button = 'JOY_BTN2'; Name = 'Jester Context Action SHORT (button, direct bind)' },
+    @{ Command = 'd3936pnilu3936cd62vd1vpnilvu0'; Button = 'JOY_BTN3'; Name = 'Jester Context Action HOLD (button, direct bind)' },
+    @{ Command = 'd3937pnilu3937cd62vd1vpnilvu0'; Button = 'JOY_BTN4'; Name = 'Jester Context Action DOUBLE (button, direct bind)' }
+)
+foreach ($Binding in $Mfd3Bindings) {
+    $Pattern = '(?ms)^\t\t\["' + [regex]::Escape($Binding.Command) +
+        '"\]\s*=\s*\{(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+    $Match = [regex]::Match($Mfd3, $Pattern)
+    if (-not $Match.Success -or
+        $Match.Groups['Block'].Value -notmatch ('\["added"\].*?"' + [regex]::Escape($Binding.Button) + '"') -or
+        $Match.Groups['Block'].Value -notmatch ('\["name"\]\s*=\s*"' + [regex]::Escape($Binding.Name) + '"')) {
+        throw "MFD3 Jester context binding $($Binding.Command) is invalid."
+    }
+}
+$Mfd3AddedKeys = [regex]::Matches($Mfd3, '\["added"\].*?\["key"\]\s*=\s*"(?<Key>JOY_BTN\d+)"') |
+    ForEach-Object { $_.Groups['Key'].Value }
+if ($Mfd3AddedKeys.Count -ne 4 -or @($Mfd3AddedKeys | Where-Object { $_ -notin 'JOY_BTN1', 'JOY_BTN2', 'JOY_BTN3', 'JOY_BTN4' }).Count -ne 0) {
+    throw 'MFD3 buttons 5-28 must remain unbound.'
+}
+
 Write-Host 'Package validation passed.'
