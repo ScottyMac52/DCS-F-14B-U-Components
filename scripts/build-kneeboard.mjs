@@ -58,6 +58,7 @@ const pages = [
     items: [
       item('STK 1', 'Trigger'), item('STK 3', 'Store release', 'red'),
       item('STK 5', 'DLC toggle / countermeasure dispense'), item('STK 6', 'Catapult salute'),
+      item('STK 7', 'Autopilot reference / NWS toggle', 'gold'),
       item('STK 13', 'Sparrow / Phoenix selector'), item('STK 14', 'Sidewinder selector'),
       item('STK 15', 'Gun selector'), item('STK 16', 'Weapon selector OFF'),
       item('STK RX', 'DLC / maneuver flaps axis', 'gold'),

@@ -66,6 +66,14 @@ local diff = {
 			},
 			["name"] = "Catapult Salute",
 		},
+		["d3085pnilu3085cd57vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN7",
+				},
+			},
+			["name"] = "Autopilot Reference / Nosewheel Steering Toggle",
+		},
 		["d3078pnilu3078cd57vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
