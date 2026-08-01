@@ -11,7 +11,7 @@ VAICOM PRO remains the primary interface for conversational Jester and radio ope
 
 ## OpenKneeboard tab
 
-The OVGME package installs eight numbered PNG pages into:
+The OVGME package installs nine numbered PNG pages into:
 
 `KNEEBOARD\\F-14BU`
 

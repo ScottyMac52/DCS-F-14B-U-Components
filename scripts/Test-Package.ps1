@@ -22,7 +22,40 @@ $Kneeboard = Join-Path $Container 'KNEEBOARD/F-14BU'
 if (-not (Test-Path $Joystick)) { throw 'Missing F-14BU joystick directory.' }
 if (-not (Test-Path $Kneeboard)) { throw 'Missing F-14BU kneeboard directory.' }
 if ((Get-ChildItem $Joystick -Filter '*.diff.lua').Count -ne 12) { throw 'Expected 12 control profiles.' }
-if ((Get-ChildItem $Kneeboard -Filter '*.png').Count -ne 8) { throw 'Expected 8 kneeboard pages.' }
+$ExpectedKneeboardPages = @(
+    '01-VAICOM-OVERVIEW.png',
+    '02-VKB-F14-GRIP.png',
+    '03-WARTHOG-THROTTLE.png',
+    '04-PDCP.png',
+    '05-PTO2.png',
+    '06-MFD1-JESTER.png',
+    '07-MFD2-CARRIER.png',
+    '08-MFD3-LANTIRN.png',
+    '09-AXES-RESERVED-OPENKNEEBOARD.png'
+)
+$ActualKneeboardPages = @(Get-ChildItem $Kneeboard -Filter '*.png' | Sort-Object Name | ForEach-Object Name)
+if (Compare-Object $ExpectedKneeboardPages $ActualKneeboardPages) {
+    throw 'Kneeboard package must contain the exact nine expected PNG filenames.'
+}
+Add-Type -AssemblyName System.Drawing
+foreach ($Page in $ExpectedKneeboardPages) {
+    $Image = [System.Drawing.Image]::FromFile((Join-Path $Kneeboard $Page))
+    try {
+        if ($Image.Width -ne 1200 -or $Image.Height -ne 1600) {
+            throw "$Page must be 1200 x 1600 pixels."
+        }
+    } finally {
+        $Image.Dispose()
+    }
+}
+if (-not (Test-Path (Join-Path $VerifyRoot 'THIRD-PARTY-ASSETS.md') -PathType Leaf)) {
+    throw 'Missing kneeboard third-party asset notice.'
+}
+foreach ($License in 'joystick-diagrams-GPL-2.0.txt', 'bindulator-templates-GPL-2.0-or-later.txt') {
+    if (-not (Test-Path (Join-Path $VerifyRoot "LICENSES/$License") -PathType Leaf)) {
+        throw "Missing redistributed asset license: $License"
+    }
+}
 if ((Get-Content (Join-Path $VerifyRoot 'VERSION.TXT') -Raw).Trim() -ne $Version) { throw 'VERSION.TXT mismatch.' }
 $PackageReadme = Get-Content (Join-Path $VerifyRoot 'README.TXT') -Raw
 if ($PackageReadme.Contains('{{VERSION}}')) { throw 'README.TXT contains an unresolved version token.' }
