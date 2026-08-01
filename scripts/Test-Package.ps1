@@ -1,9 +1,12 @@
 [CmdletBinding()]
-param()
+param(
+    [string]$Version
+)
 
 $ErrorActionPreference = 'Stop'
 $RepoRoot = Split-Path -Parent $PSScriptRoot
-$Version = (Get-Content (Join-Path $RepoRoot 'packaging/ovgme/VERSION.TXT') -Raw).Trim()
+$Version = node (Join-Path $PSScriptRoot 'version.mjs') resolve $Version
+if ($LASTEXITCODE -ne 0) { throw 'Failed to resolve the package-test version.' }
 $PackageName = "Scott-F-14BU-Control-Profiles-$Version"
 $Archive = Join-Path $RepoRoot "dist/$PackageName.zip"
 $VerifyRoot = Join-Path $RepoRoot '.build/verify'
@@ -21,6 +24,11 @@ if (-not (Test-Path $Kneeboard)) { throw 'Missing F-14BU kneeboard directory.' }
 if ((Get-ChildItem $Joystick -Filter '*.diff.lua').Count -ne 12) { throw 'Expected 12 control profiles.' }
 if ((Get-ChildItem $Kneeboard -Filter '*.png').Count -ne 8) { throw 'Expected 8 kneeboard pages.' }
 if ((Get-Content (Join-Path $VerifyRoot 'VERSION.TXT') -Raw).Trim() -ne $Version) { throw 'VERSION.TXT mismatch.' }
+$PackageReadme = Get-Content (Join-Path $VerifyRoot 'README.TXT') -Raw
+if ($PackageReadme.Contains('{{VERSION}}')) { throw 'README.TXT contains an unresolved version token.' }
+if ($PackageReadme -notmatch ('OVGME PACKAGE VERSION ' + [regex]::Escape($Version))) {
+    throw 'README.TXT does not contain the package version.'
+}
 
 $Throttle = Get-Content (Join-Path $Joystick 'Throttle - HOTAS Warthog F-14BU.diff.lua') -Raw
 $AddedKeys = [regex]::Matches(

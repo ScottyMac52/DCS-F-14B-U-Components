@@ -1,5 +1,5 @@
 SCOTT'S F-14B(U) CONTROL PROFILES
-OVGME PACKAGE VERSION 1.2.0
+OVGME PACKAGE VERSION {{VERSION}}
 
 This package installs Scott's F-14B(U) control profiles and OpenKneeboard
 pages into:
@@ -24,4 +24,3 @@ are managed by AutoHotKey and VAICOM PRO.
 
 OpenKneeboard should discover KNEEBOARD\F-14BU through the DCS Aircraft tab.
 If not, add that directory as a Folder tab.
-
