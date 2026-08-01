@@ -42,15 +42,8 @@ function dataUri(buffer, mime) {
 }
 
 async function preparedAssets() {
-  const warthogSource = join(assetDir, 'warthog-throttle-template.svg');
-
-  const warthogFull = await sharp(warthogSource, { density: 120 }).png().toBuffer();
-  const warthogBase = await sharp(warthogFull)
-    .extract({ left: 292, top: 140, width: 610, height: 865 })
-    .flatten({ background: '#ffffff' }).greyscale().negate().png().toBuffer();
-  const warthogHandles = await sharp(warthogFull)
-    .extract({ left: 405, top: 1075, width: 730, height: 820 })
-    .flatten({ background: '#ffffff' }).greyscale().negate().png().toBuffer();
+  const warthogBase = readFileSync(join(assetDir, 'warthog-throttle-base.png'));
+  const warthogHandles = readFileSync(join(assetDir, 'warthog-throttle-handles.png'));
 
   const pto2 = readFileSync(join(assetDir, 'pto2-clean.png'));
   const mfd = readFileSync(join(assetDir, 'cougar-mfd-clean.png'));

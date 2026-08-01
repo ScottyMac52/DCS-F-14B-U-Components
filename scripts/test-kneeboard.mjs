@@ -30,7 +30,8 @@ const expectedAssets = [
   'pto2-clean.png',
   'pto2-template.svg',
   'vkb-f14-grip.svg',
-  'warthog-throttle-template.svg',
+  'warthog-throttle-base.png',
+  'warthog-throttle-handles.png',
 ];
 
 function assert(condition, message) {

@@ -16,15 +16,15 @@ provenance and transformations for each hardware image.
 
 ## Thrustmaster Warthog throttle
 
-- Files: `warthog-throttle-template.svg` and `warthog-throttle-clean.png` (generated at build
-  time).
+- Files: `warthog-throttle-base.png` and `warthog-throttle-handles.png`.
 - Source: [Joystick Diagrams](https://github.com/Rexeh/joystick-diagrams), commit
   `1e9f5d0b6aeaeabc7da6fcec4122554df9da69a7`, template
   `templates/Thrustmaster/Thrustmaster Warthog - Throttle.svg`.
 - License: GNU GPL v2; a copy is stored at
   `kneeboard/assets/source/licenses/joystick-diagrams-GPL-2.0.txt`.
-- Transformation: the front and rear views are cropped from the SVG, rendered, flattened,
-  converted to high-contrast monochrome line art, and composited with project callouts.
+- Transformation: the front and rear views were cropped from the upstream SVG, rendered,
+  flattened, converted to optimized high-contrast monochrome line art, and committed as the
+  preferred local derivatives. The build composites those files with project callouts.
 
 ## WINCTRL CarrierAce PTO2
 
