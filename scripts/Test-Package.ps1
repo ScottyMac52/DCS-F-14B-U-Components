@@ -71,6 +71,24 @@ if (-not $PlmMatch.Success -or
     throw 'Warthog JOY_BTN15 is not mapped exclusively to PLM as expected.'
 }
 
+$Pto2Profile = Get-ChildItem $Joystick -Filter 'WINCTRL CarrierAce PTO 2*.diff.lua'
+if ($Pto2Profile.Count -ne 1) { throw 'Expected exactly one WINCTRL CarrierAce PTO2 profile.' }
+$Pto2 = Get-Content $Pto2Profile.FullName -Raw
+$NoseStrutBindings = @(
+    @{ Command = 'd3019pnilu3019cd18vd1vpnilvu0'; Button = 'JOY_BTN3'; Name = 'Nose strut - EXTEND else OFF (3-way Switch Up)' },
+    @{ Command = 'd3019pnilu3019cd18vd-1vpnilvu0'; Button = 'JOY_BTN4'; Name = 'Nose strut - KNEEL else OFF (3-way Switch Down)' }
+)
+foreach ($Binding in $NoseStrutBindings) {
+    $Pattern = '(?ms)^\t\t\["' + [regex]::Escape($Binding.Command) +
+        '"\]\s*=\s*\{(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+    $Match = [regex]::Match($Pto2, $Pattern)
+    if (-not $Match.Success -or
+        $Match.Groups['Block'].Value -notmatch ('\["added"\].*?"' + [regex]::Escape($Binding.Button) + '"') -or
+        $Match.Groups['Block'].Value -notmatch ('\["name"\]\s*=\s*"' + [regex]::Escape($Binding.Name) + '"')) {
+        throw "PTO2 nose-strut binding $($Binding.Name) is not mapped to $($Binding.Button)."
+    }
+}
+
 $GunfighterProfile = Get-ChildItem $Joystick -Filter '*Gunfighter F14*.diff.lua'
 if ($GunfighterProfile.Count -ne 1) { throw 'Expected exactly one VKB F-14 Gunfighter profile.' }
 $Gunfighter = Get-Content $GunfighterProfile.FullName -Raw

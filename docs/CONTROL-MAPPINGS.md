@@ -31,6 +31,15 @@ These directional bindings use the F-14B(U) speed-brake extend/retract command. 
 
 The four bindings are explicit in the Saved Games profile so they remain present even if Heatblur changes its device-default VKB mapping.
 
+## WINCTRL CarrierAce PTO2 — launch bar / nose strut
+
+| Physical switch position | Button | F-14B(U) command |
+|---|---:|---|
+| LAUNCH BAR RETRACT | 3 | Nose strut EXTEND; else OFF |
+| LAUNCH BAR EXTEND | 4 | Nose strut KNEEL; else OFF |
+
+The Hornet-labeled two-position launch-bar switch drives the Tomcat's three-way nose-strut control. Each maintained position returns the aircraft control to OFF when released.
+
 ## MFD 1 — direct Jester
 
 | Button | Command | Button | Command |
