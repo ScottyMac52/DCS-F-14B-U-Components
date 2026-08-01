@@ -54,4 +54,21 @@ foreach ($Binding in $SpeedBrakeBindings) {
     }
 }
 
+$CageSeamPattern = '(?ms)^\t\t\["d3126pnilu3126cd57vd1vpnilvu0"\]\s*=\s*\{' +
+    '(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+$CageSeamMatch = [regex]::Match($Throttle, $CageSeamPattern)
+if (-not $CageSeamMatch.Success -or
+    $CageSeamMatch.Groups['Block'].Value -notmatch '\["removed"\].*?"JOY_BTN15"') {
+    throw 'Warthog JOY_BTN15 was not removed from CAGE-SEAM.'
+}
+
+$PlmPattern = '(?ms)^\t\t\["d3127pnilu3127cd57vd1vpnilvu0"\]\s*=\s*\{' +
+    '(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+$PlmMatch = [regex]::Match($Throttle, $PlmPattern)
+if (-not $PlmMatch.Success -or
+    $PlmMatch.Groups['Block'].Value -notmatch '\["added"\].*?"JOY_BTN15"' -or
+    $PlmMatch.Groups['Block'].Value -notmatch '\["name"\]\s*=\s*"PLM button"') {
+    throw 'Warthog JOY_BTN15 is not mapped exclusively to PLM as expected.'
+}
+
 Write-Host 'Package validation passed.'

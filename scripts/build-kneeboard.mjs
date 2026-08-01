@@ -65,7 +65,7 @@ const pages = [
       item('THR 8', 'Speed brake extend'), item('THR 9', 'Wing sweep forward'),
       item('THR 10', 'Wing sweep aft'), item('THR 11', 'Wing sweep auto'),
       item('THR 12', 'Wing sweep bomb'), item('THR 13', 'Exterior lights master'),
-      item('THR 15', 'CAGE / SEAM'), item('THR 21', 'Master caution reset'),
+      item('THR 15', 'PLM button • CAGE/SEAM removed'), item('THR 21', 'Master caution reset'),
       item('THR 22', 'Flaps up'), item('THR 23', 'Flaps down'),
       item('THR 24', 'Autopilot ON; release OFF'), item('THR 25', 'Altitude hold ON; release OFF'),
       item('THR 26', 'Autopilot heading toggle'), item('THR 29', 'Left engine cutoff'),
@@ -242,4 +242,3 @@ for (let index = 0; index < pages.length; index++) {
 }
 
 console.log(`Generated ${pages.length} SVG pages and PNG pages.`);
-
