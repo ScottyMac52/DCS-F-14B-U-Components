@@ -109,6 +109,15 @@ foreach ($Binding in $TrimBindings) {
     }
 }
 
+$NwsPattern = '(?ms)^\t\t\["d3085pnilu3085cd57vd1vpnilvu0"\]\s*=\s*\{' +
+    '(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+$NwsMatch = [regex]::Match($Gunfighter, $NwsPattern)
+if (-not $NwsMatch.Success -or
+    $NwsMatch.Groups['Block'].Value -notmatch '(?s)\["added"\].*?"JOY_BTN7"' -or
+    $NwsMatch.Groups['Block'].Value -notmatch '\["name"\]\s*=\s*"Autopilot Reference / Nosewheel Steering Toggle"') {
+    throw 'VKB JOY_BTN7 is not mapped to Autopilot Reference / Nosewheel Steering Toggle.'
+}
+
 $Mfd3 = Get-Content (Join-Path $Joystick 'F16 MFD 3 {C5BE49A0-2342-11ee-8001-444553540000}.diff.lua') -Raw
 if ($Mfd3 -match 'cd7v') { throw 'MFD3 contains direct RIO LANTIRN device bindings.' }
 $Mfd3Bindings = @(
