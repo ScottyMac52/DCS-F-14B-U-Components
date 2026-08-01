@@ -83,7 +83,7 @@ foreach ($Binding in $NoseStrutBindings) {
         '"\]\s*=\s*\{(?<Block>.*?)(?=^\t\t\["|^\t\},)'
     $Match = [regex]::Match($Pto2, $Pattern)
     if (-not $Match.Success -or
-        $Match.Groups['Block'].Value -notmatch ('\["added"\].*?"' + [regex]::Escape($Binding.Button) + '"') -or
+        $Match.Groups['Block'].Value -notmatch ('(?s)\["added"\].*?"' + [regex]::Escape($Binding.Button) + '"') -or
         $Match.Groups['Block'].Value -notmatch ('\["name"\]\s*=\s*"' + [regex]::Escape($Binding.Name) + '"')) {
         throw "PTO2 nose-strut binding $($Binding.Name) is not mapped to $($Binding.Button)."
     }
