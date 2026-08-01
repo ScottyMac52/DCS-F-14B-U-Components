@@ -6,13 +6,17 @@ provenance and transformations for each hardware image.
 
 ## VKB F-14 grip
 
-- File: `kneeboard/assets/source/vkb-f14-grip.svg`
-- Source: original project vector illustration, drawn for this repository from the control
-  layout and factual product features shown on the [official VKB product page](https://www.vkbcontrollers.com/products/gnx-f-14-add-on-grip).
-- Transformation: rendered locally by `scripts/build-kneeboard.mjs` and composited with the
-  project callouts.
-- Rights: no VKB photograph or third-party artwork is included. The illustration is part of
-  this project.
+- Files: `kneeboard/assets/source/vkb-f14-grip-photo.jpeg` and
+  `kneeboard/assets/source/vkb-f14-grip-photo-clean.png`.
+- Source and owner: VKB/VKBSim product photograph, as identified by the branding in the image;
+  supplied by Scott after issue #17 for use in this repository and its release packages. The
+  original publication URL was not supplied.
+- Permission: Scott explicitly approved inclusion in the project. No separate original-owner
+  license document accompanied the supplied image.
+- Transformation: the original JPEG is preserved unchanged. A derived PNG crops out surrounding
+  whitespace, the VKBSim logo, and the “F14 GRIP” caption; applies a mild gamma adjustment for
+  dark-page readability; and removes the white background with a soft matte. The build embeds
+  the local derived PNG and adds project callouts without downloading anything.
 
 ## Thrustmaster Warthog throttle
 

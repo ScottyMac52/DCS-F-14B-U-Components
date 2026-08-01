@@ -29,7 +29,8 @@ const expectedAssets = [
   'pdcp-photo',
   'pto2-clean.png',
   'pto2-template.svg',
-  'vkb-f14-grip.svg',
+  'vkb-f14-grip-photo.jpeg',
+  'vkb-f14-grip-photo-clean.png',
   'warthog-throttle-base.png',
   'warthog-throttle-handles.png',
 ];
@@ -93,6 +94,11 @@ for (const asset of expectedAssets) {
     assert(sourceAssetNames.includes(asset), `Missing source asset: ${asset}`);
   }
 }
+assert(!sourceAssetNames.includes('vkb-f14-grip.svg'), 'The superseded VKB vector asset is still present.');
+const vkbPhoto = await sharp(join(root, 'kneeboard', 'assets', 'source', 'vkb-f14-grip-photo.jpeg')).metadata();
+assert(vkbPhoto.width === 648 && vkbPhoto.height === 1269, 'The Scott-supplied VKB photograph has unexpected dimensions.');
+const vkbCutout = await sharp(join(root, 'kneeboard', 'assets', 'source', 'vkb-f14-grip-photo-clean.png')).metadata();
+assert(vkbCutout.hasAlpha, 'The cleaned VKB photograph must retain a transparent background.');
 
 assertProfileButtons('Gunfighter F14', '02-VKB-F14-GRIP', [1, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16]);
 assertProfileButtons('OnYourTwelve F-14 PDCP', '04-PDCP', Array.from({ length: 29 }, (_, index) => index + 1));

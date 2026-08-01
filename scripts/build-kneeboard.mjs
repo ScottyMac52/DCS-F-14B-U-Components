@@ -50,8 +50,7 @@ async function preparedAssets() {
 
   const pdcp = await sharp(join(assetDir, 'scott-custom-f14-pdcp.jpeg'))
     .rotate().jpeg({ quality: 90, chromaSubsampling: '4:4:4' }).toBuffer();
-  const vkb = await sharp(join(assetDir, 'vkb-f14-grip.svg'), { density: 150 })
-    .png().toBuffer();
+  const vkb = readFileSync(join(assetDir, 'vkb-f14-grip-photo-clean.png'));
 
   return {
     warthogBase: dataUri(warthogBase, 'image/png'),
@@ -254,22 +253,22 @@ const pages = [
     file: '02-VKB-F14-GRIP',
     title: 'VKB GUNFIGHTER • F-14 GRIP',
     kicker: 'PRIMARY FLIGHT, WEAPONS, TRIM AND DIRECT LIFT CONTROL',
-    images: [{ href: assets.vkb, x: 370, y: 190, width: 460, height: 1240 }],
+    images: [{ href: assets.vkb, x: 370, y: 215, width: 460, height: 1220, opacity: 0.92 }],
     callouts: [
-      callout('BTN 1', 'Trigger', 'left', [352, 450]),
-      callout('BTN 3', 'Store release', 'left', [640, 480], 'red'),
-      callout('BTN 5', 'DLC / countermeasure', 'left', [480, 770]),
-      callout('BTN 6', 'Catapult salute', 'left', [650, 700]),
-      callout('BTN 7', 'Autopilot ref / NWS', 'left', [665, 360], 'gold'),
-      callout('RX', 'DLC / maneuver flap axis', 'left', [465, 720], 'gold'),
-      callout('BTN 9', 'Trim pitch up', 'left', [600, 880], 'gold'),
-      callout('BTN 10', 'Trim left wing down', 'right', [560, 920], 'gold'),
-      callout('BTN 11', 'Trim right wing down', 'right', [640, 920], 'gold'),
-      callout('BTN 12', 'Trim pitch down', 'right', [600, 970], 'gold'),
-      callout('BTN 13', 'Sparrow / Phoenix', 'right', [660, 1120]),
-      callout('BTN 14', 'Sidewinder selector', 'right', [685, 1165]),
-      callout('BTN 15', 'Gun selector', 'right', [630, 1215]),
-      callout('BTN 16', 'Weapon selector OFF', 'right', [545, 1190]),
+      callout('BTN 1', 'Trigger', 'left', [455, 565]),
+      callout('BTN 3', 'Store release', 'left', [755, 440], 'red'),
+      callout('BTN 5', 'DLC / countermeasure', 'left', [420, 490]),
+      callout('BTN 6', 'Catapult salute', 'left', [480, 810]),
+      callout('BTN 7', 'Autopilot ref / NWS', 'left', [710, 480], 'gold'),
+      callout('RX', 'DLC / maneuver flap axis', 'left', [420, 490], 'gold'),
+      callout('BTN 9', 'Trim pitch up', 'left', [625, 405], 'gold'),
+      callout('BTN 10', 'Trim left wing down', 'right', [625, 405], 'gold'),
+      callout('BTN 11', 'Trim right wing down', 'right', [625, 405], 'gold'),
+      callout('BTN 12', 'Trim pitch down', 'right', [625, 405], 'gold'),
+      callout('BTN 13', 'Sparrow / Phoenix', 'right', [780, 810]),
+      callout('BTN 14', 'Sidewinder selector', 'right', [780, 810]),
+      callout('BTN 15', 'Gun selector', 'right', [780, 810]),
+      callout('BTN 16', 'Weapon selector OFF', 'right', [780, 810]),
     ],
   },
   {
