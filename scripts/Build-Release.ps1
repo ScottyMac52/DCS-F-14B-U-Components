@@ -31,6 +31,7 @@ Copy-Item (Join-Path $RepoRoot 'CHANGELOG.md') (Join-Path $BundleRoot 'Documenta
 Copy-Item (Join-Path $RepoRoot 'docs/INSTALLATION.md') (Join-Path $BundleRoot 'Documentation')
 Copy-Item (Join-Path $RepoRoot 'docs/CONTROL-MAPPINGS.md') (Join-Path $BundleRoot 'Documentation')
 Copy-Item (Join-Path $RepoRoot 'docs/OPENKNEEBOARD-VAICOM.md') (Join-Path $BundleRoot 'Documentation')
+Copy-Item (Join-Path $RepoRoot 'docs/THIRD-PARTY-ASSETS.md') (Join-Path $BundleRoot 'Documentation')
 
 $BundleChecksumTargets = @(
     (Join-Path $BundleRoot "OVGME/$OvgmeName"),

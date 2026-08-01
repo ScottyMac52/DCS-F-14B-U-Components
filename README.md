@@ -18,6 +18,7 @@ Scott's DCS F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME pac
 | `autohotkey/dcs-Warthog.ahk` | Warthog-to-VAICOM TX1-TX5 bridge |
 | `kneeboard/F-14BU` | Generated OpenKneeboard/DCS PNG pages |
 | `kneeboard/source` | Generated SVG sources |
+| `kneeboard/assets/source` | Offline hardware image sources and license texts |
 | `docs` | Installation and complete mapping documentation |
 | `packaging/ovgme` | OVGME package metadata templates |
 | `scripts` | Kneeboard and OVGME build scripts |
@@ -37,7 +38,7 @@ Scott's DCS F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME pac
 
 The release also provides the OVGME ZIP as a separate asset for users who only need the DCS profiles and kneeboard. Pull requests and pushes to `main` build and validate CI packages without publishing them. Releases are created deliberately with the **Create tagged OVGME release** workflow.
 
-See [Installation](docs/INSTALLATION.md), [Control mappings](docs/CONTROL-MAPPINGS.md), and [OpenKneeboard and VAICOM](docs/OPENKNEEBOARD-VAICOM.md).
+See [Installation](docs/INSTALLATION.md), [Control mappings](docs/CONTROL-MAPPINGS.md), [OpenKneeboard and VAICOM](docs/OPENKNEEBOARD-VAICOM.md), and [Kneeboard image sources](docs/THIRD-PARTY-ASSETS.md).
 
 ## VAICOM PRO
 

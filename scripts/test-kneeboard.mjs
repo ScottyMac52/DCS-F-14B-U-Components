@@ -1,0 +1,131 @@
+import { createHash } from 'node:crypto';
+import { readFileSync, readdirSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
+
+const scriptDir = dirname(fileURLToPath(import.meta.url));
+const root = resolve(scriptDir, '..');
+const pngDir = join(root, 'kneeboard', 'F-14BU');
+const svgDir = join(root, 'kneeboard', 'source');
+const profileDir = join(root, 'src', 'Config', 'Input', 'F-14BU', 'joystick');
+
+const pages = [
+  '01-VAICOM-OVERVIEW',
+  '02-VKB-F14-GRIP',
+  '03-WARTHOG-THROTTLE',
+  '04-PDCP',
+  '05-PTO2',
+  '06-MFD1-JESTER',
+  '07-MFD2-CARRIER',
+  '08-MFD3-LANTIRN',
+  '09-AXES-RESERVED-OPENKNEEBOARD',
+];
+
+const expectedAssets = [
+  'cougar-mfd-clean.png',
+  'cougar-mfd-template.png',
+  'pdcp-photo',
+  'pto2-clean.png',
+  'pto2-template.svg',
+  'vkb-f14-grip.svg',
+  'warthog-throttle-base.png',
+  'warthog-throttle-handles.png',
+];
+
+function assert(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+function hashFile(path) {
+  return createHash('sha256').update(readFileSync(path)).digest('hex');
+}
+
+function generatedHashes() {
+  return Object.fromEntries(pages.flatMap((page) => [
+    [`${page}.svg`, hashFile(join(svgDir, `${page}.svg`))],
+    [`${page}.png`, hashFile(join(pngDir, `${page}.png`))],
+  ]));
+}
+
+function profile(nameFragment) {
+  const matches = readdirSync(profileDir).filter((name) => name.includes(nameFragment));
+  assert(matches.length === 1, `Expected one profile matching ${nameFragment}; found ${matches.length}.`);
+  return readFileSync(join(profileDir, matches[0]), 'utf8');
+}
+
+function assertProfileButtons(nameFragment, page, buttons) {
+  const lua = profile(nameFragment);
+  const svg = readFileSync(join(svgDir, `${page}.svg`), 'utf8');
+  const labelledButtons = new Set(
+    [...svg.matchAll(/BTN ([0-9/]+)/g)].flatMap((match) => match[1].split('/')),
+  );
+  for (const button of buttons) {
+    assert(lua.includes(`JOY_BTN${button}`), `${nameFragment} is missing JOY_BTN${button}.`);
+    assert(labelledButtons.has(String(button)), `${page} is missing its BTN ${button} label.`);
+  }
+}
+
+const pngNames = readdirSync(pngDir).filter((name) => name.endsWith('.png')).sort();
+const svgNames = readdirSync(svgDir).filter((name) => name.endsWith('.svg')).sort();
+assert(JSON.stringify(pngNames) === JSON.stringify(pages.map((page) => `${page}.png`)), 'Unexpected kneeboard PNG filenames or page count.');
+assert(JSON.stringify(svgNames) === JSON.stringify(pages.map((page) => `${page}.svg`)), 'Unexpected kneeboard SVG filenames or page count.');
+
+for (const page of pages) {
+  const png = join(pngDir, `${page}.png`);
+  const svg = join(svgDir, `${page}.svg`);
+  const metadata = await sharp(png).metadata();
+  assert(metadata.width === 1200 && metadata.height === 1600, `${page}.png must be 1200 x 1600.`);
+  const source = readFileSync(svg, 'utf8');
+  const resources = source
+    .replaceAll('http://www.w3.org/2000/svg', '')
+    .replaceAll('http://www.w3.org/1999/xlink', '');
+  assert(!/https?:\/\//i.test(resources), `${page}.svg contains a network dependency.`);
+  assert(source.includes(`${pages.indexOf(page) + 1} / 9`), `${page}.svg has the wrong page number.`);
+}
+
+const sourceAssetNames = readdirSync(join(root, 'kneeboard', 'assets', 'source'));
+for (const asset of expectedAssets) {
+  if (asset === 'pdcp-photo') {
+    assert(sourceAssetNames.includes('scott-custom-f14-pdcp.jpeg'), 'The Scott-provided PDCP photograph is missing.');
+  } else {
+    assert(sourceAssetNames.includes(asset), `Missing source asset: ${asset}`);
+  }
+}
+
+assertProfileButtons('Gunfighter F14', '02-VKB-F14-GRIP', [1, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16]);
+assertProfileButtons('OnYourTwelve F-14 PDCP', '04-PDCP', Array.from({ length: 29 }, (_, index) => index + 1));
+assertProfileButtons('CarrierAce PTO 2', '05-PTO2', [2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16, 32, 34, 35, 37, 38, 39]);
+assertProfileButtons('F16 MFD 1', '06-MFD1-JESTER', Array.from({ length: 28 }, (_, index) => index + 1));
+assertProfileButtons('F16 MFD 2', '07-MFD2-CARRIER', Array.from({ length: 20 }, (_, index) => index + 1));
+assertProfileButtons('F16 MFD 3', '08-MFD3-LANTIRN', [1, 2, 3, 4]);
+assertProfileButtons('Throttle - HOTAS Warthog', '03-WARTHOG-THROTTLE', [7, 8, 9, 10, 11, 12, 15, 21, 24, 25, 26, 29, 30]);
+
+const requiredText = {
+  '01-VAICOM-OVERVIEW': ['TX1', 'MFD 3', 'KNEEBOARD\\F-14BU'],
+  '02-VKB-F14-GRIP': ['DLC / maneuver flap axis', 'Autopilot ref / NWS'],
+  '03-WARTHOG-THROTTLE': ['MIC 2–6', 'CAGE/SEAM removed'],
+  '04-PDCP': ['HSD mode ECM', 'HUD barometric altitude'],
+  '05-PTO2': ['Launch bar retract / strut extend', 'Parking brake stow / pull'],
+  '06-MFD1-JESTER': ['Context DOUBLE', 'Collision steering'],
+  '07-MFD2-CARRIER': ['Deliberately unbound', 'Refuel probe extend / ALL'],
+  '08-MFD3-LANTIRN': ['Smart short / hold / double', 'Intentionally unbound'],
+  '09-AXES-RESERVED-OPENKNEEBOARD': ['NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
+};
+for (const [page, labels] of Object.entries(requiredText)) {
+  const source = readFileSync(join(svgDir, `${page}.svg`), 'utf8');
+  const visibleText = source.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  for (const label of labels) assert(visibleText.includes(label), `${page} is missing required text: ${label}`);
+}
+
+const before = generatedHashes();
+const build = spawnSync(process.execPath, [join(scriptDir, 'build-kneeboard.mjs')], {
+  cwd: root,
+  encoding: 'utf8',
+});
+assert(build.status === 0, `Deterministic rebuild failed:\n${build.stdout}\n${build.stderr}`);
+const after = generatedHashes();
+assert(JSON.stringify(after) === JSON.stringify(before), 'Kneeboard output changed across identical builds.');
+
+console.log('Kneeboard validation passed: 9 deterministic pages, mappings, dimensions, and offline assets verified.');

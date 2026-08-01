@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Replaced the text-only reference set with nine VR-oriented pages using labelled hardware imagery.
+- Added offline, deterministic source assets and documented their provenance and redistribution terms.
+- Added automated validation for page names, count, dimensions, profile mappings, and reproducible output.
+
 ## 1.2.0 — 2026-07-31
 
 - Added eight VR-optimized OpenKneeboard control-reference pages.
