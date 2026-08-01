@@ -95,7 +95,7 @@ $NwsPattern = '(?ms)^\t\t\["d3085pnilu3085cd57vd1vpnilvu0"\]\s*=\s*\{' +
     '(?<Block>.*?)(?=^\t\t\["|^\t\},)'
 $NwsMatch = [regex]::Match($Gunfighter, $NwsPattern)
 if (-not $NwsMatch.Success -or
-    $NwsMatch.Groups['Block'].Value -notmatch '\["added"\].*?"JOY_BTN7"' -or
+    $NwsMatch.Groups['Block'].Value -notmatch '(?s)\["added"\].*?"JOY_BTN7"' -or
     $NwsMatch.Groups['Block'].Value -notmatch '\["name"\]\s*=\s*"Autopilot Reference / Nosewheel Steering Toggle"') {
     throw 'VKB JOY_BTN7 is not mapped to Autopilot Reference / Nosewheel Steering Toggle.'
 }
