@@ -61,6 +61,8 @@ const pages = [
       item('STK 13', 'Sparrow / Phoenix selector'), item('STK 14', 'Sidewinder selector'),
       item('STK 15', 'Gun selector'), item('STK 16', 'Weapon selector OFF'),
       item('STK RX', 'DLC / maneuver flaps axis', 'gold'),
+      item('HAT ↑', 'Trim pitch up • BTN 9', 'gold'), item('HAT ↓', 'Trim pitch down • BTN 12', 'gold'),
+      item('HAT ←', 'Trim left wing down • BTN 10', 'gold'), item('HAT →', 'Trim right wing down • BTN 11', 'gold'),
       item('THR 1', 'PLM button'), item('THR 7', 'Speed brake retract'),
       item('THR 8', 'Speed brake extend'), item('THR 9', 'Wing sweep forward'),
       item('THR 10', 'Wing sweep aft'), item('THR 11', 'Wing sweep auto'),
