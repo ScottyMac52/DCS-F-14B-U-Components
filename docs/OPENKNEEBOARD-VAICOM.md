@@ -6,7 +6,7 @@ VAICOM PRO remains the primary interface for conversational Jester and radio ope
 
 - MFD 1: direct Jester navigation/radar/context commands without opening the wheel
 - MFD 2: carrier and airframe actions
-- MFD 3: direct LANTIRN commands
+- MFD 3: pilot-to-Jester LANTIRN context actions using VR gaze; no direct RIO-seat pod commands
 - Warthog MIC switch: TX1-TX5 through AutoHotKey and VoiceAttack
 
 ## OpenKneeboard tab
@@ -37,4 +37,3 @@ These commands can be added to the existing VoiceAttack profile without changing
 | Kneeboard day | `OpenKneeboard-RemoteControl-DISABLE_TINT.exe` |
 
 Use phrases that do not overlap with VAICOM keywords.
-
