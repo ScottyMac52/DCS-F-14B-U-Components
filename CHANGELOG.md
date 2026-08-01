@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Replaced the text-only reference set with nine VR-oriented pages using labelled hardware imagery.
+- Replaced the VKB F-14 grip vector stand-in with Scott's supplied product photograph.
 - Added offline, deterministic source assets and documented their provenance and redistribution terms.
 - Added automated validation for page names, count, dimensions, profile mappings, and reproducible output.
 
