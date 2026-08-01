@@ -33,4 +33,25 @@ foreach ($Button in 2..6) {
     }
 }
 
+$SpeedBrakeBindings = @(
+    @{ Command = 'dnilp3020u3020cd18vdnilvp-1vu0'; Button = 'JOY_BTN7'; Name = 'Speed brake retract' },
+    @{ Command = 'dnilp3020u3020cd18vdnilvp1vu0'; Button = 'JOY_BTN8'; Name = 'Speed brake extend' }
+)
+foreach ($Binding in $SpeedBrakeBindings) {
+    $CommandPattern = '(?ms)^\t\t\["' + [regex]::Escape($Binding.Command) +
+        '"\]\s*=\s*\{(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+    $CommandMatch = [regex]::Match($Throttle, $CommandPattern)
+    if (-not $CommandMatch.Success) {
+        throw "Missing Warthog speed-brake command $($Binding.Command)."
+    }
+
+    $Block = $CommandMatch.Groups['Block'].Value
+    if ($Block -notmatch ('\["key"\]\s*=\s*"' + [regex]::Escape($Binding.Button) + '"')) {
+        throw "$($Binding.Command) is not mapped to $($Binding.Button)."
+    }
+    if ($Block -notmatch ('\["name"\]\s*=\s*"' + [regex]::Escape($Binding.Name) + '"')) {
+        throw "$($Binding.Command) does not have the expected name '$($Binding.Name)'."
+    }
+}
+
 Write-Host 'Package validation passed.'

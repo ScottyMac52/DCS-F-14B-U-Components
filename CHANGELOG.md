@@ -6,5 +6,6 @@
 - Added the AutoHotKey v2 Warthog-to-VAICOM TX bridge.
 - Added reproducible OVGME build and validation scripts.
 - Added automated GitHub Releases with direct OVGME and complete-component bundles.
+- Mapped Warthog throttle BTN7/BTN8 to speed-brake retract/extend.
 - Corrected the Saved Games destination to `Config\\Input\\F-14BU`.
 - Included the complete authoritative control-profile set.
