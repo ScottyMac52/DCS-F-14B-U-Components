@@ -203,20 +203,26 @@ function hardwarePage(page, index, pageCount) {
   return frame(page.title, page.kicker, body, index, pageCount);
 }
 
-function mfdAnchors() {
-  const top = [430, 505, 580, 655, 730].map((x) => [x, 555]);
-  const right = [640, 710, 780, 850, 920].map((y) => [805, y]);
-  const bottom = [730, 655, 580, 505, 430].map((x) => [x, 1030]);
-  const left = [920, 850, 780, 710, 640].map((y) => [395, y]);
+// Tuned for the Cougar MFD image placed at (360, 500, 480×590).
+// Order matches the 28 OSB sequence used by mfdCallouts():
+// top L→R, right T→B, bottom R→L, left B→T, then the 8 corner/side extras.
+function mfdAnchors(offsetY = 0) {
+  const y = (v) => v + offsetY;
+  const top = [420, 500, 580, 660, 740].map((x) => [x, y(545)]);
+  const right = [620, 690, 760, 830, 900].map((yy) => [800, y(yy)]);
+  const bottom = [740, 660, 580, 500, 420].map((x) => [x, y(1045)]);
+  const left = [900, 830, 760, 690, 620].map((yy) => [400, y(yy)]);
   return [
     ...top, ...right, ...bottom, ...left,
-    [820, 615], [820, 660], [820, 960], [820, 1005],
-    [380, 1005], [380, 960], [380, 660], [380, 615],
+    // right-side extras (upper then lower)
+    [815, y(600)], [815, y(650)], [815, y(950)], [815, y(1000)],
+    // left-side extras (lower then upper)
+    [385, y(1000)], [385, y(950)], [385, y(650)], [385, y(600)],
   ];
 }
 
-function mfdCallouts(items) {
-  const anchors = mfdAnchors();
+function mfdCallouts(items, offsetY = 0) {
+  const anchors = mfdAnchors(offsetY);
   return items.map((entry, index) => callout(
     entry.key,
     entry.text,
@@ -281,24 +287,26 @@ const pages = [
       { href: assets.warthogHandles, x: 360, y: 760, width: 480, height: 690, opacity: 0.78 },
     ],
     callouts: [
-      callout('BTN 1', 'PLM button', 'left', [650, 1040]),
-      callout('BTN 7', 'Speed brake retract', 'left', [435, 1180]),
-      callout('BTN 8', 'Speed brake extend', 'left', [435, 1220]),
-      callout('BTN 9', 'Wing sweep forward', 'left', [450, 1280]),
-      callout('BTN 10', 'Wing sweep aft', 'left', [450, 1320]),
-      callout('BTN 11', 'Wing sweep auto', 'left', [475, 1370]),
-      callout('BTN 12', 'Wing sweep bomb', 'left', [475, 1410]),
-      callout('MIC 2–6', 'Reserved for VAICOM AHK', 'left', [420, 1080], 'red'),
-      callout('BTN 13', 'Exterior lights master', 'right', [790, 1320]),
-      callout('BTN 15', 'PLM; CAGE/SEAM removed', 'right', [760, 1120]),
-      callout('BTN 21', 'Master caution reset', 'right', [720, 620]),
+      // Base panel (upper image)
+      callout('BTN 29', 'Left engine cutoff', 'right', [520, 420]),
+      callout('BTN 30', 'Right engine cutoff', 'right', [620, 420]),
       callout('BTN 22', 'Flaps up', 'right', [470, 560]),
       callout('BTN 23', 'Flaps down', 'right', [470, 610]),
-      callout('BTN 24', 'Autopilot ON / release OFF', 'right', [500, 695]),
-      callout('BTN 25', 'Altitude hold ON / release OFF', 'right', [555, 705]),
-      callout('BTN 26', 'Autopilot heading toggle', 'right', [650, 705]),
-      callout('BTN 29', 'Left engine cutoff', 'right', [555, 470]),
-      callout('BTN 30', 'Right engine cutoff', 'right', [650, 470]),
+      callout('BTN 21', 'Master caution reset', 'right', [700, 600]),
+      callout('BTN 24', 'Autopilot ON / release OFF', 'right', [500, 690]),
+      callout('BTN 25', 'Altitude hold ON / release OFF', 'right', [560, 700]),
+      callout('BTN 26', 'Autopilot heading toggle', 'right', [640, 700]),
+      // Handles (lower image)
+      callout('BTN 1', 'PLM button', 'left', [640, 1020]),
+      callout('MIC 2–6', 'Reserved for VAICOM AHK', 'left', [430, 1060], 'red'),
+      callout('BTN 15', 'PLM; CAGE/SEAM removed', 'right', [740, 1100]),
+      callout('BTN 7', 'Speed brake retract', 'left', [430, 1170]),
+      callout('BTN 8', 'Speed brake extend', 'left', [430, 1220]),
+      callout('BTN 9', 'Wing sweep forward', 'left', [445, 1280]),
+      callout('BTN 10', 'Wing sweep aft', 'left', [445, 1325]),
+      callout('BTN 11', 'Wing sweep auto', 'left', [470, 1375]),
+      callout('BTN 12', 'Wing sweep bomb', 'left', [470, 1415]),
+      callout('BTN 13', 'Exterior lights master', 'right', [780, 1320]),
     ],
   },
   {
@@ -308,35 +316,40 @@ const pages = [
     kicker: 'SCOTT’S CUSTOM DISPLAY, POWER, STEERING AND HSD PANEL',
     images: [{ href: assets.pdcp, x: 355, y: 245, width: 490, height: 1000, opacity: 0.92 }],
     callouts: [
-      callout('BTN 1', 'Display mode takeoff', 'left', [450, 385]),
-      callout('BTN 2', 'Display mode cruise', 'left', [450, 500]),
-      callout('BTN 3', 'Display mode air-to-air', 'left', [450, 615]),
-      callout('BTN 4', 'Display mode air-to-ground', 'left', [450, 730]),
-      callout('BTN 5', 'Display mode landing', 'left', [450, 850]),
-      callout('BTN 6', 'STEER CMD TACAN', 'left', [450, 1130]),
-      callout('BTN 7', 'STEER CMD destination', 'left', [525, 1130]),
-      callout('BTN 8', 'STEER CMD AWL/PCD', 'left', [600, 1130]),
-      callout('BTN 9', 'STEER CMD VEC', 'left', [675, 1130]),
-      callout('BTN 10', 'STEER CMD MAN', 'left', [750, 1130]),
-      callout('BTN 11', 'HUD digital', 'left', [600, 440]),
-      callout('BTN 12', 'HUD analog', 'left', [600, 440]),
-      callout('BTN 13', 'HUD radar altitude', 'left', [750, 440], 'gold'),
-      callout('BTN 14', 'HUD barometric altitude', 'left', [750, 440], 'gold'),
-      callout('BTN 15', 'VDI mode NORM', 'right', [600, 620]),
-      callout('BTN 16', 'VDI mode TV', 'right', [600, 620]),
-      callout('BTN 17', 'HUD mode night', 'right', [750, 640]),
-      callout('BTN 18', 'HUD mode day', 'right', [750, 640]),
-      callout('BTN 19', 'HSD mode NAV', 'right', [600, 820]),
-      callout('BTN 20', 'HSD mode TID', 'right', [600, 820]),
-      callout('BTN 21', 'HSD ECM override OFF', 'right', [750, 825]),
-      callout('BTN 22', 'HSD ECM override ON', 'right', [750, 825]),
-      callout('BTN 23', 'HUD power OFF', 'right', [600, 1005]),
-      callout('BTN 24', 'HUD power ON', 'right', [600, 1005]),
-      callout('BTN 25', 'HSD/ECM power OFF', 'right', [750, 1005]),
-      callout('BTN 26', 'HSD/ECM power ON', 'right', [750, 1005]),
-      callout('BTN 27', 'VDI power OFF', 'right', [455, 1005]),
-      callout('BTN 28', 'VDI power ON', 'right', [455, 1005]),
-      callout('BTN 29', 'HSD mode ECM', 'right', [600, 820]),
+      // Left column – display modes
+      callout('BTN 1', 'Display mode takeoff', 'left', [430, 400]),
+      callout('BTN 2', 'Display mode cruise', 'left', [430, 500]),
+      callout('BTN 3', 'Display mode air-to-air', 'left', [430, 600]),
+      callout('BTN 4', 'Display mode air-to-ground', 'left', [430, 700]),
+      callout('BTN 5', 'Display mode landing', 'left', [430, 800]),
+      // HUD mode / altitude (upper center)
+      callout('BTN 11', 'HUD digital', 'left', [560, 430]),
+      callout('BTN 12', 'HUD analog', 'left', [560, 430]),
+      callout('BTN 13', 'HUD radar altitude', 'left', [700, 430], 'gold'),
+      callout('BTN 14', 'HUD barometric altitude', 'left', [700, 430], 'gold'),
+      // VDI / HSD modes
+      callout('BTN 15', 'VDI mode NORM', 'right', [600, 580]),
+      callout('BTN 16', 'VDI mode TV', 'right', [600, 580]),
+      callout('BTN 17', 'HUD mode night', 'right', [720, 600]),
+      callout('BTN 18', 'HUD mode day', 'right', [720, 600]),
+      callout('BTN 19', 'HSD mode NAV', 'right', [600, 780]),
+      callout('BTN 20', 'HSD mode TID', 'right', [600, 780]),
+      callout('BTN 29', 'HSD mode ECM', 'right', [600, 780]),
+      callout('BTN 21', 'HSD ECM override OFF', 'right', [720, 800]),
+      callout('BTN 22', 'HSD ECM override ON', 'right', [720, 800]),
+      // STEER CMD row (bottom of panel)
+      callout('BTN 6', 'STEER CMD TACAN', 'left', [430, 1100]),
+      callout('BTN 7', 'STEER CMD destination', 'left', [510, 1100]),
+      callout('BTN 8', 'STEER CMD AWL/PCD', 'left', [590, 1100]),
+      callout('BTN 9', 'STEER CMD VEC', 'left', [670, 1100]),
+      callout('BTN 10', 'STEER CMD MAN', 'left', [750, 1100]),
+      // Power switches (bottom row)
+      callout('BTN 27', 'VDI power OFF', 'right', [450, 1000]),
+      callout('BTN 28', 'VDI power ON', 'right', [450, 1000]),
+      callout('BTN 23', 'HUD power OFF', 'right', [580, 1000]),
+      callout('BTN 24', 'HUD power ON', 'right', [580, 1000]),
+      callout('BTN 25', 'HSD/ECM power OFF', 'right', [720, 1000]),
+      callout('BTN 26', 'HSD/ECM power ON', 'right', [720, 1000]),
     ],
   },
   {
@@ -346,24 +359,24 @@ const pages = [
     kicker: 'CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING',
     images: [{ href: assets.pto2, x: 350, y: 360, width: 500, height: 760, opacity: 0.72 }],
     callouts: [
-      callout('BTN 2', 'Master caution reset', 'left', [430, 765]),
-      callout('BTN 3', 'Launch bar retract / strut extend', 'left', [500, 570], 'gold'),
-      callout('BTN 4', 'Launch bar extend / strut kneel', 'left', [500, 570], 'gold'),
-      callout('BTN 5', 'Flaps up; else half', 'left', [590, 590]),
-      callout('BTN 7', 'Flaps down; else half', 'left', [590, 590]),
-      callout('BTN 8', 'Taxi lights ON', 'left', [510, 690]),
-      callout('BTN 9', 'Taxi lights OFF', 'left', [510, 690]),
-      callout('BTN 10', 'Antiskid / spoiler BOTH', 'left', [585, 690]),
-      callout('BTN 11', 'Antiskid / spoiler OFF', 'left', [585, 690]),
-      callout('BTN 12', 'Hook bypass FIELD', 'right', [535, 790]),
-      callout('BTN 13', 'Hook bypass CARRIER', 'right', [535, 790]),
-      callout('BTN 14', 'Refuel probe extend / ALL', 'right', [620, 790]),
-      callout('BTN 16', 'Refuel probe retract', 'right', [620, 790]),
-      callout('BTN 32', 'Hook retract', 'right', [710, 720]),
-      callout('BTN 34', 'Hook extend', 'right', [710, 720]),
-      callout('BTN 35', 'Gear UP', 'right', [455, 510]),
-      callout('BTN 37', 'Gear DOWN', 'right', [455, 510]),
-      callout('BTN 38/39', 'Parking brake stow / pull', 'right', [640, 870]),
+      callout('BTN 35', 'Gear UP', 'right', [470, 520]),
+      callout('BTN 37', 'Gear DOWN', 'right', [470, 520]),
+      callout('BTN 3', 'Launch bar retract / strut extend', 'left', [520, 560], 'gold'),
+      callout('BTN 4', 'Launch bar extend / strut kneel', 'left', [520, 560], 'gold'),
+      callout('BTN 5', 'Flaps up; else half', 'left', [600, 580]),
+      callout('BTN 7', 'Flaps down; else half', 'left', [600, 580]),
+      callout('BTN 32', 'Hook retract', 'right', [720, 680]),
+      callout('BTN 34', 'Hook extend', 'right', [720, 680]),
+      callout('BTN 8', 'Taxi lights ON', 'left', [510, 700]),
+      callout('BTN 9', 'Taxi lights OFF', 'left', [510, 700]),
+      callout('BTN 10', 'Antiskid / spoiler BOTH', 'left', [590, 700]),
+      callout('BTN 11', 'Antiskid / spoiler OFF', 'left', [590, 700]),
+      callout('BTN 2', 'Master caution reset', 'left', [430, 780]),
+      callout('BTN 12', 'Hook bypass FIELD', 'right', [550, 800]),
+      callout('BTN 13', 'Hook bypass CARRIER', 'right', [550, 800]),
+      callout('BTN 14', 'Refuel probe extend / ALL', 'right', [640, 800]),
+      callout('BTN 16', 'Refuel probe retract', 'right', [640, 800]),
+      callout('BTN 38/39', 'Parking brake stow / pull', 'right', [650, 880]),
     ],
   },
   {
@@ -419,11 +432,11 @@ const pages = [
     kicker: 'QJESTER CONTEXT • VR GAZE • NO WHEEL',
     images: [{ href: assets.mfd, x: 360, y: 260, width: 480, height: 590, opacity: 0.78 }],
     callouts: [
-      callout('BTN 1', 'Smart short / hold / double', 'left', [430, 315], 'gold'),
-      callout('BTN 2', 'Direct SHORT context', 'left', [505, 315]),
-      callout('BTN 3', 'Direct HOLD context', 'right', [580, 315], 'gold'),
-      callout('BTN 4', 'Direct DOUBLE context', 'right', [655, 315]),
-      callout('5–28', 'Intentionally unbound', 'right', [800, 600], 'red'),
+      callout('BTN 1', 'Smart short / hold / double', 'left', [430, 310], 'gold'),
+      callout('BTN 2', 'Direct SHORT context', 'left', [510, 310]),
+      callout('BTN 3', 'Direct HOLD context', 'right', [590, 310], 'gold'),
+      callout('BTN 4', 'Direct DOUBLE context', 'right', [670, 310]),
+      callout('5–28', 'Intentionally unbound', 'right', [800, 560], 'red'),
     ],
     notes: [
       item('A/G', 'Hold BTN 1, look at a ground point, then release. Jester slews the pod and establishes area track.'),
