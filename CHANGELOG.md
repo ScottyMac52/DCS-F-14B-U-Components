@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fixed VKB F-14 Gunfighter trim hat: pitch and roll were swapped relative to physical directions (JOY_BTN9–12 reassigned).
+- Fixed T-Pendular-Rudder left/right wheel brake axes: added invert + slider so resting pedals release brakes and pressure applies them.
 - Labeled VKB F-14 Gunfighter BTN7 as the NWS toggle on the VR kneeboard.
 - Added explicit MOZA AB9 FFB Base pitch (`JOY_Y`) and roll (`JOY_X`) axis bindings.
 - Replaced the text-only reference set with nine VR-oriented pages using labelled hardware imagery.
