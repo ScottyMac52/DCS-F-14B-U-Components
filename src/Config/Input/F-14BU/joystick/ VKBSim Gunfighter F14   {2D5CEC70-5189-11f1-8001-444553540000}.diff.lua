@@ -43,19 +43,19 @@ local diff = {
 	},
 	["keyDiffs"] = {
 		["dnilp2019u2019cdnilvdnilvp-1vu0"] = {
-			["added"] = { [1] = { ["key"] = "JOY_BTN12" } },
+			["added"] = { [1] = { ["key"] = "JOY_BTN11" } },
 			["name"] = "Trim Pitch Down",
 		},
 		["dnilp2019u2019cdnilvdnilvp1vu0"] = {
-			["added"] = { [1] = { ["key"] = "JOY_BTN9" } },
+			["added"] = { [1] = { ["key"] = "JOY_BTN10" } },
 			["name"] = "Trim Pitch Up",
 		},
 		["dnilp2020u2020cdnilvdnilvp-1vu0"] = {
-			["added"] = { [1] = { ["key"] = "JOY_BTN10" } },
+			["added"] = { [1] = { ["key"] = "JOY_BTN9" } },
 			["name"] = "Trim Roll Left Wing Down",
 		},
 		["dnilp2020u2020cdnilvdnilvp1vu0"] = {
-			["added"] = { [1] = { ["key"] = "JOY_BTN11" } },
+			["added"] = { [1] = { ["key"] = "JOY_BTN12" } },
 			["name"] = "Trim Roll Right Wing Down",
 		},
 		["d3023pnilunilcd18vd1vpnilvunil"] = {
