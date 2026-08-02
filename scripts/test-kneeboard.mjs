@@ -117,7 +117,7 @@ const requiredText = {
   '06-MFD1-JESTER': ['Context DOUBLE', 'Collision steering'],
   '07-MFD2-CARRIER': ['Deliberately unbound', 'Refuel probe extend / ALL'],
   '08-MFD3-LANTIRN': ['Smart short / hold / double', 'Intentionally unbound'],
-  '09-AXES-RESERVED-OPENKNEEBOARD': ['NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
+  '09-AXES-RESERVED-OPENKNEEBOARD': ['MOZA', 'Y pitch / X roll', 'NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
 };
 for (const [page, labels] of Object.entries(requiredText)) {
   const source = readFileSync(join(svgDir, `${page}.svg`), 'utf8');

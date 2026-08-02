@@ -444,7 +444,7 @@ const pages = [
     kicker: 'CONFIGURATION NOTES AND OPTIONAL VOICE NAVIGATION',
     items: [
       item('TPR Z', 'Rudder axis', 'gold'), item('TPR Y', 'Left wheel brake', 'gold'),
-      item('TPR X', 'Right wheel brake', 'gold'), item('MOZA', 'Removes stray rudder and throttle binds'),
+      item('TPR X', 'Right wheel brake', 'gold'), item('MOZA', 'Y pitch / X roll', 'gold'),
       item('Viper TQS', 'Reserved; clears stray flight axes'), item('vJoy', 'Reserved; clears stray generic axes'),
       item('ICP', 'Empty and deliberately reserved', 'red'), item('MFD 2', 'Buttons 21–28 deliberately unbound', 'red'),
       item('VOICE', '“Kneeboard next page” • NEXT_PAGE.exe'),

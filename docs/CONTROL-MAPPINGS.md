@@ -31,6 +31,15 @@ These directional bindings use the F-14B(U) speed-brake extend/retract command. 
 
 The four bindings are explicit in the Saved Games profile so they remain present even if Heatblur changes its device-default VKB mapping.
 
+## MOZA AB9 FFB Base — flight axes
+
+| Physical axis | F-14B(U) axis |
+|---|---|
+| Y | Pitch |
+| X | Roll |
+
+The primary pitch and roll bindings are explicit in the MOZA profile. The same profile removes inherited rudder and combined-throttle assignments so the TPR and throttle devices remain authoritative for those axes.
+
 ## WINCTRL CarrierAce PTO2 — launch bar / nose strut
 
 | Physical switch position | Button | F-14B(U) command |
