@@ -12,10 +12,10 @@ mkdirSync(svgDir, { recursive: true });
 mkdirSync(pngDir, { recursive: true });
 
 const esc = (value) => String(value)
-  .replaceAll('&', '&amp;')
-  .replaceAll('<', '&lt;')
-  .replaceAll('>', '&gt;')
-  .replaceAll('"', '&quot;');
+  .replaceAll('&', '&')
+  .replaceAll('<', '<')
+  .replaceAll('>', '>')
+  .replaceAll('"', '"');
 
 function wrap(text, max = 28, limit = 2) {
   const words = String(text).split(/\s+/);
@@ -280,7 +280,6 @@ const pages = [
       { href: assets.warthogBase, x: 390, y: 180, width: 420, height: 600, opacity: 0.78 },
       { href: assets.warthogHandles, x: 360, y: 760, width: 480, height: 690, opacity: 0.78 },
     ],
-    directMarkers: true,
     callouts: [
       callout('BTN 1', 'PLM button', 'left', [650, 1040]),
       callout('BTN 7', 'Speed brake retract', 'left', [435, 1180]),
@@ -308,7 +307,6 @@ const pages = [
     title: 'ONYOURTWELVE F-14 PDCP',
     kicker: 'SCOTT’S CUSTOM DISPLAY, POWER, STEERING AND HSD PANEL',
     images: [{ href: assets.pdcp, x: 355, y: 245, width: 490, height: 1000, opacity: 0.92 }],
-    directMarkers: true,
     callouts: [
       callout('BTN 1', 'Display mode takeoff', 'left', [450, 385]),
       callout('BTN 2', 'Display mode cruise', 'left', [450, 500]),
@@ -347,7 +345,6 @@ const pages = [
     title: 'WINCTRL CARRIERACE PTO2',
     kicker: 'CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING',
     images: [{ href: assets.pto2, x: 350, y: 360, width: 500, height: 760, opacity: 0.72 }],
-    directMarkers: true,
     callouts: [
       callout('BTN 2', 'Master caution reset', 'left', [430, 765]),
       callout('BTN 3', 'Launch bar retract / strut extend', 'left', [500, 570], 'gold'),
@@ -375,7 +372,6 @@ const pages = [
     title: 'MFD 1 • DIRECT JESTER',
     kicker: 'NO WHEEL • NAVIGATION, RADAR AND CONTEXT',
     images: [{ href: assets.mfd, x: 360, y: 500, width: 480, height: 590, opacity: 0.78 }],
-    directMarkers: true,
     callouts: mfdCallouts([
       item('BTN 1', 'Steerpoint SP1'), item('BTN 2', 'Steerpoint SP2'),
       item('BTN 3', 'Steerpoint SP3'), item('BTN 4', 'Fixed point'),
@@ -399,7 +395,6 @@ const pages = [
     title: 'MFD 2 • CARRIER + AIRFRAME',
     kicker: 'DETERMINISTIC BACKUP TO PTO2',
     images: [{ href: assets.mfd, x: 360, y: 500, width: 480, height: 590, opacity: 0.78 }],
-    directMarkers: true,
     callouts: mfdCallouts([
       item('BTN 1', 'Gear up'), item('BTN 2', 'Gear down'),
       item('BTN 3', 'Hook retract'), item('BTN 4', 'Hook extend'),
@@ -423,7 +418,6 @@ const pages = [
     title: 'MFD 3 • PILOT / JESTER LANTIRN',
     kicker: 'QJESTER CONTEXT • VR GAZE • NO WHEEL',
     images: [{ href: assets.mfd, x: 360, y: 260, width: 480, height: 590, opacity: 0.78 }],
-    directMarkers: true,
     callouts: [
       callout('BTN 1', 'Smart short / hold / double', 'left', [430, 315], 'gold'),
       callout('BTN 2', 'Direct SHORT context', 'left', [505, 315]),
