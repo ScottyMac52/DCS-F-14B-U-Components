@@ -32,12 +32,22 @@ The kneeboard labels BTN7 as **NWS toggle** for quick recognition in VR while re
 
 | HAT direction | Button | Command |
 |---|---:|---|
-| Up | 9 | Trim pitch up |
-| Left | 10 | Trim roll left wing down |
-| Right | 11 | Trim roll right wing down |
-| Down | 12 | Trim pitch down |
+| Up (back) | 10 | Trim pitch up |
+| Left | 9 | Trim roll left wing down |
+| Right | 12 | Trim roll right wing down |
+| Down (forward) | 11 | Trim pitch down |
 
-The four bindings are explicit in the Saved Games profile so they remain present even if Heatblur changes its device-default VKB mapping.
+The four bindings are explicit in the Saved Games profile so they remain present even if Heatblur changes its device-default VKB mapping. Pitch/roll were previously swapped relative to physical hat directions; corrected in the profile.
+
+## T-Pendular-Rudder (TRP) — rudder and toe brakes
+
+| Physical axis | F-14B(U) axis | Notes |
+|---|---|---|
+| JOY_Z | Rudder | |
+| JOY_Y | Wheel Brake Left | invert + slider |
+| JOY_X | Wheel Brake Right | invert + slider |
+
+Toe-brake axes require invert and slider so resting pedals = brakes released and progressive pressure applies braking. Without invert the axes are reversed (full brake at rest).
 
 ## MOZA AB9 FFB Base — flight axes
 
