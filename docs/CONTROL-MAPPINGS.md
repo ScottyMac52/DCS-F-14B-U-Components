@@ -20,7 +20,15 @@
 
 These directional bindings use the F-14B(U) speed-brake extend/retract command. BTN15 explicitly removes Heatblur's inherited CAGE-SEAM assignment before adding PLM, preventing both commands from firing together. None of these changes alter the AutoHotKey-managed MIC inputs on buttons 2–6.
 
-## VKB F-14 Gunfighter — trim HAT
+## VKB F-14 Gunfighter — NWS and trim HAT
+
+| Button | Command |
+|---:|---|
+| 7 | Autopilot Reference / Nosewheel Steering Toggle (NWS) |
+
+The kneeboard labels BTN7 as **NWS toggle** for quick recognition in VR while retaining Heatblur's full combined command name here.
+
+### Trim HAT
 
 | HAT direction | Button | Command |
 |---|---:|---|

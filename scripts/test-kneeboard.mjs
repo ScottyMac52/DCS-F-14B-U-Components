@@ -110,7 +110,7 @@ assertProfileButtons('Throttle - HOTAS Warthog', '03-WARTHOG-THROTTLE', [7, 8, 9
 
 const requiredText = {
   '01-VAICOM-OVERVIEW': ['TX1', 'MFD 3', 'KNEEBOARD\\F-14BU'],
-  '02-VKB-F14-GRIP': ['DLC / maneuver flap axis', 'Autopilot ref / NWS'],
+  '02-VKB-F14-GRIP': ['DLC / maneuver flap axis', 'BTN 7', 'NWS toggle'],
   '03-WARTHOG-THROTTLE': ['MIC 2–6', 'CAGE/SEAM removed'],
   '04-PDCP': ['HSD mode ECM', 'HUD barometric altitude'],
   '05-PTO2': ['Launch bar retract / strut extend', 'Parking brake stow / pull'],
