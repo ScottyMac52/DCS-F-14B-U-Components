@@ -259,7 +259,7 @@ const pages = [
       callout('BTN 3', 'Store release', 'left', [755, 440], 'red'),
       callout('BTN 5', 'DLC / countermeasure', 'left', [420, 490]),
       callout('BTN 6', 'Catapult salute', 'left', [480, 810]),
-      callout('BTN 7', 'Autopilot ref / NWS', 'left', [710, 480], 'gold'),
+      callout('BTN 7', 'NWS toggle', 'left', [710, 480], 'gold'),
       callout('RX', 'DLC / maneuver flap axis', 'left', [420, 490], 'gold'),
       callout('BTN 9', 'Trim pitch up', 'left', [625, 405], 'gold'),
       callout('BTN 10', 'Trim left wing down', 'right', [625, 405], 'gold'),
@@ -444,7 +444,7 @@ const pages = [
     kicker: 'CONFIGURATION NOTES AND OPTIONAL VOICE NAVIGATION',
     items: [
       item('TPR Z', 'Rudder axis', 'gold'), item('TPR Y', 'Left wheel brake', 'gold'),
-      item('TPR X', 'Right wheel brake', 'gold'), item('MOZA', 'Removes stray rudder and throttle binds'),
+      item('TPR X', 'Right wheel brake', 'gold'), item('MOZA', 'Y pitch / X roll', 'gold'),
       item('Viper TQS', 'Reserved; clears stray flight axes'), item('vJoy', 'Reserved; clears stray generic axes'),
       item('ICP', 'Empty and deliberately reserved', 'red'), item('MFD 2', 'Buttons 21–28 deliberately unbound', 'red'),
       item('VOICE', '“Kneeboard next page” • NEXT_PAGE.exe'),

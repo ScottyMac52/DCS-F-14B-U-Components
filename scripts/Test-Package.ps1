@@ -159,6 +159,24 @@ if (-not $NwsMatch.Success -or
     throw 'VKB JOY_BTN7 is not mapped to Autopilot Reference / Nosewheel Steering Toggle.'
 }
 
+$MozaProfile = Get-ChildItem $Joystick -Filter 'MOZA AB9 FFB Base*.diff.lua'
+if ($MozaProfile.Count -ne 1) { throw 'Expected exactly one MOZA AB9 FFB Base profile.' }
+$Moza = Get-Content $MozaProfile.FullName -Raw
+$MozaFlightAxes = @(
+    @{ Command = 'a2001cdnil'; Axis = 'JOY_Y'; Name = 'Pitch' },
+    @{ Command = 'a2002cdnil'; Axis = 'JOY_X'; Name = 'Roll' }
+)
+foreach ($Binding in $MozaFlightAxes) {
+    $Pattern = '(?ms)^\t\t\["' + [regex]::Escape($Binding.Command) +
+        '"\]\s*=\s*\{(?<Block>.*?)(?=^\t\t\["|^\t\},)'
+    $Match = [regex]::Match($Moza, $Pattern)
+    if (-not $Match.Success -or
+        $Match.Groups['Block'].Value -notmatch ('(?s)\["added"\].*?"' + [regex]::Escape($Binding.Axis) + '"') -or
+        $Match.Groups['Block'].Value -notmatch ('\["name"\]\s*=\s*"' + [regex]::Escape($Binding.Name) + '"')) {
+        throw "MOZA flight axis $($Binding.Name) is not mapped to $($Binding.Axis)."
+    }
+}
+
 $Mfd3 = Get-Content (Join-Path $Joystick 'F16 MFD 3 {C5BE49A0-2342-11ee-8001-444553540000}.diff.lua') -Raw
 if ($Mfd3 -match 'cd7v') { throw 'MFD3 contains direct RIO LANTIRN device bindings.' }
 $Mfd3Bindings = @(

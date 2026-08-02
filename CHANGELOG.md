@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Labeled VKB F-14 Gunfighter BTN7 as the NWS toggle on the VR kneeboard.
+- Added explicit MOZA AB9 FFB Base pitch (`JOY_Y`) and roll (`JOY_X`) axis bindings.
 - Replaced the text-only reference set with nine VR-oriented pages using labelled hardware imagery.
 - Replaced the VKB F-14 grip vector stand-in with Scott's supplied product photograph.
 - Added offline, deterministic source assets and documented their provenance and redistribution terms.

@@ -110,14 +110,14 @@ assertProfileButtons('Throttle - HOTAS Warthog', '03-WARTHOG-THROTTLE', [7, 8, 9
 
 const requiredText = {
   '01-VAICOM-OVERVIEW': ['TX1', 'MFD 3', 'KNEEBOARD\\F-14BU'],
-  '02-VKB-F14-GRIP': ['DLC / maneuver flap axis', 'Autopilot ref / NWS'],
+  '02-VKB-F14-GRIP': ['DLC / maneuver flap axis', 'BTN 7', 'NWS toggle'],
   '03-WARTHOG-THROTTLE': ['MIC 2–6', 'CAGE/SEAM removed'],
   '04-PDCP': ['HSD mode ECM', 'HUD barometric altitude'],
   '05-PTO2': ['Launch bar retract / strut extend', 'Parking brake stow / pull'],
   '06-MFD1-JESTER': ['Context DOUBLE', 'Collision steering'],
   '07-MFD2-CARRIER': ['Deliberately unbound', 'Refuel probe extend / ALL'],
   '08-MFD3-LANTIRN': ['Smart short / hold / double', 'Intentionally unbound'],
-  '09-AXES-RESERVED-OPENKNEEBOARD': ['NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
+  '09-AXES-RESERVED-OPENKNEEBOARD': ['MOZA', 'Y pitch / X roll', 'NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
 };
 for (const [page, labels] of Object.entries(requiredText)) {
   const source = readFileSync(join(svgDir, `${page}.svg`), 'utf8');

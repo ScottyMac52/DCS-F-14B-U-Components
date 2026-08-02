@@ -20,7 +20,15 @@
 
 These directional bindings use the F-14B(U) speed-brake extend/retract command. BTN15 explicitly removes Heatblur's inherited CAGE-SEAM assignment before adding PLM, preventing both commands from firing together. None of these changes alter the AutoHotKey-managed MIC inputs on buttons 2–6.
 
-## VKB F-14 Gunfighter — trim HAT
+## VKB F-14 Gunfighter — NWS and trim HAT
+
+| Button | Command |
+|---:|---|
+| 7 | Autopilot Reference / Nosewheel Steering Toggle (NWS) |
+
+The kneeboard labels BTN7 as **NWS toggle** for quick recognition in VR while retaining Heatblur's full combined command name here.
+
+### Trim HAT
 
 | HAT direction | Button | Command |
 |---|---:|---|
@@ -30,6 +38,15 @@ These directional bindings use the F-14B(U) speed-brake extend/retract command. 
 | Down | 12 | Trim pitch down |
 
 The four bindings are explicit in the Saved Games profile so they remain present even if Heatblur changes its device-default VKB mapping.
+
+## MOZA AB9 FFB Base — flight axes
+
+| Physical axis | F-14B(U) axis |
+|---|---|
+| Y | Pitch |
+| X | Roll |
+
+The primary pitch and roll bindings are explicit in the MOZA profile. The same profile removes inherited rudder and combined-throttle assignments so the TPR and throttle devices remain authoritative for those axes.
 
 ## WINCTRL CarrierAce PTO2 — launch bar / nose strut
 
