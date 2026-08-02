@@ -88,7 +88,8 @@ jobs:
             return
           }
 
-          git commit -m "chore: regenerate kneeboard pages for $env:RELEASE_TAG"
+          # [skip ci] prevents the push from triggering build.yml
+          git commit -m "chore: regenerate kneeboard pages for $env:RELEASE_TAG [skip ci]"
           git push origin HEAD:main
 
           $NewSha = git rev-parse HEAD
