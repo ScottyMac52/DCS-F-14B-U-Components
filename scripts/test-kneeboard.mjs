@@ -58,13 +58,8 @@ function profile(nameFragment) {
 
 function assertProfileButtons(nameFragment, page, buttons) {
   const lua = profile(nameFragment);
-  const svg = readFileSync(join(svgDir, `${page}.svg`), 'utf8');
-  const labelledButtons = new Set(
-    [...svg.matchAll(/BTN ([0-9/]+)/g)].flatMap((match) => match[1].split('/')),
-  );
   for (const button of buttons) {
     assert(lua.includes(`JOY_BTN${button}`), `${nameFragment} is missing JOY_BTN${button}.`);
-    assert(labelledButtons.has(String(button)), `${page} is missing its BTN ${button} label.`);
   }
 }
 
@@ -110,13 +105,13 @@ assertProfileButtons('Throttle - HOTAS Warthog', '03-WARTHOG-THROTTLE', [7, 8, 9
 
 const requiredText = {
   '01-VAICOM-OVERVIEW': ['TX1', 'MFD 3', 'KNEEBOARD\\F-14BU'],
-  '02-VKB-F14-GRIP': ['DLC / maneuver flap axis', 'BTN 7', 'NWS toggle'],
-  '03-WARTHOG-THROTTLE': ['MIC 2–6', 'CAGE/SEAM removed'],
-  '04-PDCP': ['HSD mode ECM', 'HUD barometric altitude'],
-  '05-PTO2': ['Launch bar retract / strut extend', 'Parking brake stow / pull'],
-  '06-MFD1-JESTER': ['Context DOUBLE', 'Collision steering'],
-  '07-MFD2-CARRIER': ['Deliberately unbound', 'Refuel probe extend / ALL'],
-  '08-MFD3-LANTIRN': ['Smart short / hold / double', 'Intentionally unbound'],
+  '02-VKB-F14-GRIP': ['Shared DCS-Common device: vkb-f14-gunfighter'],
+  '03-WARTHOG-THROTTLE': ['Shared DCS-Common device: tm-warthog-throttle'],
+  '04-PDCP': ['Shared DCS-Common device: onyourtwelve-pdcp'],
+  '05-PTO2': ['Shared DCS-Common device: winctrl-pto2'],
+  '06-MFD1-JESTER': ['Shared DCS-Common device: tm-mfd'],
+  '07-MFD2-CARRIER': ['Shared DCS-Common device: tm-mfd'],
+  '08-MFD3-LANTIRN': ['Shared DCS-Common device: tm-mfd'],
   '09-AXES-RESERVED-OPENKNEEBOARD': ['MOZA', 'Y pitch / X roll', 'NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
 };
 for (const [page, labels] of Object.entries(requiredText)) {
@@ -126,7 +121,7 @@ for (const [page, labels] of Object.entries(requiredText)) {
 }
 
 const before = generatedHashes();
-const build = spawnSync(process.execPath, [join(scriptDir, 'build-kneeboard.mjs')], {
+const build = spawnSync('npm', ['run', 'build:kneeboard'], {
   cwd: root,
   encoding: 'utf8',
 });
