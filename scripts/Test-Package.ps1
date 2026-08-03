@@ -63,7 +63,15 @@ if ($PackageReadme -notmatch ('OVGME PACKAGE VERSION ' + [regex]::Escape($Versio
     throw 'README.TXT does not contain the package version.'
 }
 
-$Throttle = Get-Content (Join-Path $Joystick 'Throttle - HOTAS Warthog F-14BU.diff.lua') -Raw
+$ThrottleProfileName = 'Throttle - HOTAS Warthog {5200C960-CB32-11ed-8020-444553540000}.diff.lua'
+$ThrottleProfile = Join-Path $Joystick $ThrottleProfileName
+if (-not (Test-Path $ThrottleProfile -PathType Leaf)) {
+    throw "Missing GUID-qualified Warthog throttle profile: $ThrottleProfileName"
+}
+if (Test-Path (Join-Path $Joystick 'Throttle - HOTAS Warthog F-14BU.diff.lua')) {
+    throw 'Legacy non-GUID Warthog throttle profile must not be packaged.'
+}
+$Throttle = Get-Content $ThrottleProfile -Raw
 $AddedKeys = [regex]::Matches(
     $Throttle,
     '\["added"\]\s*=\s*\{\s*\[1\]\s*=\s*\{\s*\["key"\]\s*=\s*"(?<Key>JOY_BTN\d+)"'

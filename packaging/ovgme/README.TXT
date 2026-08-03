@@ -14,10 +14,10 @@ Installed paths:
 Configure OVGME with the DCS.openbeta Saved Games directory as its root.
 Close DCS before enabling or disabling this package.
 
-The Warthog throttle GUID was not available. Load its profile manually once:
+The Warthog throttle profile is installed automatically as:
 
   Config\Input\F-14BU\joystick\
-  Throttle - HOTAS Warthog F-14BU.diff.lua
+  Throttle - HOTAS Warthog {5200C960-CB32-11ed-8020-444553540000}.diff.lua
 
 JOY_BTN2 through JOY_BTN6 are deliberately unassigned in DCS because they
 are managed by AutoHotKey and VAICOM PRO.

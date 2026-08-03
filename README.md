@@ -35,7 +35,7 @@ Scott's DCS F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME pac
 3. Place the ZIP from the extracted `OVGME` folder in that configuration's mod repository.
 4. Close DCS, enable the package, then start DCS.
 5. In OpenKneeboard, use the DCS Aircraft tab or add `KNEEBOARD\\F-14BU` as a Folder tab.
-6. Load the Warthog throttle profile manually once because its Windows device GUID was not available.
+6. The Warthog throttle profile is installed automatically under its DCS device GUID; confirm `JOY_BTN2` through `JOY_BTN6` remain unassigned in DCS.
 
 The release also provides the OVGME ZIP as a separate asset for users who only need the DCS profiles and kneeboard.
 

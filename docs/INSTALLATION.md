@@ -28,13 +28,11 @@ The package installs:
 
 ## Warthog throttle
 
-The supplied Saved Games directory did not contain the Warthog throttle's Windows GUID. After enabling the package:
+The package installs the Warthog throttle profile automatically using its DCS device filename:
 
-1. Open DCS controls for the F-14B(U).
-2. Right-click the Warthog throttle column.
-3. Choose **Load profile**.
-4. Load `Config\\Input\\F-14BU\\joystick\\Throttle - HOTAS Warthog F-14BU.diff.lua`.
-5. Confirm `JOY_BTN2` through `JOY_BTN6` have no DCS assignments.
+`Config\\Input\\F-14BU\\joystick\\Throttle - HOTAS Warthog {5200C960-CB32-11ed-8020-444553540000}.diff.lua`
+
+After enabling the package, open DCS controls for the F-14B(U) and confirm `JOY_BTN2` through `JOY_BTN6` have no DCS assignments. Those inputs remain reserved for AutoHotKey and VAICOM PRO.
 
 ## OpenKneeboard
 
