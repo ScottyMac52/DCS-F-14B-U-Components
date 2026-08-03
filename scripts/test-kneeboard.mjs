@@ -143,6 +143,24 @@ for (const label of [
   assert(warthogSharedSvg.includes(label), `Warthog shared SVG is missing mapped label: ${label}`);
 }
 
+const pto2SharedSvg = embeddedSharedSvg('05-PTO2');
+assert((pto2SharedSvg.match(/<!-- callout:pto2-button-/g) ?? []).length === 41,
+  'PTO2 page must retain all 41 shared catalog callouts.');
+for (const [id, label] of [
+  ['pto2-button-2', 'Caution reset'],
+  ['pto2-button-3', 'Launch bar retract'],
+  ['pto2-button-14', 'Refuel probe extend'],
+  ['pto2-button-35', 'Gear up'],
+  ['pto2-button-39', 'Parking brake pull'],
+]) {
+  const text = pto2SharedSvg.match(new RegExp(`<text id="lbl-${id}"[^>]*>([^<]*)</text>`))?.[1];
+  assert(text === label, `PTO2 ${id} must render its mapped label.`);
+}
+for (const id of ['pto2-button-1', 'pto2-button-6', 'pto2-button-41']) {
+  const text = pto2SharedSvg.match(new RegExp(`<text id="lbl-${id}"[^>]*>([^<]*)</text>`))?.[1];
+  assert(text === '', `PTO2 ${id} must remain visibly unbound.`);
+}
+
 const before = generatedHashes();
 function runBuildStep(script) {
   const result = spawnSync(process.execPath, [join(scriptDir, script)], {

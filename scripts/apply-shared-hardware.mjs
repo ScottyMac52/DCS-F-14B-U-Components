@@ -37,14 +37,35 @@ const warthogLabels = {
   'warthog-thr-axis-friction': 'FRICTION',
 };
 
+const pto2Labels = {
+  'pto2-button-2': 'Caution reset',
+  'pto2-button-3': 'Launch bar retract',
+  'pto2-button-4': 'Launch bar extend',
+  'pto2-button-5': 'Flaps up',
+  'pto2-button-7': 'Flaps full',
+  'pto2-button-8': 'Taxi lights ON',
+  'pto2-button-9': 'Taxi lights OFF',
+  'pto2-button-10': 'Antiskid BOTH',
+  'pto2-button-11': 'Antiskid OFF',
+  'pto2-button-12': 'Hook bypass FIELD',
+  'pto2-button-13': 'Hook bypass CARRIER',
+  'pto2-button-14': 'Refuel probe extend',
+  'pto2-button-16': 'Refuel probe retract',
+  'pto2-button-32': 'Hook retract',
+  'pto2-button-34': 'Hook extend',
+  'pto2-button-35': 'Gear up',
+  'pto2-button-37': 'Gear down',
+  'pto2-button-38': 'Parking brake stow',
+  'pto2-button-39': 'Parking brake pull',
+};
+
 const pages = [
   page('02-VKB-F14-GRIP','vkb-f14-gunfighter','VKB GUNFIGHTER • F-14 GRIP','PRIMARY FLIGHT, WEAPONS, TRIM AND DIRECT LIFT CONTROL',[
     'BTN 9–12: Trim','BTN 3: Store release','BTN 13–16: Weapon select','BTN 7: NWS toggle','BTN 5 / RX: DLC','BTN 6: Catapult salute','BTN 1: Trigger','','DLC / countermeasure','','','Trigger stage 1','Trigger stage 2']),
   page('03-WARTHOG-THROTTLE','tm-warthog-throttle','THRUSTMASTER WARTHOG THROTTLE','WING SWEEP, DFCS, SPEED BRAKE, FLAPS AND VAICOM MIC',warthogLabels),
   page('04-PDCP','onyourtwelve-pdcp','ONYOURTWELVE F-14 PDCP','DISPLAY, POWER, STEERING AND HSD PANEL',[
     'BTN 1: Takeoff','BTN 2: Cruise','BTN 3: Air-to-air','BTN 4: Air-to-ground','BTN 5: Landing','BTN 11/12: HUD mode','BTN 15/16: VDI mode','BTN 19/20/29: HSD mode','BTN 27/28: VDI power','BTN 13/14/17/18: HUD controls','BTN 6–10: Steering command','BTN 21/22/25/26: HSD/ECM','BTN 23/24: HUD power']),
-  page('05-PTO2','winctrl-pto2','WINCTRL CARRIERACE PTO2','CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING',[
-    'BTN 35/37: Gear','BTN 3/4: Launch bar','BTN 5/7: Flaps','','','BTN 32/34: Hook','BTN 12/13: Hook bypass','BTN 8/9: Taxi lights','BTN 10/11: Antiskid','','','','','BTN 2: Caution reset','BTN 38/39: Parking brake','','BTN 14/16: Refuel probe','Flaps','']),
+  page('05-PTO2','winctrl-pto2','WINCTRL CARRIERACE PTO2','CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING',pto2Labels),
   page('06-MFD1-JESTER','tm-mfd','MFD 1 • DIRECT JESTER','NAVIGATION, RADAR AND CONTEXT',mfdLabels(Array.from({length:28},(_,i)=>`BTN ${i+1}`))),
   page('07-MFD2-CARRIER','tm-mfd','MFD 2 • CARRIER + AIRFRAME','DETERMINISTIC BACKUP TO PTO2',mfdLabels(['Gear up','Gear down','Hook retract','Hook extend','Flaps up','Flaps down','Antiskid BOTH','Antiskid OFF','Brake stow','Brake pull','Probe extend','Probe retract','Taxi lights ON','Taxi lights OFF','Hook carrier','Hook field','Nose strut kneel','Caution reset','Catapult salute','DLC / countermeasure','Unbound','Unbound','Unbound','Unbound','Unbound','Unbound','Unbound','Unbound'])),
   page('08-MFD3-LANTIRN','tm-mfd','MFD 3 • PILOT / JESTER LANTIRN','QJESTER CONTEXT • VR GAZE',mfdLabels(['Smart context','Direct SHORT','Direct HOLD','Direct DOUBLE',...Array(24).fill('Unbound')]))
