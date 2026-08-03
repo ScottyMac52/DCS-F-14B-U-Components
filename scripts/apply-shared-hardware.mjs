@@ -13,12 +13,34 @@ mkdirSync(svgDir, { recursive: true }); mkdirSync(pngDir, { recursive: true });
 const mfdIds = ['mfd-osb-t1','mfd-osb-t2','mfd-osb-t3','mfd-osb-t4','mfd-osb-t5','mfd-osb-r1','mfd-osb-r2','mfd-osb-r3','mfd-osb-r4','mfd-osb-r5','mfd-osb-b5','mfd-osb-b4','mfd-osb-b3','mfd-osb-b2','mfd-osb-b1','mfd-osb-l5','mfd-osb-l4','mfd-osb-l3','mfd-osb-l2','mfd-osb-l1','mfd-rocker-gain','mfd-rocker-lvl','mfd-rocker-con-up','mfd-rocker-con-down','mfd-rocker-brt-up','mfd-rocker-brt-down','mfd-rocker-sym','mfd-rocker-int'];
 const mfdLabels = (values) => Object.fromEntries(mfdIds.map((id, index) => [id, values[index] ?? '']));
 const page = (file, deviceId, title, kicker, labels) => ({ file, deviceId, title, kicker, labels });
+const warthogLabels = {
+  'warthog-thr-mic-up': 'VAICOM TX5',
+  'warthog-thr-mic-right': 'VAICOM TX2',
+  'warthog-thr-mic-down': 'VAICOM TX3',
+  'warthog-thr-mic-left': 'VAICOM TX4',
+  'warthog-thr-mic-push': 'VAICOM TX1',
+  'warthog-thr-speedbrake-forward': 'RETRACT',
+  'warthog-thr-speedbrake-back': 'EXTEND',
+  'warthog-thr-boat-forward': 'SWEEP FWD',
+  'warthog-thr-boat-back': 'SWEEP AFT',
+  'warthog-thr-china-forward': 'SWEEP AUTO',
+  'warthog-thr-china-back': 'SWEEP BOMB',
+  'warthog-thr-left-throttle-button': 'PLM',
+  'warthog-thr-landing-horn-silence': 'CAUTION',
+  'warthog-thr-eac-on': 'AP ON',
+  'warthog-thr-rdr-alt-normal': 'ALT HOLD',
+  'warthog-thr-ap-engage': 'HDG TOGGLE',
+  'warthog-thr-left-engine-idle-off': 'L CUT',
+  'warthog-thr-right-engine-idle-off': 'R CUT',
+  'warthog-thr-axis-slew-x': 'Slew X',
+  'warthog-thr-axis-slew-y': 'Slew Y',
+  'warthog-thr-axis-friction': 'FRICTION',
+};
 
 const pages = [
   page('02-VKB-F14-GRIP','vkb-f14-gunfighter','VKB GUNFIGHTER • F-14 GRIP','PRIMARY FLIGHT, WEAPONS, TRIM AND DIRECT LIFT CONTROL',[
     'BTN 9–12: Trim','BTN 3: Store release','BTN 13–16: Weapon select','BTN 7: NWS toggle','BTN 5 / RX: DLC','BTN 6: Catapult salute','BTN 1: Trigger','','DLC / countermeasure','','','Trigger stage 1','Trigger stage 2']),
-  page('03-WARTHOG-THROTTLE','tm-warthog-throttle','THRUSTMASTER WARTHOG THROTTLE','WING SWEEP, DFCS, SPEED BRAKE, FLAPS AND VAICOM MIC',[
-    'Friction axis','BTN 22/23: Flaps','BTN 24: Autopilot','BTN 25: Altitude hold','','','','BTN 29: Left cutoff','BTN 30: Right cutoff','','BTN 21: Caution reset','BTN 26: Heading toggle','','Wing sweep / MIC','Speed brake','BTN 1: PLM','Exterior lights','BTN 9–12: Wing sweep']),
+  page('03-WARTHOG-THROTTLE','tm-warthog-throttle','THRUSTMASTER WARTHOG THROTTLE','WING SWEEP, DFCS, SPEED BRAKE, FLAPS AND VAICOM MIC',warthogLabels),
   page('04-PDCP','onyourtwelve-pdcp','ONYOURTWELVE F-14 PDCP','DISPLAY, POWER, STEERING AND HSD PANEL',[
     'BTN 1: Takeoff','BTN 2: Cruise','BTN 3: Air-to-air','BTN 4: Air-to-ground','BTN 5: Landing','BTN 11/12: HUD mode','BTN 15/16: VDI mode','BTN 19/20/29: HSD mode','BTN 27/28: VDI power','BTN 13/14/17/18: HUD controls','BTN 6–10: Steering command','BTN 21/22/25/26: HSD/ECM','BTN 23/24: HUD power']),
   page('05-PTO2','winctrl-pto2','WINCTRL CARRIERACE PTO2','CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING',[
