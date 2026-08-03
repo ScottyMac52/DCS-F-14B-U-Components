@@ -1,6 +1,6 @@
 # DCS F-14B(U) Components
 
-Scott's DCS F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME packaging, and VR-optimized OpenKneeboard reference pages.
+DCS/Heatblur F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME packaging, and VR-optimized OpenKneeboard reference pages.
 
 ## Design goals
 
