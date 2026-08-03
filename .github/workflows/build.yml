@@ -9,38 +9,18 @@ on:
 permissions:
   contents: read
 
-env:
-  PACKAGE_VERSION: 0.0.0-ci.${{ github.run_number }}
-
 jobs:
   build:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - name: Generate OpenKneeboard pages
-        shell: pwsh
-        run: |
-          npm ci
-          npm run build:kneeboard
-      - name: Build package
-        shell: pwsh
-        run: ./scripts/Build-OvGME.ps1 -Version $env:PACKAGE_VERSION
-      - name: Validate package
-        shell: pwsh
-        run: |
-          npm run test:kneeboard
-          npm run test:versioning
-          ./scripts/Test-Package.ps1 -Version $env:PACKAGE_VERSION
-      - name: Build complete release bundle
-        shell: pwsh
-        run: ./scripts/Build-Release.ps1 -Version $env:PACKAGE_VERSION
-      - uses: actions/upload-artifact@v4
-        with:
-          name: F-14BU-Release
-          path: |
-            dist/*.zip
-            dist/SHA256SUMS.txt
+    uses: ScottyMac52/DCS-Common/.github/workflows/build.yml@main
+    with:
+      runs-on: windows-latest
+      package-version: 0.0.0-ci.${{ github.run_number }}
+      package-script: scripts/Build-OvGME.ps1
+      test-package-script: scripts/Test-Package.ps1
+      build-release-script: scripts/Build-Release.ps1
+      test-release-script: scripts/Test-Release.ps1
+      run-release-build: true
+      artifact-name: F-14BU-Release
+      artifact-path: |
+        dist/*.zip
+        dist/SHA256SUMS.txt
