@@ -120,6 +120,27 @@ for (const [page, labels] of Object.entries(requiredText)) {
   for (const label of labels) assert(visibleText.includes(label), `${page} is missing required text: ${label}`);
 }
 
+function embeddedSharedSvg(page) {
+  const source = readFileSync(join(svgDir, `${page}.svg`), 'utf8');
+  const encoded = source.match(/<image href="data:image\\/svg\\+xml;base64,([^"]+)"/)?.[1];
+  assert(encoded, `${page} does not embed its shared hardware SVG.`);
+  return Buffer.from(encoded, 'base64').toString('utf8');
+}
+
+const warthogSharedSvg = embeddedSharedSvg('03-WARTHOG-THROTTLE');
+assert((warthogSharedSvg.match(/<!-- callout:/g) ?? []).length === 41, 'Warthog page must retain all 41 shared catalog callouts.');
+for (const label of [
+  'BTN 2: VAICOM TX5', 'BTN 6: VAICOM TX1',
+  'BTN 7: Speed brake retract', 'BTN 8: Speed brake extend',
+  'BTN 9: Wing sweep forward', 'BTN 12: Wing sweep bomb',
+  'BTN 15: PLM', 'BTN 21: Caution reset',
+  'BTN 24: Autopilot on', 'BTN 25: Altitude hold', 'BTN 26: Heading toggle',
+  'BTN 29: Left cutoff', 'BTN 30: Right cutoff',
+  'Slew X', 'Slew Y', 'Right throttle', 'Left throttle', 'Friction axis',
+]) {
+  assert(warthogSharedSvg.includes(label), `Warthog shared SVG is missing mapped label: ${label}`);
+}
+
 const before = generatedHashes();
 function runBuildStep(script) {
   const result = spawnSync(process.execPath, [join(scriptDir, script)], {
