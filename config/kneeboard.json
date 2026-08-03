@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "aircraft": "F-14B(U)",
+  "profiles": {
+    "pto2": "src/Config/Input/F-14BU/joystick/WINCTRL CarrierAce PTO 2 {19B7D090-6120-11f0-8001-444553540000}.diff.lua"
+  },
+  "pages": [
+    {
+      "file": "02-VKB-F14-GRIP",
+      "deviceId": "vkb-f14-gunfighter",
+      "title": "VKB GUNFIGHTER • F-14 GRIP",
+      "kicker": "PRIMARY FLIGHT, WEAPONS, TRIM AND DIRECT LIFT CONTROL",
+      "labels": ["BTN 9–12: Trim", "BTN 3: Store release", "BTN 13–16: Weapon select", "BTN 7: NWS toggle", "BTN 5 / RX: DLC", "BTN 6: Catapult salute", "BTN 1: Trigger", "", "DLC / countermeasure", "", "", "Trigger stage 1", "Trigger stage 2"]
+    },
+    {
+      "file": "03-WARTHOG-THROTTLE",
+      "deviceId": "tm-warthog-throttle",
+      "title": "THRUSTMASTER WARTHOG THROTTLE",
+      "kicker": "WING SWEEP, DFCS, SPEED BRAKE, FLAPS AND VAICOM MIC",
+      "labels": {
+        "warthog-thr-mic-up": "VAICOM TX5", "warthog-thr-mic-right": "VAICOM TX2", "warthog-thr-mic-down": "VAICOM TX3", "warthog-thr-mic-left": "VAICOM TX4", "warthog-thr-mic-push": "VAICOM TX1",
+        "warthog-thr-speedbrake-forward": "RETRACT", "warthog-thr-speedbrake-back": "EXTEND", "warthog-thr-boat-forward": "SWEEP FWD", "warthog-thr-boat-back": "SWEEP AFT", "warthog-thr-china-forward": "SWEEP AUTO", "warthog-thr-china-back": "SWEEP BOMB",
+        "warthog-thr-left-throttle-button": "PLM", "warthog-thr-landing-horn-silence": "CAUTION", "warthog-thr-eac-on": "AP ON", "warthog-thr-rdr-alt-normal": "ALT HOLD", "warthog-thr-ap-engage": "HDG TOGGLE", "warthog-thr-left-engine-idle-off": "L CUT", "warthog-thr-right-engine-idle-off": "R CUT",
+        "warthog-thr-axis-slew-x": "Slew X", "warthog-thr-axis-slew-y": "Slew Y", "warthog-thr-axis-friction": "FRICTION"
+      }
+    },
+    {
+      "file": "04-PDCP", "deviceId": "onyourtwelve-pdcp", "title": "ONYOURTWELVE F-14 PDCP", "kicker": "DISPLAY, POWER, STEERING AND HSD PANEL",
+      "labels": ["BTN 1: Takeoff", "BTN 2: Cruise", "BTN 3: Air-to-air", "BTN 4: Air-to-ground", "BTN 5: Landing", "BTN 11/12: HUD mode", "BTN 15/16: VDI mode", "BTN 19/20/29: HSD mode", "BTN 27/28: VDI power", "BTN 13/14/17/18: HUD controls", "BTN 6–10: Steering command", "BTN 21/22/25/26: HSD/ECM", "BTN 23/24: HUD power"]
+    },
+    {
+      "file": "05-PTO2", "deviceId": "winctrl-pto2", "title": "WINCTRL CARRIERACE PTO2", "kicker": "CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING",
+      "controls": {
+        "pto2-button-2": { "profile": "pto2", "key": "JOY_BTN2", "label": "Caution reset" },
+        "pto2-button-3": { "profile": "pto2", "key": "JOY_BTN3", "label": "Launch bar retract" },
+        "pto2-button-4": { "profile": "pto2", "key": "JOY_BTN4", "label": "Launch bar extend" },
+        "pto2-button-5": { "profile": "pto2", "key": "JOY_BTN5", "label": "Flaps up" },
+        "pto2-button-7": { "profile": "pto2", "key": "JOY_BTN7", "label": "Flaps full" },
+        "pto2-button-8": { "profile": "pto2", "key": "JOY_BTN8", "label": "Taxi lights ON" },
+        "pto2-button-9": { "profile": "pto2", "key": "JOY_BTN9", "label": "Taxi lights OFF" },
+        "pto2-button-10": { "profile": "pto2", "key": "JOY_BTN10", "label": "Antiskid BOTH" },
+        "pto2-button-11": { "profile": "pto2", "key": "JOY_BTN11", "label": "Antiskid OFF" },
+        "pto2-button-12": { "profile": "pto2", "key": "JOY_BTN12", "label": "Hook bypass FIELD" },
+        "pto2-button-13": { "profile": "pto2", "key": "JOY_BTN13", "label": "Hook bypass CARRIER" },
+        "pto2-button-14": { "profile": "pto2", "key": "JOY_BTN14", "label": "Refuel probe extend" },
+        "pto2-button-16": { "profile": "pto2", "key": "JOY_BTN16", "label": "Refuel probe retract" },
+        "pto2-button-32": { "profile": "pto2", "key": "JOY_BTN32", "label": "Hook retract" },
+        "pto2-button-34": { "profile": "pto2", "key": "JOY_BTN34", "label": "Hook extend" },
+        "pto2-button-35": { "profile": "pto2", "key": "JOY_BTN35", "label": "Gear up" },
+        "pto2-button-37": { "profile": "pto2", "key": "JOY_BTN37", "label": "Gear down" },
+        "pto2-button-38": { "profile": "pto2", "key": "JOY_BTN38", "label": "Parking brake stow" },
+        "pto2-button-39": { "profile": "pto2", "key": "JOY_BTN39", "label": "Parking brake pull" }
+      }
+    },
+    {
+      "file": "06-MFD1-JESTER", "deviceId": "tm-mfd", "title": "MFD 1 • DIRECT JESTER", "kicker": "NAVIGATION, RADAR AND CONTEXT",
+      "labels": ["BTN 1", "BTN 2", "BTN 3", "BTN 4", "BTN 5", "BTN 6", "BTN 7", "BTN 8", "BTN 9", "BTN 10", "BTN 11", "BTN 12", "BTN 13", "BTN 14", "BTN 15", "BTN 16", "BTN 17", "BTN 18", "BTN 19", "BTN 20", "BTN 21", "BTN 22", "BTN 23", "BTN 24", "BTN 25", "BTN 26", "BTN 27", "BTN 28"]
+    },
+    {
+      "file": "07-MFD2-CARRIER", "deviceId": "tm-mfd", "title": "MFD 2 • CARRIER + AIRFRAME", "kicker": "DETERMINISTIC BACKUP TO PTO2",
+      "labels": ["Gear up", "Gear down", "Hook retract", "Hook extend", "Flaps up", "Flaps down", "Antiskid BOTH", "Antiskid OFF", "Brake stow", "Brake pull", "Probe extend", "Probe retract", "Taxi lights ON", "Taxi lights OFF", "Hook carrier", "Hook field", "Nose strut kneel", "Caution reset", "Catapult salute", "DLC / countermeasure", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound"]
+    },
+    {
+      "file": "08-MFD3-LANTIRN", "deviceId": "tm-mfd", "title": "MFD 3 • PILOT / JESTER LANTIRN", "kicker": "QJESTER CONTEXT • VR GAZE",
+      "labels": ["Smart context", "Direct SHORT", "Direct HOLD", "Direct DOUBLE", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound"]
+    }
+  ]
+}
