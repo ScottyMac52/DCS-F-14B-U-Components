@@ -129,14 +129,15 @@ function embeddedSharedSvg(page) {
 
 const warthogSharedSvg = embeddedSharedSvg('03-WARTHOG-THROTTLE');
 assert((warthogSharedSvg.match(/<!-- callout:/g) ?? []).length === 41, 'Warthog page must retain all 41 shared catalog callouts.');
+assert(!/<(?:line|circle)\b|<rect\b[^>]*\bx=/.test(warthogSharedSvg), 'Warthog page must not draw duplicate callout paths, dots, or label boxes.');
 for (const label of [
-  'BTN 2: VAICOM TX5', 'BTN 6: VAICOM TX1',
-  'BTN 7: Speed brake retract', 'BTN 8: Speed brake extend',
-  'BTN 9: Wing sweep forward', 'BTN 12: Wing sweep bomb',
-  'BTN 15: PLM', 'BTN 21: Caution reset',
-  'BTN 24: Autopilot on', 'BTN 25: Altitude hold', 'BTN 26: Heading toggle',
-  'BTN 29: Left cutoff', 'BTN 30: Right cutoff',
-  'Slew X', 'Slew Y', 'Right throttle', 'Left throttle', 'Friction axis',
+  'VAICOM TX5', 'VAICOM TX1',
+  'RETRACT', 'EXTEND',
+  'SWEEP FWD', 'SWEEP BOMB',
+  'PLM', 'CAUTION',
+  'AP ON', 'ALT HOLD', 'HDG TOGGLE',
+  'L CUT', 'R CUT',
+  'Slew X', 'Slew Y', 'FRICTION',
 ]) {
   assert(warthogSharedSvg.includes(label), `Warthog shared SVG is missing mapped label: ${label}`);
 }
