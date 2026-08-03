@@ -122,7 +122,8 @@ for (const [page, labels] of Object.entries(requiredText)) {
 
 function embeddedSharedSvg(page) {
   const source = readFileSync(join(svgDir, `${page}.svg`), 'utf8');
-  const encoded = source.match(/<image href="data:image\\/svg\\+xml;base64,([^"]+)"/)?.[1];
+  const prefix = '<image href="data:image/svg+xml;base64,';
+  const encoded = source.split(prefix)[1]?.split('"')[0];
   assert(encoded, `${page} does not embed its shared hardware SVG.`);
   return Buffer.from(encoded, 'base64').toString('utf8');
 }
