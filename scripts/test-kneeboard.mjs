@@ -20,7 +20,8 @@ const pages = [
   '06-MFD1-JESTER',
   '07-MFD2-CARRIER',
   '08-MFD3-LANTIRN',
-  '09-AXES-RESERVED-OPENKNEEBOARD',
+  '09-TM-TPR',
+  '10-AXES-RESERVED-OPENKNEEBOARD',
 ];
 
 const expectedAssets = [
@@ -78,7 +79,7 @@ for (const page of pages) {
     .replaceAll('http://www.w3.org/2000/svg', '')
     .replaceAll('http://www.w3.org/1999/xlink', '');
   assert(!/https?:\/\//i.test(resources), `${page}.svg contains a network dependency.`);
-  assert(source.includes(`${pages.indexOf(page) + 1} / 9`), `${page}.svg has the wrong page number.`);
+  assert(source.includes(`${pages.indexOf(page) + 1} / 10`), `${page}.svg has the wrong page number.`);
 }
 
 const sourceAssetNames = readdirSync(join(root, 'kneeboard', 'assets', 'source'));
@@ -195,4 +196,4 @@ runBuildStep('apply-shared-hardware.mjs');
 const after = generatedHashes();
 assert(JSON.stringify(after) === JSON.stringify(before), 'Kneeboard output changed across identical builds.');
 
-console.log('Kneeboard validation passed: 9 deterministic pages, mappings, dimensions, and offline assets verified.');
+console.log('Kneeboard validation passed: 10 deterministic pages, mappings, dimensions, and offline assets verified.');

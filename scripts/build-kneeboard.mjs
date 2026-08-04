@@ -447,8 +447,16 @@ const pages = [
     ],
   },
   {
+    type: 'hardware',
+    file: '09-TM-TPR',
+    title: 'THRUSTMASTER TPR',
+    kicker: 'RUDDER AND WHEEL BRAKES',
+    images: [],
+    callouts: []
+  },
+  {
     type: 'summary',
-    file: '09-AXES-RESERVED-OPENKNEEBOARD',
+    file: '10-AXES-RESERVED-OPENKNEEBOARD',
     title: 'AXES, RESERVED DEVICES + KNEEBOARD',
     kicker: 'CONFIGURATION NOTES AND OPTIONAL VOICE NAVIGATION',
     items: [
