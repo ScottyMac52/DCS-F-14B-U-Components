@@ -17,7 +17,7 @@ for (const [index, page] of config.pages.entries()) {
   const { svg } = renderSharedHardwarePage({
     ...page,
     commonRoot,
-    footer: `${config.aircraft} • shared DCS-Common hardware template • ${index + 2} / 9`,
+    provenance: { consumer: 'DCS-F-14B-U-Components', page: `${index + 2} / 9` },
   });
   writeFileSync(join(svgDir, `${page.file}.svg`), svg);
   await sharp(Buffer.from(svg)).png().toFile(join(pngDir, `${page.file}.png`));
