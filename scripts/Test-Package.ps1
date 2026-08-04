@@ -31,7 +31,8 @@ $ExpectedKneeboardPages = @(
     '06-MFD1-JESTER.png',
     '07-MFD2-CARRIER.png',
     '08-MFD3-LANTIRN.png',
-    '09-AXES-RESERVED-OPENKNEEBOARD.png'
+    '09-TM-TPR.png',
+    '10-AXES-RESERVED-OPENKNEEBOARD.png'
 )
 $ActualKneeboardPages = @(Get-ChildItem $Kneeboard -Filter '*.png' | Sort-Object Name | ForEach-Object Name)
 if (Compare-Object $ExpectedKneeboardPages $ActualKneeboardPages) {
