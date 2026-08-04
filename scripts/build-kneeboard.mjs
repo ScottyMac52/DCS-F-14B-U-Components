@@ -1,4 +1,5 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, rmSync, readFileSync, writeFileSync } from 'node:fs';
+
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import sharp from 'sharp';
@@ -10,6 +11,12 @@ const { formatProvenanceFooter } = await import(pathToFileURL(join(commonRoot, '
 const svgDir = join(root, 'kneeboard', 'source');
 const pngDir = join(root, 'kneeboard', 'F-14BU');
 const assetDir = join(root, 'kneeboard', 'assets', 'source');
+
+// Delete and recreate the kneeboard output directories to ensure a clean build.
+rmSync(svgDir, { recursive: true, force: true });
+rmSync(pngDir, { recursive: true, force: true });
+
+// Recreate the kneeboard output directories.
 mkdirSync(svgDir, { recursive: true });
 mkdirSync(pngDir, { recursive: true });
 
