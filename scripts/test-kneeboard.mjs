@@ -113,7 +113,8 @@ const requiredText = {
   '06-MFD1-JESTER': ['Shared DCS-Common device: tm-mfd'],
   '07-MFD2-CARRIER': ['Shared DCS-Common device: tm-mfd'],
   '08-MFD3-LANTIRN': ['Shared DCS-Common device: tm-mfd'],
-  '09-AXES-RESERVED-OPENKNEEBOARD': ['MOZA', 'Y pitch / X roll', 'NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
+  '09-TM-TPR': ['Shared DCS-Common device: tm-tpr'],
+  '10-AXES-RESERVED-OPENKNEEBOARD': ['MOZA', 'Y pitch / X roll', 'NEXT_PAGE.exe', 'ENABLE_TINT.exe'],
 };
 for (const [page, labels] of Object.entries(requiredText)) {
   const source = readFileSync(join(svgDir, `${page}.svg`), 'utf8');
@@ -196,4 +197,4 @@ runBuildStep('apply-shared-hardware.mjs');
 const after = generatedHashes();
 assert(JSON.stringify(after) === JSON.stringify(before), 'Kneeboard output changed across identical builds.');
 
-console.log('Kneeboard validation passed: 10 deterministic pages, mappings, dimensions, and offline assets verified.');
+console.log('Kneeboard validation passed:  deterministic pages, mappings, dimensions, and offline assets verified.');
