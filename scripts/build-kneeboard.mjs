@@ -1,10 +1,12 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import sharp from 'sharp';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const root = resolve(scriptDir, '..');
+const commonRoot = resolve(process.env.DCS_COMMON_ROOT ?? join(root, '.dcs-common'));
+const { formatProvenanceFooter } = await import(pathToFileURL(join(commonRoot, 'scripts/shared-hardware-consumer.mjs')));
 const svgDir = join(root, 'kneeboard', 'source');
 const pngDir = join(root, 'kneeboard', 'F-14BU');
 const assetDir = join(root, 'kneeboard', 'assets', 'source');
@@ -80,7 +82,7 @@ function frame(title, kicker, body, index, pageCount) {
   <line x1="54" y1="156" x2="1146" y2="156" stroke="#263a52" stroke-width="3"/>
   ${body}
   <line x1="54" y1="1532" x2="1146" y2="1532" stroke="#263a52" stroke-width="2"/>
-  <text x="54" y="1570" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" fill="#8ea5bd">F-14B(U) • Scott's cockpit • VAICOM PRO • Version in package VERSION.TXT</text>
+  <text x="54" y="1570" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" fill="#8ea5bd">${esc(formatProvenanceFooter({ commonRoot, consumer: 'DCS-F-14B-U-Components' }))}</text>
   <text x="1146" y="1570" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" fill="#8ea5bd">${index + 1} / ${pageCount}</text>
 </svg>`;
 }
