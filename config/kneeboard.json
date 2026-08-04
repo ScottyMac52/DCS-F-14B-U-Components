@@ -10,7 +10,7 @@
       "deviceId": "vkb-f14-gunfighter",
       "title": "VKB GUNFIGHTER • F-14 GRIP",
       "kicker": "PRIMARY FLIGHT, WEAPONS, TRIM AND DIRECT LIFT CONTROL",
-      "labels": ["BTN 9–12: Trim", "BTN 3: Store release", "BTN 13–16: Weapon select", "BTN 7: NWS toggle", "BTN 5 / RX: DLC", "BTN 6: Catapult salute", "BTN 1: Trigger", "", "DLC / countermeasure", "", "", "Trigger stage 1", "Trigger stage 2"]
+      "labels": ["Trim", "Store release", "Weapon select", "NWS toggle", "DLC", "Catapult salute", "Trigger", "", "DLC / countermeasure", "", "", "Trigger stage 1", "Trigger stage 2"]
     },
     {
       "file": "03-WARTHOG-THROTTLE",
@@ -26,7 +26,7 @@
     },
     {
       "file": "04-PDCP", "deviceId": "onyourtwelve-pdcp", "title": "ONYOURTWELVE F-14 PDCP", "kicker": "DISPLAY, POWER, STEERING AND HSD PANEL",
-      "labels": ["BTN 1: Takeoff", "BTN 2: Cruise", "BTN 3: Air-to-air", "BTN 4: Air-to-ground", "BTN 5: Landing", "BTN 11/12: HUD mode", "BTN 15/16: VDI mode", "BTN 19/20/29: HSD mode", "BTN 27/28: VDI power", "BTN 13/14/17/18: HUD controls", "BTN 6–10: Steering command", "BTN 21/22/25/26: HSD/ECM", "BTN 23/24: HUD power"]
+      "labels": ["Takeoff", "Cruise", "Air-to-air", "Air-to-ground", "Landing", "HUD mode", "VDI mode", "HSD mode", "VDI power", "HUD controls", "Steering command", "HSD/ECM", "HUD power"]
     },
     {
       "file": "05-PTO2", "deviceId": "winctrl-pto2", "title": "WINCTRL CARRIERACE PTO2", "kicker": "CARRIER, GEAR, FLAPS, LIGHTS AND REFUELING",
