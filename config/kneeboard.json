@@ -94,6 +94,17 @@
     {
       "file": "08-MFD3-LANTIRN", "deviceId": "tm-mfd", "title": "MFD 3 • PILOT / JESTER LANTIRN", "kicker": "QJESTER CONTEXT • VR GAZE",
       "labels": ["Smart context", "Direct SHORT", "Direct HOLD", "Direct DOUBLE", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound"]
+    },
+    {
+      "file": "09-TM-TPR",
+      "deviceId": "tm-tpr",
+      "title": "THRUSTMASTER TPR",
+      "kicker": "RUDDER AND WHEEL BRAKES",
+      "labels": [
+        "Left Wheel Brake",
+        "Right Wheel Brake",
+        "Rudder"
+      ]
     }
   ]
 }
