@@ -143,6 +143,23 @@ for (const label of [
   assert(warthogSharedSvg.includes(label), `Warthog shared SVG is missing mapped label: ${label}`);
 }
 
+const pdcpSharedSvg = embeddedSharedSvg('04-PDCP');
+const pdcpLabels = [...pdcpSharedSvg.matchAll(/<text id="lbl-(pdcp-[^"]+)"[^>]*>([^<]*)<\/text>/g)];
+assert(pdcpLabels.length === 29, 'PDCP page must retain all 29 shared catalog callouts.');
+for (const [, id, label] of pdcpLabels) {
+  assert(label.length > 0, `PDCP ${id} must render its configured F-14 function.`);
+}
+for (const [id, label] of [
+  ['pdcp-to', 'Takeoff'],
+  ['pdcp-vdi-awl', 'STEER TACAN'],
+  ['pdcp-hud-alt-baro', 'HUD ALT BARO'],
+  ['pdcp-vdi-power-on', 'VDI POWER ON'],
+  ['pdcp-hsd-ecm-mode', 'HSD ECM'],
+]) {
+  const text = pdcpSharedSvg.match(new RegExp(`<text id="lbl-${id}"[^>]*>([^<]*)</text>`))?.[1];
+  assert(text === label, `PDCP ${id} must render its mapped label.`);
+}
+
 const pto2SharedSvg = embeddedSharedSvg('05-PTO2');
 assert((pto2SharedSvg.match(/<!-- callout:pto2-button-/g) ?? []).length === 41,
   'PTO2 page must retain all 41 shared catalog callouts.');
