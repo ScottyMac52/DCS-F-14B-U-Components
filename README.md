@@ -17,12 +17,12 @@ DCS/Heatblur F-14B(U) control profiles, VAICOM PRO push-to-talk bridge, OVGME pa
 |---|---|
 | `src/Config/Input/F-14BU/joystick` | Canonical DCS `.diff.lua` profiles |
 | `autohotkey/dcs-Warthog.ahk` | Warthog-to-VAICOM TX1-TX5 bridge |
+| `config/kneeboard.json` | Page order, shared device IDs, labels, and summary pages |
 | `kneeboard/F-14BU` | Generated OpenKneeboard/DCS PNG pages |
 | `kneeboard/source` | Generated SVG sources |
-| `kneeboard/assets/source` | Local image inputs used by the base F-14B(U) page generator |
 | `docs` | Installation and complete mapping documentation |
 | `packaging/ovgme` | OVGME package metadata templates |
-| `scripts` | Kneeboard, shared-hardware adapter, versioning, and OVGME build scripts |
+| `scripts` | Unified kneeboard builder, versioning, and OVGME/release scripts |
 | `dist` | Validated OVGME archive, complete release bundle, and checksums |
 
 ## Quick start
@@ -43,22 +43,25 @@ See [Installation](docs/INSTALLATION.md), [Control mappings](docs/CONTROL-MAPPIN
 
 ## Shared kneeboard pipeline
 
-The generated kneeboard contains nine pages. The F-14B(U) builder creates the complete base set, then `scripts/apply-shared-hardware.mjs` replaces the seven hardware pages with canonical device diagrams from DCS-Common:
+One script builds every page: `scripts/build-kneeboard.mjs`.
 
-- VKB F-14 Gunfighter grip
-- Thrustmaster Warthog throttle
-- OnYourTwelve PDCP
-- WinCtrl PTO2
-- Thrustmaster MFD 1, 2, and 3
+It imports DCS-Common helpers directly:
 
-The F-14B(U)-specific summary pages remain owned by this repository. Canonical shared-hardware assets, draw.io sources, geometry, and rendering logic are owned by DCS-Common.
+- `shared-hardware-consumer.mjs` for canonical device diagrams
+- `profile-driven-kneeboard.mjs` for profile-backed labels
+- `kneeboard-renderer.mjs` for consumer-owned summary pages
 
-The adapter locates DCS-Common in this order:
+Current page set (ten pages):
 
-1. The directory specified by `DCS_COMMON_ROOT`.
-2. The repository-local `.dcs-common` directory used by automation.
+- Summary: VAICOM overview, axes/reserved/OpenKneeboard notes
+- Shared hardware: VKB F-14 Gunfighter grip, Warthog throttle, OnYourTwelve PDCP, WinCtrl PTO2, three Thrustmaster MFDs, TM TPR
 
-Do not hand-edit the generated shared hardware SVG or PNG pages in this repository. Make diagram changes in `assets/shared/hardware/drawio` in DCS-Common, regenerate and visually verify them there, merge that change, then rebuild this repository.
+DCS-Common is located in this order:
+
+1. `DCS_COMMON_ROOT`
+2. Repository-local `.dcs-common` (CI checkout)
+
+Do not hand-edit generated SVG/PNG pages. Change diagrams in DCS-Common, rebuild there, then rebuild this repository.
 
 ## Local development
 
@@ -68,19 +71,17 @@ Requirements:
 - PowerShell 7 for the OVGME and release-bundle scripts
 - A checkout of [DCS-Common](https://github.com/ScottyMac52/DCS-Common)
 
-Install dependencies and point the build at DCS-Common.
-
-PowerShell:
-
 ```powershell
 npm ci
 $env:DCS_COMMON_ROOT = 'C:\path\to\DCS-Common'
 npm run build:kneeboard
 npm run test:kneeboard
 npm run test:versioning
+./scripts/Build-OvGME.ps1 -Version 0.0.0-local
+./scripts/Test-Package.ps1 -Version 0.0.0-local
+./scripts/Build-Release.ps1 -Version 0.0.0-local
+./scripts/Test-Package.ps1 -Version 0.0.0-local
 ```
-
-Bash:
 
 ```bash
 npm ci
@@ -90,9 +91,7 @@ npm run test:kneeboard
 npm run test:versioning
 ```
 
-`npm run build:kneeboard` first runs the F-14B(U) page generator and then applies the shared hardware renderer. The kneeboard test verifies the expected pages and dimensions, required content markers, offline generation, and deterministic rebuilds.
-
-When changing control mappings or shared diagrams, inspect the generated SVG and PNG output before committing it. Generated pages are versioned so users and release builds receive the same reviewed output.
+`npm run build:kneeboard` is a single command. There is no separate `apply-shared-hardware` step and no `Test-Release.ps1`. `Test-Package.ps1` validates both the OVGME package and the complete release bundle.
 
 ## Continuous integration and releases
 
@@ -103,9 +102,9 @@ Releases are created deliberately with the **Create tagged OVGME release** workf
 1. Run the workflow from the Actions page.
 2. Select a `patch`, `minor`, or `major` bump.
 3. The reusable DCS-Common workflow calculates the next stable version from the latest tag.
-4. It checks out the shared assets, rebuilds and validates the kneeboard and packages, commits regenerated kneeboard output when needed, and creates the matching tag and GitHub Release from that commit.
+4. It rebuilds and validates the kneeboard and packages, commits regenerated kneeboard output when needed, and creates the matching tag and GitHub Release from that commit.
 
-Git tags in the form `vMAJOR.MINOR.PATCH` are the authoritative OVGME package versions. Ordinary CI builds use a prerelease version such as `0.0.0-ci.42`. Local builds default to `0.0.0-local`; pass `-Version 1.3.0` to the PowerShell build and test scripts when a specific version is needed.
+Git tags in the form `vMAJOR.MINOR.PATCH` are the authoritative OVGME package versions. Ordinary CI builds use a prerelease version such as `0.0.0-ci.42`. Local builds default to `0.0.0-local`.
 
 ## VAICOM PRO
 
