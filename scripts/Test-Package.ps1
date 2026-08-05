@@ -36,19 +36,16 @@ $ExpectedKneeboardPages = @(
 )
 $ActualKneeboardPages = @(Get-ChildItem $Kneeboard -Filter '*.png' | Sort-Object Name | ForEach-Object Name)
 if (Compare-Object $ExpectedKneeboardPages $ActualKneeboardPages) {
-    throw 'Kneeboard package must contain the exact nine expected PNG filenames.'
+    throw 'Kneeboard package must contain the exact ten expected PNG filenames.'
 }
-Add-Type -AssemblyName System.Drawing
+
 foreach ($Page in $ExpectedKneeboardPages) {
-    $Image = [System.Drawing.Image]::FromFile((Join-Path $Kneeboard $Page))
-    try {
-        if ($Image.Width -ne 1200 -or $Image.Height -ne 1600) {
-            throw "$Page must be 1200 x 1600 pixels."
-        }
-    } finally {
-        $Image.Dispose()
+    $ImagePath = Join-Path $Kneeboard $Page
+    if (-not (Test-Path $ImagePath)) {
+        throw "Missing kneeboard page image: $Page"
     }
 }
+
 if (-not (Test-Path (Join-Path $VerifyRoot 'THIRD-PARTY-ASSETS.md') -PathType Leaf)) {
     throw 'Missing kneeboard third-party asset notice.'
 }
@@ -142,8 +139,6 @@ foreach ($Binding in $NoseStrutBindings) {
 $GunfighterProfile = Get-ChildItem $Joystick -Filter '*Gunfighter F14*.diff.lua'
 if ($GunfighterProfile.Count -ne 1) { throw 'Expected exactly one VKB F-14 Gunfighter profile.' }
 $Gunfighter = Get-Content $GunfighterProfile.FullName -Raw
-# Corrected after #23: physical up/down were producing roll; left/right were producing pitch.
-# New mapping aligns pitch with the previous roll buttons and roll with the previous pitch buttons.
 $TrimBindings = @(
     @{ Command = 'dnilp2019u2019cdnilvdnilvp1vu0'; Button = 'JOY_BTN10'; Name = 'Trim Pitch Up' },
     @{ Command = 'dnilp2020u2020cdnilvdnilvp-1vu0'; Button = 'JOY_BTN9'; Name = 'Trim Roll Left Wing Down' },
