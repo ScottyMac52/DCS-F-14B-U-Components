@@ -22,12 +22,13 @@ jobs:
     uses: ScottyMac52/DCS-Common/.github/workflows/release.yml@main
     with:
       bump: ${{ inputs.bump }}
-      runs-on: windows-latest
+      install-lua-parser: true
+      run-lua-parse: true
+      run-release-validation: true
       package-script: scripts/Build-OvGME.ps1
       test-package-script: scripts/Test-Package.ps1
       build-release-script: scripts/Build-Release.ps1
       test-release-script: scripts/Test-Release.ps1
-      run-release-build: true
       artifact-name: F-14BU-Release-${{ inputs.bump }}-${{ github.run_number }}
       artifact-path: |
         dist/*.zip
