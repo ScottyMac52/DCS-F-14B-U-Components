@@ -1,4 +1,4 @@
-import { mkdirSync, rmSync, writeFileSync, copyFileSync } from 'node:fs';
+import { mkdirSync, rmSync, writeFileSync, copyFileSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve, basename } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import sharp from 'sharp';
@@ -11,11 +11,11 @@ const { renderSharedHardwarePage } = await import(pathToFileURL(join(commonRoot,
 const { loadProfileDrivenConfig } = await import(pathToFileURL(join(commonRoot, 'scripts/profile-driven-kneeboard.mjs')));
 const { renderKneeboard } = await import(pathToFileURL(join(commonRoot, 'scripts/kneeboard-renderer.mjs')));
 
-// 1. Load the single source of truth: kneeboard.json
+// 1. Load both the raw JSON (for summary pages) and the loaded config (for mapped hardware pages)
+const rawConfig = JSON.parse(readFileSync(join(root, 'config/kneeboard.json'), 'utf8'));
 const config = loadProfileDrivenConfig('config/kneeboard.json', { consumerRoot: root, commonRoot });
 
-// 2. Set up directories dynamically based on the config
-const aircraftFolder = config.aircraft.replace(/[^a-zA-Z0-9-]/g, ''); // e.g., 'F-14B(U)' -> 'F-14BU'
+const aircraftFolder = config.aircraft.replace(/[^a-zA-Z0-9-]/g, '');
 const svgDir = join(root, 'kneeboard', 'source');
 const pngDir = join(root, 'kneeboard', aircraftFolder);
 
@@ -24,23 +24,30 @@ rmSync(pngDir, { recursive: true, force: true });
 mkdirSync(svgDir, { recursive: true });
 mkdirSync(pngDir, { recursive: true });
 
-const totalPages = config.pages.length;
+// 2. Stitch the pages together and sort them by filename so they process in order (01, 02, etc.)
+const allPages = [
+  ...(rawConfig.summaryPages || []),
+  ...config.pages
+].sort((a, b) => a.file.localeCompare(b.file));
+
+const totalPages = allPages.length;
 
 // 3. Process the sequence
-for (const [index, page] of config.pages.entries()) {
+for (const [index, page] of allPages.entries()) {
   if (page.type === 'summary') {
-    // Let DCS-Common's renderer handle the text-only summary pages
+    // Pass summary pages to the generic renderer
     const result = await renderKneeboard({
       config: { pages: [page], profiles: [] },
       outputDir: pngDir,
       rootDir: root,
     });
-    // Mirror the SVG output to the source directory for validation
+    
+    // Copy the generated SVG back into the source directory to maintain test consistency
     for (const svgFile of result.svgFiles) {
       copyFileSync(svgFile, join(svgDir, basename(svgFile)));
     }
   } else if (page.deviceId) {
-    // Let DCS-Common's hardware manifest provide the baked SVGs for devices
+    // Pass hardware pages to the DCS-Common hardware composition function
     const hardwareRender = renderSharedHardwarePage({
       ...page,
       commonRoot,

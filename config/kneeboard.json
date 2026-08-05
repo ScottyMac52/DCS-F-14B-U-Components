@@ -5,7 +5,7 @@
     "pdcp": "src/Config/Input/F-14BU/joystick/OnYourTwelve F-14 PDCP {52C96400-3F11-11f1-8001-444553540000}.diff.lua",
     "pto2": "src/Config/Input/F-14BU/joystick/WINCTRL CarrierAce PTO 2 {19B7D090-6120-11f0-8001-444553540000}.diff.lua"
   },
-  "pages": [
+  "summaryPages": [
     {
       "type": "summary",
       "file": "01-VAICOM-OVERVIEW",
@@ -26,6 +26,34 @@
         { "key": "RULE", "text": "Time-critical actions stay on physical controls" }
       ]
     },
+    {
+      "type": "summary",
+      "file": "10-AXES-RESERVED-OPENKNEEBOARD",
+      "title": "AXES, RESERVED DEVICES + KNEEBOARD",
+      "kicker": "CONFIGURATION NOTES AND OPTIONAL VOICE NAVIGATION",
+      "items": [
+        { "key": "TPR Z", "text": "Rudder axis", "accent": "gold" },
+        { "key": "TPR Y", "text": "Left wheel brake", "accent": "gold" },
+        { "key": "TPR X", "text": "Right wheel brake", "accent": "gold" },
+        { "key": "MOZA", "text": "Y pitch / X roll", "accent": "gold" },
+        { "key": "Viper TQS", "text": "Reserved; clears stray flight axes" },
+        { "key": "vJoy", "text": "Reserved; clears stray generic axes" },
+        { "key": "ICP", "text": "Empty and deliberately reserved", "accent": "red" },
+        { "key": "MFD 2", "text": "Buttons 21–28 deliberately unbound", "accent": "red" },
+        { "key": "VOICE", "text": "“Kneeboard next page” • NEXT_PAGE.exe" },
+        { "key": "VOICE", "text": "“Kneeboard previous page” • PREVIOUS_PAGE.exe" },
+        { "key": "VOICE", "text": "“Kneeboard next tab” • NEXT_TAB.exe" },
+        { "key": "VOICE", "text": "“Kneeboard previous tab” • PREVIOUS_TAB.exe" },
+        { "key": "VOICE", "text": "“Kneeboard brighter” • INCREASE_BRIGHTNESS.exe" },
+        { "key": "VOICE", "text": "“Kneeboard dimmer” • DECREASE_BRIGHTNESS.exe" },
+        { "key": "VOICE", "text": "“Kneeboard night” • ENABLE_TINT.exe" },
+        { "key": "VOICE", "text": "“Kneeboard day” • DISABLE_TINT.exe" },
+        { "key": "TAB", "text": "Saved Games\\DCS.openbeta\\KNEEBOARD\\F-14BU" },
+        { "key": "SAFETY", "text": "Use unique phrases that do not overlap VAICOM", "accent": "gold" }
+      ]
+    }
+  ],
+  "pages": [
     {
       "file": "02-VKB-F14-GRIP",
       "deviceId": "vkb-f14-gunfighter",
@@ -139,32 +167,6 @@
         "Left Wheel Brake",
         "Right Wheel Brake",
         "Rudder"
-      ]
-    },
-    {
-      "type": "summary",
-      "file": "10-AXES-RESERVED-OPENKNEEBOARD",
-      "title": "AXES, RESERVED DEVICES + KNEEBOARD",
-      "kicker": "CONFIGURATION NOTES AND OPTIONAL VOICE NAVIGATION",
-      "items": [
-        { "key": "TPR Z", "text": "Rudder axis", "accent": "gold" },
-        { "key": "TPR Y", "text": "Left wheel brake", "accent": "gold" },
-        { "key": "TPR X", "text": "Right wheel brake", "accent": "gold" },
-        { "key": "MOZA", "text": "Y pitch / X roll", "accent": "gold" },
-        { "key": "Viper TQS", "text": "Reserved; clears stray flight axes" },
-        { "key": "vJoy", "text": "Reserved; clears stray generic axes" },
-        { "key": "ICP", "text": "Empty and deliberately reserved", "accent": "red" },
-        { "key": "MFD 2", "text": "Buttons 21–28 deliberately unbound", "accent": "red" },
-        { "key": "VOICE", "text": "“Kneeboard next page” • NEXT_PAGE.exe" },
-        { "key": "VOICE", "text": "“Kneeboard previous page” • PREVIOUS_PAGE.exe" },
-        { "key": "VOICE", "text": "“Kneeboard next tab” • NEXT_TAB.exe" },
-        { "key": "VOICE", "text": "“Kneeboard previous tab” • PREVIOUS_TAB.exe" },
-        { "key": "VOICE", "text": "“Kneeboard brighter” • INCREASE_BRIGHTNESS.exe" },
-        { "key": "VOICE", "text": "“Kneeboard dimmer” • DECREASE_BRIGHTNESS.exe" },
-        { "key": "VOICE", "text": "“Kneeboard night” • ENABLE_TINT.exe" },
-        { "key": "VOICE", "text": "“Kneeboard day” • DISABLE_TINT.exe" },
-        { "key": "TAB", "text": "Saved Games\\DCS.openbeta\\KNEEBOARD\\F-14BU" },
-        { "key": "SAFETY", "text": "Use unique phrases that do not overlap VAICOM", "accent": "gold" }
       ]
     }
   ]
