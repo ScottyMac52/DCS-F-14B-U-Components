@@ -16,11 +16,14 @@ jobs:
       runs-on: windows-latest
       package-version: 0.0.0-ci.${{ github.run_number }}
       package-script: scripts/Build-OvGME.ps1
+      package-script-args: -ModuleName "F-14BU" -KneeboardId "F-14BU" -PackagePrefix "Scott-F-14BU-Control-Profiles"
       test-package-script: scripts/Test-Package.ps1
       build-release-script: scripts/Build-Release.ps1
+      build-release-script-args: -PackagePrefix "Scott-F-14BU-Control-Profiles" -BundlePrefix "Scott-F-14BU-Complete-Package"
       test-release-script: scripts/Test-Release.ps1
       run-release-build: true
       artifact-name: F-14BU-Release
       artifact-path: |
         dist/*.zip
         dist/SHA256SUMS.txt
+    secrets: inherit
