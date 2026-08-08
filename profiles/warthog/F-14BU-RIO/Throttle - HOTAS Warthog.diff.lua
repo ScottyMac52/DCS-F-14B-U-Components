@@ -3,6 +3,8 @@
 -- Original mapping assembled from verified Heatblur F-14 RIO/LANTIRN command IDs.
 -- JOY_BTN2 through JOY_BTN6 are deliberately left free for the repository's
 -- AutoHotKey/VAICOM TX bridge, matching the Pilot throttle profile convention.
+-- JOY_BTN13 and JOY_BTN14 (pinky switch) are intentionally unused because the
+-- physical pinky switch on this cockpit's Warthog throttle is inoperative.
 
 local diff = {
     ["axisDiffs"] = {
@@ -20,10 +22,14 @@ local diff = {
         ["d3502pnilu3502cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN8" } }, ["name"] = "LANTIRN Trigger Full Action" },
         ["d3504pnilunilcd7vd1vpnilvunil"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN9" } }, ["name"] = "LANTIRN Undesignate" },
         ["d3512pnilu3512cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN10" } }, ["name"] = "LANTIRN Toggle FOV" },
-        ["d3696pnilu3696cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN11" } }, ["name"] = "LANTIRN Slew Up" },
-        ["d3695pnilu3695cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN12" } }, ["name"] = "LANTIRN Slew Right" },
-        ["d3696pnilu3696cd7vd-1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN13" } }, ["name"] = "LANTIRN Slew Down" },
-        ["d3695pnilu3695cd7vd-1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN14" } }, ["name"] = "LANTIRN Slew Left" },
+
+        -- Coolie HAT owns LANTIRN slew on the base layer. This keeps the broken
+        -- Warthog pinky BTN13/BTN14 completely out of the profile.
+        ["d3696pnilu3696cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_POV1_U" } }, ["name"] = "LANTIRN Slew Up" },
+        ["d3695pnilu3695cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_POV1_R" } }, ["name"] = "LANTIRN Slew Right" },
+        ["d3696pnilu3696cd7vd-1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_POV1_D" } }, ["name"] = "LANTIRN Slew Down" },
+        ["d3695pnilu3695cd7vd-1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_POV1_L" } }, ["name"] = "LANTIRN Slew Left" },
+
         ["d3505pnilu3505cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN15" } }, ["name"] = "LANTIRN Point Track" },
         ["d3506pnilu3506cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN16" } }, ["name"] = "LANTIRN Area Track" },
         ["d3513pnilu3513cd7vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN17" } }, ["name"] = "LANTIRN Toggle WHOT / BHOT" },
