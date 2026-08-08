@@ -25,24 +25,76 @@ The shifted Warthog layer is for capabilities that otherwise require virtual-coc
 - **MFD 1:** direct Jester navigation/radar/context controls.
 - **MFD 2:** deterministic carrier/airframe backup.
 - **MFD 3:** Pilot/Jester LANTIRN context controls.
+- **ViperAce ICP:** reserve for B(U) CDNU/navigation/data-entry functions rather than tactical throttle functions.
 - **Warthog BTN2-BTN6:** always reserved for the AutoHotKey/VAICOM TX bridge.
+- **Warthog BTN13-BTN14:** never bind; the physical pinky switch is inoperative.
 
 Safety/stateful controls such as engine cutoff retain one meaning and are not repurposed on Shift.
 
-## Pilot philosophy
+## Pilot philosophy and selected Shift roles
 
 - **Base:** flight/combat, wing sweep and DFCS controls.
-- **Shift:** additional B(U) combat/avionics/VR convenience functions that are not already represented by the dedicated cockpit hardware above.
+- **Shift:** weapons/tactical/DFCS convenience that is not already represented by PTO2, PDCP, MFDs, ICP or VAICOM.
 - Speed-brake retract/extend are explicitly available both with and without Shift so holding BTN7 never removes speed-brake authority.
+- BTN13/BTN14 are excluded from both layers.
 
-The remaining Pilot shifted assignments should only be filled with command IDs verified against a current F-14B(U) installation; speculative bindings are intentionally not added.
+Preferred Pilot Shift definitions, subject to exact current B(U) command-ID verification:
 
-## RIO philosophy
+| Warthog input | Pilot SHIFT role |
+|---:|---|
+| BTN1 slew push | ACM cover toggle |
+| BTN2-BTN6 | VAICOM unchanged |
+| BTN7 / BTN8 | Speed brake retract / extend unchanged |
+| BTN9 / BTN10 | Master Arm ARM / TRAIN-OFF |
+| BTN11 / BTN12 | Missile Prep ON / OFF |
+| BTN13 / BTN14 | **UNUSED - broken pinky switch** |
+| BTN15 | CAGE/SEAM |
+| BTN16 / BTN17 | Leave free initially |
+| BTN18 / BTN19 | Leave free initially |
+| BTN20 | Canopy utility candidate |
+| BTN21 | Emergency Stores Jettison |
+| BTN22 / BTN23 | Fuel Dump ON / OFF |
+| BTN24 | DFCS/SAS secondary mode |
+| BTN25 | APC / approach-power-compensator function |
+| BTN26 | AP emergency/disconnect utility |
+| BTN27 / BTN28 | DFCS/APC mode pair |
+| BTN29 / BTN30 | Engine cutoff unchanged; no shifted action |
+| BTN31 / BTN32 | Leave free unless a verified engine-start function merits them |
+| Coolie HAT | TCS/weapon tactical functions if verified |
+
+The exact `.diff.lua` bindings should only be populated with command IDs verified against a current F-14B(U) installation; speculative command IDs are intentionally not added.
+
+## RIO philosophy and selected Shift roles
 
 - **Base:** direct LANTIRN operation.
-- **Shift:** AWG-9 / TID / HCU / navigation capability.
+- **Shift:** HCU / AWG-9 / TID tactical control.
+- **ICP:** B(U) CDNU/navigation data entry, keeping keypad work off the throttle.
+- BTN13/BTN14 are excluded from both layers.
 
-The RIO base profile currently contains the verified LANTIRN command set. The shifted radar/TID/HCU layer is reserved but should only be populated with command IDs verified against the current B(U) RIO input definitions.
+Preferred RIO Shift definitions, subject to exact current B(U) command-ID verification:
+
+| Warthog input | RIO SHIFT role |
+|---:|---|
+| Slew X/Y | HCU X/Y axes |
+| BTN1 slew push | HCU HALF ACTION |
+| BTN2-BTN6 | VAICOM unchanged |
+| BTN7 / BTN8 | Radar antenna elevation UP / DOWN |
+| BTN9 / BTN10 | TID range IN / OUT |
+| BTN11 / BTN12 | Radar scan azimuth narrow / wide |
+| BTN13 / BTN14 | **UNUSED - broken pinky switch** |
+| BTN15 | HCU FULL ACTION |
+| BTN16 | MRL / Manual Rapid Lock-on |
+| BTN17 | IFF Interrogate |
+| BTN18 / BTN19 | Radar mode previous / next |
+| BTN20 | OFFSET |
+| BTN21-BTN24 | HCU modes: IR/TV / RDR / DDD CURSOR / TID CURSOR |
+| BTN25 / BTN26 | DDD/TID display-scale or brightness candidates |
+| BTN27 / BTN28 | Radar/TID range secondary pair if useful after validation |
+| BTN29 / BTN30 | Radar STBY / XMT |
+| BTN31 / BTN32 | STAB/scan-volume secondary functions |
+| Coolie HAT | Radar scan center UP / RIGHT / DOWN / LEFT |
+
+The RIO base profile contains the verified LANTIRN command set. The shifted radar/TID/HCU layer should only be populated with command IDs verified against the current B(U) RIO input definitions.
 
 ## Loading in DCS
 
@@ -64,7 +116,8 @@ The canonical GUID-named Pilot profile under `src/Config/Input/F-14BU/joystick` 
 | BTN7 / BTN8 | LANTIRN trigger half / full |
 | BTN9 | Undesignate |
 | BTN10 | FOV toggle |
-| BTN11-BTN14 | Slew up/right/down/left |
+| Coolie HAT U/R/D/L | LANTIRN slew up/right/down/left |
+| BTN13 / BTN14 | **UNUSED - broken pinky switch** |
 | BTN15 / BTN16 | Point / area track |
 | BTN17 | WHOT/BHOT |
 | BTN18 / BTN19 | QWP- / QWP+ |
