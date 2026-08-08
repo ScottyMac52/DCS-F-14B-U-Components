@@ -1,8 +1,9 @@
 -- F-14B(U) Pilot / TM HOTAS Warthog throttle
 -- Portable DCS "Load Profile" copy of the repository's canonical Pilot profile.
--- This file intentionally omits the machine-specific Warthog device GUID.
+-- VKB F-14 Gunfighter JOY_BTN7 is the hold-only HOTAS shift modifier.
 -- JOY_BTN2 through JOY_BTN6 remain reserved for AutoHotKey/VAICOM TX1-TX5.
 
+local shift = { [1] = "JOY_BTN7" }
 local diff = {
     ["axisDiffs"] = {
         ["a2001cdnil"] = { ["name"] = "Pitch", ["removed"] = { [1] = { ["key"] = "JOY_Y" } } },
@@ -11,8 +12,8 @@ local diff = {
         ["a2004cdnil"] = { ["name"] = "Throttle Both", ["removed"] = { [1] = { ["key"] = "JOY_Z" } } },
     },
     ["keyDiffs"] = {
-        ["dnilp3020u3020cd18vdnilvp-1vu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN7" } }, ["name"] = "Speed brake retract" },
-        ["dnilp3020u3020cd18vdnilvp1vu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN8" } }, ["name"] = "Speed brake extend" },
+        ["dnilp3020u3020cd18vdnilvp-1vu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN7" }, [2] = { ["key"] = "JOY_BTN7", ["reformers"] = shift } }, ["name"] = "Speed brake retract" },
+        ["dnilp3020u3020cd18vdnilvp1vu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN8" }, [2] = { ["key"] = "JOY_BTN8", ["reformers"] = shift } }, ["name"] = "Speed brake extend" },
         ["d3126pnilu3126cd57vd1vpnilvu0"] = { ["removed"] = { [1] = { ["key"] = "JOY_BTN15" } }, ["name"] = "CAGE-SEAM button" },
         ["d3127pnilu3127cd57vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN15" } }, ["name"] = "PLM button" },
         ["d3024pnilu3024cd17vd1vpnilvu0"] = { ["added"] = { [1] = { ["key"] = "JOY_BTN11" } }, ["removed"] = { [1] = { ["key"] = "JOY_BTN3" } }, ["name"] = "Wing Sweep Auto Mode" },
