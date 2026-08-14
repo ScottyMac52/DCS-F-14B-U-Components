@@ -59,7 +59,19 @@
       "deviceId": "vkb-f14-gunfighter",
       "title": "VKB GUNFIGHTER • F-14 GRIP",
       "kicker": "PRIMARY FLIGHT, WEAPONS, TRIM AND DIRECT LIFT CONTROL",
-      "labels": ["Trim", "Store release", "Weapon select", "NWS toggle", "DLC", "Catapult salute", "Trigger", "", "DLC / countermeasure", "", "", "Trigger stage 1", "Trigger stage 2"]
+      "labels": {
+        "vkb-hat": "Trim",
+        "vkb-btn-release": "Store release",
+        "vkb-btn-dlc": "Weapon select",
+        "vkb-pinky": "NWS toggle",
+        "vkb-sw1": "DLC",
+        "vkb-sw2": "Catapult salute",
+        "vkb-sw3": "Trigger",
+        "vkb-sw4": "",
+        "vkb-axis-dlc": "DLC / countermeasure",
+        "vkb-nws": "",
+        "vkb-trigger": ""
+      }
     },
     {
       "file": "03-WARTHOG-THROTTLE",
@@ -142,32 +154,119 @@
       "deviceId": "tm-mfd",
       "title": "MFD 1 • DIRECT JESTER",
       "kicker": "NAVIGATION, RADAR AND CONTEXT",
-      "labels": ["BTN 1", "BTN 2", "BTN 3", "BTN 4", "BTN 5", "BTN 6", "BTN 7", "BTN 8", "BTN 9", "BTN 10", "BTN 11", "BTN 12", "BTN 13", "BTN 14", "BTN 15", "BTN 16", "BTN 17", "BTN 18", "BTN 19", "BTN 20", "BTN 21", "BTN 22", "BTN 23", "BTN 24", "BTN 25", "BTN 26", "BTN 27", "BTN 28"]
+      "labels": {
+        "mfd-osb-t1": "BTN 1",
+        "mfd-osb-t2": "BTN 2",
+        "mfd-osb-t3": "BTN 3",
+        "mfd-osb-t4": "BTN 4",
+        "mfd-osb-t5": "BTN 5",
+        "mfd-osb-r1": "BTN 6",
+        "mfd-osb-r2": "BTN 7",
+        "mfd-osb-r3": "BTN 8",
+        "mfd-osb-r4": "BTN 9",
+        "mfd-osb-r5": "BTN 10",
+        "mfd-osb-b5": "BTN 11",
+        "mfd-osb-b4": "BTN 12",
+        "mfd-osb-b3": "BTN 13",
+        "mfd-osb-b2": "BTN 14",
+        "mfd-osb-b1": "BTN 15",
+        "mfd-osb-l5": "BTN 16",
+        "mfd-osb-l4": "BTN 17",
+        "mfd-osb-l3": "BTN 18",
+        "mfd-osb-l2": "BTN 19",
+        "mfd-osb-l1": "BTN 20",
+        "mfd-rocker-gain": "BTN 21",
+        "mfd-rocker-lvl": "BTN 22",
+        "mfd-rocker-con-up": "BTN 23",
+        "mfd-rocker-con-down": "BTN 24",
+        "mfd-rocker-brt-up": "BTN 25",
+        "mfd-rocker-brt-down": "BTN 26",
+        "mfd-rocker-sym": "BTN 27",
+        "mfd-rocker-int": "BTN 28"
+      }
     },
     {
       "file": "07-MFD2-CARRIER",
       "deviceId": "tm-mfd",
       "title": "MFD 2 • CARRIER + AIRFRAME",
       "kicker": "DETERMINISTIC BACKUP TO PTO2",
-      "labels": ["Gear up", "Gear down", "Hook retract", "Hook extend", "Flaps up", "Flaps down", "Antiskid BOTH", "Antiskid OFF", "Brake stow", "Brake pull", "Probe extend", "Probe retract", "Taxi lights ON", "Taxi lights OFF", "Hook carrier", "Hook field", "Nose strut kneel", "Caution reset", "Catapult salute", "DLC / countermeasure", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound"]
+      "labels": {
+        "mfd-osb-t1": "Gear up",
+        "mfd-osb-t2": "Gear down",
+        "mfd-osb-t3": "Hook retract",
+        "mfd-osb-t4": "Hook extend",
+        "mfd-osb-t5": "Flaps up",
+        "mfd-osb-r1": "Flaps down",
+        "mfd-osb-r2": "Antiskid BOTH",
+        "mfd-osb-r3": "Antiskid OFF",
+        "mfd-osb-r4": "Brake stow",
+        "mfd-osb-r5": "Brake pull",
+        "mfd-osb-b5": "Probe extend",
+        "mfd-osb-b4": "Probe retract",
+        "mfd-osb-b3": "Taxi lights ON",
+        "mfd-osb-b2": "Taxi lights OFF",
+        "mfd-osb-b1": "Hook carrier",
+        "mfd-osb-l5": "Hook field",
+        "mfd-osb-l4": "Nose strut kneel",
+        "mfd-osb-l3": "Caution reset",
+        "mfd-osb-l2": "Catapult salute",
+        "mfd-osb-l1": "DLC / countermeasure",
+        "mfd-rocker-gain": "Unbound",
+        "mfd-rocker-lvl": "Unbound",
+        "mfd-rocker-con-up": "Unbound",
+        "mfd-rocker-con-down": "Unbound",
+        "mfd-rocker-brt-up": "Unbound",
+        "mfd-rocker-brt-down": "Unbound",
+        "mfd-rocker-sym": "Unbound",
+        "mfd-rocker-int": "Unbound"
+      }
     },
     {
       "file": "08-MFD3-LANTIRN",
       "deviceId": "tm-mfd",
       "title": "MFD 3 • PILOT / JESTER LANTIRN",
       "kicker": "QJESTER CONTEXT • VR GAZE",
-      "labels": ["Smart context", "Direct SHORT", "Direct HOLD", "Direct DOUBLE", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound", "Unbound"]
+      "labels": {
+        "mfd-osb-t1": "Smart context",
+        "mfd-osb-t2": "Direct SHORT",
+        "mfd-osb-t3": "Direct HOLD",
+        "mfd-osb-t4": "Direct DOUBLE",
+        "mfd-osb-t5": "Unbound",
+        "mfd-osb-r1": "Unbound",
+        "mfd-osb-r2": "Unbound",
+        "mfd-osb-r3": "Unbound",
+        "mfd-osb-r4": "Unbound",
+        "mfd-osb-r5": "Unbound",
+        "mfd-osb-b5": "Unbound",
+        "mfd-osb-b4": "Unbound",
+        "mfd-osb-b3": "Unbound",
+        "mfd-osb-b2": "Unbound",
+        "mfd-osb-b1": "Unbound",
+        "mfd-osb-l5": "Unbound",
+        "mfd-osb-l4": "Unbound",
+        "mfd-osb-l3": "Unbound",
+        "mfd-osb-l2": "Unbound",
+        "mfd-osb-l1": "Unbound",
+        "mfd-rocker-gain": "Unbound",
+        "mfd-rocker-lvl": "Unbound",
+        "mfd-rocker-con-up": "Unbound",
+        "mfd-rocker-con-down": "Unbound",
+        "mfd-rocker-brt-up": "Unbound",
+        "mfd-rocker-brt-down": "Unbound",
+        "mfd-rocker-sym": "Unbound",
+        "mfd-rocker-int": "Unbound"
+      }
     },
     {
       "file": "09-TM-TPR",
       "deviceId": "tm-tpr",
       "title": "THRUSTMASTER TPR",
       "kicker": "RUDDER AND WHEEL BRAKES",
-      "labels": [
-        "Left Wheel Brake",
-        "Right Wheel Brake",
-        "Rudder"
-      ]
+      "labels": {
+        "tpr-axis-left-brake": "Left Wheel Brake",
+        "tpr-axis-right-brake": "Right Wheel Brake",
+        "tpr-axis-rudder": "Rudder"
+      }
     }
   ]
 }
