@@ -1,12 +1,12 @@
 name: Build OVGME package
-
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
 
-# contents: write required so commit-kneeboard can push regenerated SVG/PNG to main.
+# contents: write is required when commit-kneeboard is true so the
+# reusable workflow can push regenerated SVG/PNG back to main.
 permissions:
   contents: write
 
@@ -23,11 +23,10 @@ jobs:
       build-release-script: scripts/Build-Release.ps1
       test-release-script: scripts/Test-Package.ps1
       # Keep repo kneeboard assets in lockstep with the OvGME package.
-      # Skipped on pull_request; runs on main push / workflow_dispatch.
+      # Skipped automatically on pull_request; runs on main push / workflow_dispatch.
       commit-kneeboard: true
       kneeboard-paths: kneeboard/source kneeboard/F-14BU
       artifact-name: F-14BU-Release
       artifact-path: |
         dist/*.zip
         dist/SHA256SUMS.txt
-    secrets: inherit

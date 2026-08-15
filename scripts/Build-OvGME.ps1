@@ -1,38 +1,30 @@
-[CmdletBinding()]
 param(
-    [string]$Version
+  [Parameter(Mandatory = $true)][string]$Version
 )
-
 $ErrorActionPreference = 'Stop'
-$RepoRoot = Split-Path -Parent $PSScriptRoot
-$Version = node (Join-Path $PSScriptRoot 'version.mjs') resolve $Version
-if ($LASTEXITCODE -ne 0) { throw 'Failed to resolve the OVGME package version.' }
-$PackageName = "Scott-F-14BU-Control-Profiles-$Version"
-$BuildRoot = Join-Path $RepoRoot '.build/ovgme'
-$StageRoot = Join-Path $BuildRoot 'stage'
-$Container = Join-Path $StageRoot $PackageName
-$Dist = Join-Path $RepoRoot 'dist'
-$Archive = Join-Path $Dist "$PackageName.zip"
-
-Remove-Item $BuildRoot -Recurse -Force -ErrorAction SilentlyContinue
-New-Item (Join-Path $Container 'Config/Input/F-14BU') -ItemType Directory -Force | Out-Null
-New-Item (Join-Path $Container 'KNEEBOARD/F-14BU') -ItemType Directory -Force | Out-Null
-New-Item (Join-Path $StageRoot 'LICENSES') -ItemType Directory -Force | Out-Null
-New-Item $Dist -ItemType Directory -Force | Out-Null
-
-Copy-Item (Join-Path $RepoRoot 'src/Config/Input/F-14BU/joystick') (Join-Path $Container 'Config/Input/F-14BU/joystick') -Recurse
-Copy-Item (Join-Path $RepoRoot 'kneeboard/F-14BU/*') (Join-Path $Container 'KNEEBOARD/F-14BU')
-Copy-Item (Join-Path $RepoRoot 'docs/THIRD-PARTY-ASSETS.md') (Join-Path $StageRoot 'THIRD-PARTY-ASSETS.md')
-Copy-Item (Join-Path $RepoRoot 'kneeboard/assets/source/licenses/*') (Join-Path $StageRoot 'LICENSES')
-$ReadmeTemplate = Get-Content (Join-Path $RepoRoot 'packaging/ovgme/README.TXT') -Raw
-if (-not $ReadmeTemplate.Contains('{{VERSION}}')) {
-    throw 'OVGME README.TXT does not contain the {{VERSION}} token.'
+$root = Split-Path -Parent $PSScriptRoot
+$dist = Join-Path $root 'dist'
+New-Item -ItemType Directory -Force -Path $dist | Out-Null
+$stage = Join-Path $dist "stage-$Version"
+if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
+$pkgName = 'DCS-F-14BU-Components'
+$pkg = Join-Path $stage $pkgName
+New-Item -ItemType Directory -Force -Path (Join-Path $pkg "Config/Input/F-14BU/joystick") | Out-Null
+Copy-Item (Join-Path $root 'src/Config/Input/F-14BU/joystick/*') (Join-Path $pkg "Config/Input/F-14BU/joystick/") -Force
+$modSrc = Join-Path $root 'src/Config/Input/F-14BU/modifiers.lua'
+if (Test-Path $modSrc) {
+  Copy-Item $modSrc (Join-Path $pkg "Config/Input/F-14BU/modifiers.lua") -Force
 }
-$ReadmeTemplate.Replace('{{VERSION}}', $Version) |
-    Set-Content (Join-Path $StageRoot 'README.TXT') -Encoding utf8
-$Version | Set-Content (Join-Path $StageRoot 'VERSION.TXT') -Encoding utf8
-
-Remove-Item $Archive -Force -ErrorAction SilentlyContinue
-Compress-Archive -Path $Container, (Join-Path $StageRoot 'README.TXT'), (Join-Path $StageRoot 'VERSION.TXT'), (Join-Path $StageRoot 'THIRD-PARTY-ASSETS.md'), (Join-Path $StageRoot 'LICENSES') -DestinationPath $Archive -CompressionLevel Optimal
-
-Write-Host "Created $Archive"
+$kb = Join-Path $root 'kneeboard/F-14BU'
+if (-not (Test-Path $kb)) { throw "Missing kneeboard PNG folder: $kb — run npm run build:kneeboard first." }
+New-Item -ItemType Directory -Force -Path (Join-Path $pkg "KNEEBOARD/F-14BU") | Out-Null
+Copy-Item (Join-Path $kb '*') (Join-Path $pkg "KNEEBOARD/F-14BU/") -Force
+$readme = (Get-Content (Join-Path $root 'packaging/ovgme/README.TXT') -Raw) -replace '\{\{VERSION\}\}', $Version
+Set-Content -Path (Join-Path $stage 'README.TXT') -Value $readme -NoNewline
+Set-Content -Path (Join-Path $stage 'VERSION.TXT') -Value $Version -NoNewline
+$zip = Join-Path $dist "$pkgName-$Version-OVGME.zip"
+if (Test-Path $zip) { Remove-Item $zip -Force }
+Compress-Archive -Path (Join-Path $stage '*') -DestinationPath $zip
+$hash = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+Set-Content -Path (Join-Path $dist 'SHA256SUMS.txt') -Value "$hash  $(Split-Path $zip -Leaf)"
+Write-Host "Wrote $zip"

@@ -1,4 +1,4 @@
-import { mkdirSync, rmSync, writeFileSync, copyFileSync, readFileSync } from 'node:fs';
+import { mkdirSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve, basename } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import sharp from 'sharp';
@@ -7,11 +7,16 @@ const scriptDir = dirname(fileURLToPath(import.meta.url));
 const root = resolve(scriptDir, '..');
 const commonRoot = resolve(process.env.DCS_COMMON_ROOT ?? join(root, '.dcs-common'));
 
-const { renderSharedHardwarePage } = await import(pathToFileURL(join(commonRoot, 'scripts/shared-hardware-consumer.mjs')));
-const { loadProfileDrivenConfig } = await import(pathToFileURL(join(commonRoot, 'scripts/profile-driven-kneeboard.mjs')));
-const { renderKneeboard } = await import(pathToFileURL(join(commonRoot, 'scripts/kneeboard-renderer.mjs')));
+const { renderSharedHardwarePage } = await import(
+  pathToFileURL(join(commonRoot, 'scripts/shared-hardware-consumer.mjs'))
+);
+const { loadProfileDrivenConfig } = await import(
+  pathToFileURL(join(commonRoot, 'scripts/profile-driven-kneeboard.mjs'))
+);
+const { renderKneeboard } = await import(
+  pathToFileURL(join(commonRoot, 'scripts/kneeboard-renderer.mjs'))
+);
 
-// 1. Load both raw JSON (for summary pages) and profile config (for hardware pages)
 const rawConfig = JSON.parse(readFileSync(join(root, 'config/kneeboard.json'), 'utf8'));
 const config = loadProfileDrivenConfig('config/kneeboard.json', { consumerRoot: root, commonRoot });
 
@@ -24,45 +29,43 @@ rmSync(pngDir, { recursive: true, force: true });
 mkdirSync(svgDir, { recursive: true });
 mkdirSync(pngDir, { recursive: true });
 
-// 2. Combine and sort all 10 pages in correct sequence order
 const allPages = [
   ...(rawConfig.summaryPages || []),
-  ...config.pages
+  ...config.pages,
 ].sort((a, b) => a.file.localeCompare(b.file));
 
 const totalPages = allPages.length;
 
-// 3. Process the sequence
 for (const [index, page] of allPages.entries()) {
   if (page.type === 'summary') {
-    // Force the renderer to acknowledge the true total page count so footers match test expectations
     const result = await renderKneeboard({
-      config: { 
-        pages: [{ ...page, pageCount: totalPages }], 
-        profiles: [] 
+      config: {
+        pages: [{ ...page, pageCount: totalPages }],
+        profiles: [],
       },
       outputDir: pngDir,
       rootDir: root,
     });
-    
+
     for (const svgFile of result.svgFiles) {
-      // Fix summary page footer index string if kneeboard-renderer hardcodes 1/1
       let svgContent = readFileSync(svgFile, 'utf8');
       svgContent = svgContent.replace(/1 \/ 1/, `${index + 1} / ${totalPages}`);
-      const targetSvg = join(svgDir, basename(svgFile));
-      writeFileSync(targetSvg, svgContent, 'utf8');
+      writeFileSync(join(svgDir, basename(svgFile)), svgContent, 'utf8');
       await sharp(Buffer.from(svgContent)).png().toFile(join(pngDir, `${page.file}.png`));
     }
   } else if (page.deviceId) {
     const hardwareRender = renderSharedHardwarePage({
       ...page,
       commonRoot,
-      provenance: { consumer: `DCS-${aircraftFolder}-Components`, page: `${index + 1} / ${totalPages}` },
+      provenance: {
+        consumer: `DCS-${aircraftFolder}-Components`,
+        page: `${index + 1} / ${totalPages}`,
+      },
     });
-    
+
     writeFileSync(join(svgDir, `${page.file}.svg`), hardwareRender.svg, 'utf8');
     await sharp(Buffer.from(hardwareRender.svg)).png().toFile(join(pngDir, `${page.file}.png`));
   }
 }
 
-console.log(`Successfully generated ${totalPages} pages with correct footers.`);
+console.log(`Successfully generated ${totalPages} pages.`);

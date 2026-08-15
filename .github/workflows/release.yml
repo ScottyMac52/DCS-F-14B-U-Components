@@ -1,12 +1,11 @@
 name: Create tagged OVGME release
-
 on:
   workflow_dispatch:
     inputs:
       bump:
         description: Semantic version component to increment
         required: true
-        default: minor
+        default: patch
         type: choice
         options: [patch, minor, major]
 
@@ -35,5 +34,5 @@ jobs:
         dist/SHA256SUMS.txt
       release-notes-path: packaging/release/RELEASE-NOTES.md
       kneeboard-paths: kneeboard/source kneeboard/F-14BU
-      release-title-prefix: F-14B(U) Components
+      release-title-prefix: DCS-F-14BU-Components
     secrets: inherit

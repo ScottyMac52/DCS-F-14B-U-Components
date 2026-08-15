@@ -1,8 +1,6 @@
 {
-  "name": "dcs-f-14bu-components",
-  "version": "0.0.0",
+  "name": "DCS-F-14BU-Components",
   "private": true,
-  "description": "Build tooling for Scott's F-14B(U) OpenKneeboard pages.",
   "type": "module",
   "scripts": {
     "build:kneeboard": "node scripts/build-kneeboard.mjs",
@@ -10,6 +8,6 @@
     "test:versioning": "node scripts/test-versioning.mjs"
   },
   "devDependencies": {
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.5"
   }
 }

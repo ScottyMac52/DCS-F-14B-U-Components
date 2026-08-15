@@ -48,14 +48,6 @@ local diff = {
 			},
 			["name"] = "Gears Down",
 		},
-		["d3019pnilu3019cd18vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN3",
-				},
-			},
-			["name"] = "Nose strut - EXTEND else OFF (3-way Switch Up)",
-		},
 		["d3019pnilu3019cd18vd-1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
@@ -63,6 +55,14 @@ local diff = {
 				},
 			},
 			["name"] = "Nose strut - KNEEL else OFF (3-way Switch Down)",
+		},
+		["d3019pnilu3019cd18vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN3",
+				},
+			},
+			["name"] = "Nose strut - EXTEND else OFF (3-way Switch Up)",
 		},
 		["d3021pnilunilcd18vd0vpnilvunil"] = {
 			["added"] = {
