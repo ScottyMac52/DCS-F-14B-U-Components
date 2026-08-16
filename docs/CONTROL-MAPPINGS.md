@@ -41,10 +41,11 @@ The IDs and values are verified against the installed Heatblur `F-14B-Pilot` inp
 | Input | Base command | `JOY_BTN7` held |
 |---:|---|---|
 | BTN3 | Store Release | Autopilot Reference / Nosewheel Steering Toggle |
+| BTN5 | DLC Toggle / Countermeasure Dispense | Catapult Salute |
 | BTN6 paddle | Autopilot Emergency Disconnect Paddle | UI Layer: Re-center VR Headset |
 | BTN7 | Hold-only modifier | — |
 
-A/P REF/NWS stays on the grip and emergency disconnect is directly accessible without a keyboard modifier. The profile explicitly removes Heatblur's inherited A/P REF/NWS action from BTN7 so pressing the modifier alone cannot operate the aircraft control. `JOY_BTN7 + JOY_BTN6` remains unbound in this aircraft profile because the DCS UI Layer owns it for VR recentering; Catapult Salute is intentionally omitted. The emergency-paddle encoding (`d3086...cd22`, press `1`, release `0`) is verified by both the installed Heatblur input definition and the local F-14B(U) export.
+A/P REF/NWS stays on the grip and emergency disconnect is directly accessible without a keyboard modifier. The profile explicitly removes Heatblur's inherited A/P REF/NWS action from BTN7 so pressing the modifier alone cannot operate the aircraft control. `JOY_BTN7 + JOY_BTN6` remains unbound in this aircraft profile because the DCS UI Layer owns it for VR recentering. Catapult Salute uses `JOY_BTN7 + JOY_BTN5`, leaving BTN5's base DLC/countermeasure function unchanged. The emergency-paddle encoding (`d3086...cd22`, press `1`, release `0`) is verified by both the installed Heatblur input definition and the local F-14B(U) export.
 
 ### Trim HAT
 

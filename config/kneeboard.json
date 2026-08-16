@@ -132,10 +132,15 @@
             "vkb-btn-release": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN3"
+            },
+            "vkb-btn-dlc": {
+              "profile": "vkb-f14-gunfighter",
+              "key": "JOY_BTN5"
             }
           },
           "labels": {
-            "vkb-btn-release": "Autopilot Reference / Nosewheel Steering Toggle"
+            "vkb-btn-release": "Autopilot Reference / Nosewheel Steering Toggle",
+            "vkb-btn-dlc": "Catapult Salute"
           }
         }
       ]

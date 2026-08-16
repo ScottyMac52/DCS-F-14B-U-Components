@@ -107,7 +107,7 @@ test('Warthog autopilot block uses verified deterministic command forms', () => 
 });
 
 test('VKB grip preserves UI-layer VR recenter while keeping autopilot controls accessible', () => {
-  assert.deepEqual(targetAssignments('grip', ['JOY_BTN3', 'JOY_BTN6']), [
+  assert.deepEqual(targetAssignments('grip', ['JOY_BTN3', 'JOY_BTN5', 'JOY_BTN6']), [
     {
       command: 'd3078pnilu3078cd57vd1vpnilvu0',
       name: 'Store Release',
@@ -118,6 +118,18 @@ test('VKB grip preserves UI-layer VR recenter while keeping autopilot controls a
       command: 'd3085pnilu3085cd57vd1vpnilvu0',
       name: 'Autopilot Reference / Nosewheel Steering Toggle',
       key: 'JOY_BTN3',
+      chord: 'JOY_BTN7',
+    },
+    {
+      command: 'd3084pnilu3084cd57vd1vpnilvu0',
+      name: 'DLC Toggle / Countermeasure Dispense',
+      key: 'JOY_BTN5',
+      chord: '',
+    },
+    {
+      command: 'd3023pnilunilcd18vd1vpnilvunil',
+      name: 'Catapult Salute',
+      key: 'JOY_BTN5',
       chord: 'JOY_BTN7',
     },
     {
@@ -155,6 +167,10 @@ test('DCS-Common resolves base and BTN7 labels on shared hardware callouts', () 
   assert.deepEqual(grip.labels['vkb-btn-release'].map(({ fullLabel }) => fullLabel), [
     'BASE — Store Release',
     'BTN7 — Autopilot Reference / Nosewheel Steering Toggle',
+  ]);
+  assert.deepEqual(grip.labels['vkb-btn-dlc'].map(({ fullLabel }) => fullLabel), [
+    'BASE — DLC Toggle / Countermeasure Dispense',
+    'BTN7 — Catapult Salute',
   ]);
   assert.equal(grip.labels['vkb-paddle'], 'Autopilot Emergency Disconnect Paddle');
   assert.equal(config.modifierCatalog.JOY_BTN7.mode, 'hold');
