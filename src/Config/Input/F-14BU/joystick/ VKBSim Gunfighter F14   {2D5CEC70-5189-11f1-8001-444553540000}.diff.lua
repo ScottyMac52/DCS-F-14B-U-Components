@@ -45,7 +45,10 @@ local diff = {
 		["d3023pnilunilcd18vd1vpnilvunil"] = {
 			["added"] = {
 				[1] = {
-					["key"] = "JOY_BTN6",
+					["key"] = "JOY_BTN5",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
 				},
 			},
 			["name"] = "Catapult Salute",
@@ -116,6 +119,19 @@ local diff = {
 				},
 			},
 			["name"] = "Autopilot Reference / Nosewheel Steering Toggle",
+			["removed"] = {
+				[1] = {
+					["key"] = "JOY_BTN7",
+				},
+			},
+		},
+		["d3086pnilu3086cd22vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN6",
+				},
+			},
+			["name"] = "Autopilot Emergency Disconnect Paddle",
 		},
 		["d3087pnilu3087cd57vd1vpnilvu0"] = {
 			["added"] = {

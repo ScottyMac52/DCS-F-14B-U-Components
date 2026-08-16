@@ -38,31 +38,19 @@ Safety/stateful controls such as engine cutoff retain one meaning and are not re
 - Speed-brake retract/extend are explicitly available both with and without Shift so holding BTN7 never removes speed-brake authority.
 - BTN13/BTN14 are excluded from both layers.
 
-Preferred Pilot Shift definitions, subject to exact current B(U) command-ID verification:
+Verified Pilot autopilot definitions:
 
-| Warthog input | Pilot SHIFT role |
-|---:|---|
-| BTN1 slew push | ACM cover toggle |
-| BTN2-BTN6 | VAICOM unchanged |
-| BTN7 / BTN8 | Speed brake retract / extend unchanged |
-| BTN9 / BTN10 | Master Arm ARM / TRAIN-OFF |
-| BTN11 / BTN12 | Missile Prep ON / OFF |
-| BTN13 / BTN14 | **UNUSED - broken pinky switch** |
-| BTN15 | CAGE/SEAM |
-| BTN16 / BTN17 | Leave free initially |
-| BTN18 / BTN19 | Leave free initially |
-| BTN20 | Canopy utility candidate |
-| BTN21 | Emergency Stores Jettison |
-| BTN22 / BTN23 | Fuel Dump ON / OFF |
-| BTN24 | DFCS/SAS secondary mode |
-| BTN25 | APC / approach-power-compensator function |
-| BTN26 | AP emergency/disconnect utility |
-| BTN27 / BTN28 | DFCS/APC mode pair |
-| BTN29 / BTN30 | Engine cutoff unchanged; no shifted action |
-| BTN31 / BTN32 | Leave free unless a verified engine-start function merits them |
-| Coolie HAT | TCS/weapon tactical functions if verified |
+| Warthog input | Base role | Pilot SHIFT role |
+|---:|---|---|
+| BTN24 | Autopilot On, else Off | — |
+| BTN25 | Altitude Hold On, else Off | — |
+| BTN26 | Autopilot Heading Toggle On | — |
+| BTN27 | Heading Hold GT, else Off | Autopilot Vector VEC/PCD, else Off |
+| BTN28 | Autopilot Vector ACL, else Off | — |
 
-The exact `.diff.lua` bindings should only be populated with command IDs verified against a current F-14B(U) installation; speculative command IDs are intentionally not added.
+The maintained BTN24, BTN25, BTN27, and BTN28 positions use deterministic press/release commands. The inherited generic autopilot toggle on BTN26 and inherited unmodified VEC/PCD binding on BTN27 are removed so each physical chord has one command form. Command IDs and value semantics are verified against the locally installed Heatblur input definitions, shared command enumeration, and current Saved Games exports.
+
+On the VKB grip, `SHIFT + JOY_BTN3` remains A/P REF/NWS and `SHIFT + JOY_BTN5` provides Catapult Salute while preserving the base DLC/countermeasure action. The unmodified JOY_BTN6 paddle is the directly accessible emergency autopilot disconnect. `SHIFT + JOY_BTN6` is intentionally left out of the aircraft profile because the DCS UI Layer owns that chord for VR recentering.
 
 ## RIO philosophy and selected Shift roles
 

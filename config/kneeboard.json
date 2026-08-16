@@ -22,7 +22,7 @@
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels are pre-filled from DCS binding names via controls. Edit any string to override display text; keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
-        "vkb-paddle": "Catapult Salute",
+        "vkb-paddle": "Autopilot Emergency Disconnect Paddle",
         "vkb-btn-release": "Store Release",
         "vkb-sw2": "Weapon Selector Sidewinder Missiles",
         "vkb-sw4": "Weapon Selector Off",
@@ -104,7 +104,7 @@
             }
           },
           "labels": {
-            "vkb-paddle": "Catapult Salute",
+            "vkb-paddle": "Autopilot Emergency Disconnect Paddle",
             "vkb-btn-release": "Store Release",
             "vkb-sw2": "Weapon Selector Sidewinder Missiles",
             "vkb-sw4": "Weapon Selector Off",
@@ -132,10 +132,15 @@
             "vkb-btn-release": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN3"
+            },
+            "vkb-btn-dlc": {
+              "profile": "vkb-f14-gunfighter",
+              "key": "JOY_BTN5"
             }
           },
           "labels": {
-            "vkb-btn-release": "Autopilot Reference / Nosewheel Steering Toggle"
+            "vkb-btn-release": "Autopilot Reference / Nosewheel Steering Toggle",
+            "vkb-btn-dlc": "Catapult Salute"
           }
         }
       ]
@@ -642,63 +647,90 @@
         "warthog-thr-left-engine-idle-off": "Left Engine Cutoff",
         "warthog-thr-right-engine-idle-off": "Right Engine Cutoff",
         "warthog-thr-ap-engage": "Autopilot Heading Toggle On",
+        "warthog-thr-ap-select-up": "Heading Hold GT, else Off / Autopilot Vector VEC/PCD, else Off",
+        "warthog-thr-ap-select-down": "Autopilot Vector ACL, else Off",
         "warthog-thr-speedbrake-forward": "Speed brake retract",
         "warthog-thr-speedbrake-back": "Speed brake extend"
       },
-      "controls": {
-        "warthog-thr-china-forward": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN11"
+      "layers": [
+        {
+          "id": "base",
+          "controls": {
+            "warthog-thr-china-forward": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN11"
+            },
+            "warthog-thr-boat-forward": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN9"
+            },
+            "warthog-thr-boat-back": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN10"
+            },
+            "warthog-thr-china-back": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN12"
+            },
+            "warthog-thr-rdr-alt-normal": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN25"
+            },
+            "warthog-thr-eac-on": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN24"
+            },
+            "warthog-thr-landing-horn-silence": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN21"
+            },
+            "warthog-thr-left-throttle-button": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN15"
+            },
+            "warthog-thr-left-engine-idle-off": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN29"
+            },
+            "warthog-thr-right-engine-idle-off": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN30"
+            },
+            "warthog-thr-ap-engage": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN26"
+            },
+            "warthog-thr-ap-select-up": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN27"
+            },
+            "warthog-thr-ap-select-down": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN28"
+            },
+            "warthog-thr-speedbrake-forward": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN7"
+            },
+            "warthog-thr-speedbrake-back": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN8"
+            }
+          }
         },
-        "warthog-thr-boat-forward": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN9"
-        },
-        "warthog-thr-boat-back": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN10"
-        },
-        "warthog-thr-china-back": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN12"
-        },
-        "warthog-thr-rdr-alt-normal": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN25"
-        },
-        "warthog-thr-eac-on": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN24"
-        },
-        "warthog-thr-landing-horn-silence": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN21"
-        },
-        "warthog-thr-left-throttle-button": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN15"
-        },
-        "warthog-thr-left-engine-idle-off": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN29"
-        },
-        "warthog-thr-right-engine-idle-off": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN30"
-        },
-        "warthog-thr-ap-engage": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN26"
-        },
-        "warthog-thr-speedbrake-forward": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN7"
-        },
-        "warthog-thr-speedbrake-back": {
-          "profile": "tm-warthog-throttle",
-          "key": "JOY_BTN8"
+        {
+          "id": "JOY_BTN7",
+          "modifiers": [
+            "JOY_BTN7"
+          ],
+          "controls": {
+            "warthog-thr-ap-select-up": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN27"
+            }
+          }
         }
-      }
+      ]
     },
     {
       "file": "09-VIPER-TQS-MISSION-PACK",
