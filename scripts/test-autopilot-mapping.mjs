@@ -106,7 +106,7 @@ test('Warthog autopilot block uses verified deterministic command forms', () => 
   )), 'inherited VEC/PCD binding must be removed before assigning Ground Track');
 });
 
-test('VKB grip keeps A/P REF accessible and makes emergency disconnect direct', () => {
+test('VKB grip preserves UI-layer VR recenter while keeping autopilot controls accessible', () => {
   assert.deepEqual(targetAssignments('grip', ['JOY_BTN3', 'JOY_BTN6']), [
     {
       command: 'd3078pnilu3078cd57vd1vpnilvu0',
@@ -126,14 +126,13 @@ test('VKB grip keeps A/P REF accessible and makes emergency disconnect direct', 
       key: 'JOY_BTN6',
       chord: '',
     },
-    {
-      command: 'd3023pnilunilcd18vd1vpnilvunil',
-      name: 'Catapult Salute',
-      key: 'JOY_BTN6',
-      chord: 'JOY_BTN7',
-    },
   ]);
   assert.equal(assignments('grip').some(({ key }) => key === 'JOY_BTN7'), false);
+  assert.equal(
+    assignments('grip').some(({ key, chord }) => key === 'JOY_BTN6' && chord === 'JOY_BTN7'),
+    false,
+    'JOY_BTN7 + JOY_BTN6 is reserved for UI-layer VR recenter',
+  );
   const removed = bindings('grip').flatMap((binding) => binding.removed.map((input) => ({
     command: binding.command,
     key: input.key,
@@ -157,10 +156,7 @@ test('DCS-Common resolves base and BTN7 labels on shared hardware callouts', () 
     'BASE — Store Release',
     'BTN7 — Autopilot Reference / Nosewheel Steering Toggle',
   ]);
-  assert.deepEqual(grip.labels['vkb-paddle'].map(({ fullLabel }) => fullLabel), [
-    'BASE — Autopilot Emergency Disconnect Paddle',
-    'BTN7 — Catapult Salute',
-  ]);
+  assert.equal(grip.labels['vkb-paddle'], 'Autopilot Emergency Disconnect Paddle');
   assert.equal(config.modifierCatalog.JOY_BTN7.mode, 'hold');
   assert.equal(config.modifierCatalog.JOY_BTN7.key, 'JOY_BTN7');
 });

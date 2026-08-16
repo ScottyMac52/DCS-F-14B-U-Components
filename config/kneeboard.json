@@ -104,7 +104,7 @@
             }
           },
           "labels": {
-            "vkb-paddle": "Catapult Salute",
+            "vkb-paddle": "Autopilot Emergency Disconnect Paddle",
             "vkb-btn-release": "Store Release",
             "vkb-sw2": "Weapon Selector Sidewinder Missiles",
             "vkb-sw4": "Weapon Selector Off",
@@ -132,15 +132,10 @@
             "vkb-btn-release": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN3"
-            },
-            "vkb-paddle": {
-              "profile": "vkb-f14-gunfighter",
-              "key": "JOY_BTN6"
             }
           },
           "labels": {
-            "vkb-btn-release": "Autopilot Reference / Nosewheel Steering Toggle",
-            "vkb-paddle": "Catapult Salute"
+            "vkb-btn-release": "Autopilot Reference / Nosewheel Steering Toggle"
           }
         }
       ]

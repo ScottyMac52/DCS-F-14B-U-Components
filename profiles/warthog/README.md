@@ -50,7 +50,7 @@ Verified Pilot autopilot definitions:
 
 The maintained BTN24, BTN25, BTN27, and BTN28 positions use deterministic press/release commands. The inherited generic autopilot toggle on BTN26 and inherited unmodified VEC/PCD binding on BTN27 are removed so each physical chord has one command form. Command IDs and value semantics are verified against the locally installed Heatblur input definitions, shared command enumeration, and current Saved Games exports.
 
-On the VKB grip, `SHIFT + JOY_BTN3` remains A/P REF/NWS. The unmodified JOY_BTN6 paddle is the directly accessible emergency autopilot disconnect; `SHIFT + JOY_BTN6` preserves Catapult Salute.
+On the VKB grip, `SHIFT + JOY_BTN3` remains A/P REF/NWS. The unmodified JOY_BTN6 paddle is the directly accessible emergency autopilot disconnect. `SHIFT + JOY_BTN6` is intentionally left out of the aircraft profile because the DCS UI Layer owns that chord for VR recentering; Catapult Salute is omitted.
 
 ## RIO philosophy and selected Shift roles
 

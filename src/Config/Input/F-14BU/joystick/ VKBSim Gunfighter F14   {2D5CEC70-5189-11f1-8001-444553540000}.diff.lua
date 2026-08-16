@@ -42,17 +42,6 @@ local diff = {
 		},
 	},
 	["keyDiffs"] = {
-		["d3023pnilunilcd18vd1vpnilvunil"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN6",
-					["reformers"] = {
-						[1] = "JOY_BTN7",
-					},
-				},
-			},
-			["name"] = "Catapult Salute",
-		},
 		["d3078pnilu3078cd57vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
