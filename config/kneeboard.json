@@ -304,7 +304,7 @@
       "_comment": "labels are pre-filled from DCS binding names via controls. Edit any string to override display text; keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
         "mfd-osb-l2": "Salute",
-        "mfd-osb-l3": "Master Caution Reset",
+        "mfd-osb-l3": "Master Caution Reset"
       },
       "controls": {
         "mfd-osb-r5": {
