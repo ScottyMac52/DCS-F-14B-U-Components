@@ -155,29 +155,24 @@ test('VKB grip preserves UI-layer VR recenter while keeping autopilot controls a
   )), 'inherited A/P REF/NWS must be removed from the JOY_BTN7 modifier');
 });
 
-test('DCS-Common resolves base and BTN7 layers on shared hardware callouts', () => {
+test('DCS-Common resolves base and BTN7 labels on shared hardware callouts', () => {
   const config = loadProfileDrivenConfig('config/kneeboard.json', { consumerRoot: root, commonRoot });
   const throttle = config.pages.find(({ deviceId }) => deviceId === 'tm-warthog-throttle');
   const grip = config.pages.find(({ deviceId }) => deviceId === 'vkb-f14-gunfighter');
 
-  for (const [page, controlId] of [
-    [throttle, 'warthog-thr-ap-select-up'],
-    [grip, 'vkb-btn-release'],
-    [grip, 'vkb-btn-dlc'],
-  ]) {
-    const variants = page.labels[controlId];
-    assert.equal(variants.length, 2, `${controlId} must render base and BTN7 variants`);
-    assert.deepEqual(
-      variants.map(({ fullLabel }) => fullLabel.split(' — ', 1)[0]),
-      ['BASE', 'BTN7'],
-      `${controlId} must keep base and BTN7 labels distinct`,
-    );
-  }
-  assert.deepEqual(grip.controls['vkb-paddle'], {
-    profile: 'vkb-f14-gunfighter',
-    key: 'JOY_BTN6',
-    modifiers: [],
-  });
+  assert.deepEqual(throttle.labels['warthog-thr-ap-select-up'].map(({ fullLabel }) => fullLabel), [
+    'BASE — Heading Hold GT, else Off',
+    'BTN7 — Autopilot Vector VEC/PCD, else Off',
+  ]);
+  assert.deepEqual(grip.labels['vkb-btn-release'].map(({ fullLabel }) => fullLabel), [
+    'BASE — Store Release',
+    'BTN7 — Autopilot Reference / Nosewheel Steering Toggle',
+  ]);
+  assert.deepEqual(grip.labels['vkb-btn-dlc'].map(({ fullLabel }) => fullLabel), [
+    'BASE — DLC Toggle / Countermeasure Dispense',
+    'BTN7 — Catapult Salute',
+  ]);
+  assert.equal(grip.labels['vkb-paddle'], 'Autopilot Emergency Disconnect Paddle');
   assert.equal(config.modifierCatalog.JOY_BTN7.mode, 'hold');
   assert.equal(config.modifierCatalog.JOY_BTN7.key, 'JOY_BTN7');
 });
