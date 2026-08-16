@@ -20,13 +20,31 @@
 
 These directional bindings use the F-14B(U) speed-brake extend/retract command. BTN15 explicitly removes Heatblur's inherited CAGE-SEAM assignment before adding PLM, preventing both commands from firing together. None of these changes alter the AutoHotKey-managed MIC inputs on buttons 2–6.
 
-## VKB F-14 Gunfighter — NWS and trim HAT
+## Warthog throttle — autopilot
 
-| Button | Command |
-|---:|---|
-| 7 | Autopilot Reference / Nosewheel Steering Toggle (NWS) |
+VKB `JOY_BTN7` is a hold-only modifier (`switch = false`). The Warthog autopilot block uses maintained commands that return the cockpit switch to its neutral/off state when the physical switch is released.
 
-The kneeboard labels BTN7 as **NWS toggle** for quick recognition in VR while retaining Heatblur's full combined command name here.
+| Physical control | Input | Base command | `JOY_BTN7` held |
+|---|---:|---|---|
+| EAC ON | 24 | Autopilot On, else Off | — |
+| RDR ALT NORMAL | 25 | Altitude Hold On, else Off | — |
+| AP ENGAGE | 26 | Autopilot Heading Toggle On | — |
+| AP SELECT UP | 27 | Heading Hold GT, else Off | Autopilot Vector VEC/PCD, else Off |
+| AP SELECT DOWN | 28 | Autopilot Vector ACL, else Off | — |
+
+The profile explicitly removes Heatblur's inherited generic autopilot toggle from BTN26 and inherited unmodified VEC/PCD assignment from BTN27. This prevents two command forms from firing on the same physical chord. Ground Track receives the unmodified selector position because it is modeled and operationally useful; VEC/PCD remains available on the shifted position even though Link 4 remote vector steering is not modeled.
+
+The IDs and values are verified against the installed Heatblur `F-14B-Pilot` input definitions and `Cockpit/command_defs.lua`: AP Vector is command 3037 (`1` VEC/PCD, `-1` ACL, release `0`), AP Heading is 3039 (`-1` Ground Track, release `0`), AP Engage is 3040 (`1`, release `-1`), and Altitude Hold is 3038 (`1`, release `-1`). The current F-14B(U) Saved Games export independently confirms engage, altitude, and heading-toggle encodings.
+
+## VKB F-14 Gunfighter — autopilot, NWS and trim HAT
+
+| Input | Base command | `JOY_BTN7` held |
+|---:|---|---|
+| BTN3 | Store Release | Autopilot Reference / Nosewheel Steering Toggle |
+| BTN6 paddle | Autopilot Emergency Disconnect Paddle | Catapult Salute |
+| BTN7 | Hold-only modifier | — |
+
+A/P REF/NWS stays on the grip and emergency disconnect is directly accessible without a keyboard modifier. The profile explicitly removes Heatblur's inherited A/P REF/NWS action from BTN7 so pressing the modifier alone cannot operate the aircraft control. The emergency-paddle encoding (`d3086...cd22`, press `1`, release `0`) is verified by both the installed Heatblur input definition and the local F-14B(U) export.
 
 ### Trim HAT
 

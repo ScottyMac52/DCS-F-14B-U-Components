@@ -40,6 +40,38 @@ local diff = {
 			},
 			["name"] = "Altitude Hold On, else Off",
 		},
+		["d3037pnilu3037cd22vd-1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN28",
+				},
+			},
+			["name"] = "Autopilot Vector ACL, else Off",
+		},
+		["d3037pnilu3037cd22vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN27",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Autopilot Vector VEC/PCD, else Off",
+			["removed"] = {
+				[1] = {
+					["key"] = "JOY_BTN27",
+				},
+			},
+		},
+		["d3039pnilu3039cd22vd-1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN27",
+				},
+			},
+			["name"] = "Heading Hold GT, else Off",
+		},
 		["d3040pnilu3040cd22vd1vpnilvu-1"] = {
 			["added"] = {
 				[1] = {
@@ -47,6 +79,14 @@ local diff = {
 				},
 			},
 			["name"] = "Autopilot On, else Off",
+		},
+		["d3041pnilunilcd22vd0vpnilvunil"] = {
+			["name"] = "Autopilot toggle",
+			["removed"] = {
+				[1] = {
+					["key"] = "JOY_BTN26",
+				},
+			},
 		},
 		["d3056pnilu3056cd35vd1vpnilvu0"] = {
 			["added"] = {
