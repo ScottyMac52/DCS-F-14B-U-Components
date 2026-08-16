@@ -36,7 +36,8 @@
         "vkb-trim-up": "Trim Up",
         "vkb-trim-right": "Trim Left",
         "vkb-trim-left": "Trim Right",
-        "vkb-axis-dlc": "DLC"
+        "vkb-axis-dlc": "DLC",
+        "vkb-nws": "Shift"
       },
       "layers": [
         {
