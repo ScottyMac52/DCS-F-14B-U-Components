@@ -194,6 +194,17 @@ local diff = {
 			},
 			["name"] = "Radar - STT Lock Enemy Ahead",
 		},
+		["d3586pnilunilcd62vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN20",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Radar - STT Lock Friendly Ahead",
+		},
 		["d3587pnilunilcd62vd1vpnilvunil"] = {
 			["added"] = {
 				[1] = {

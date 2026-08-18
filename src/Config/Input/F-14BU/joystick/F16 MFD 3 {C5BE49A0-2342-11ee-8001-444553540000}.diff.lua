@@ -34,6 +34,22 @@ local diff = {
 		},
 	},
 	["keyDiffs"] = {
+		["d3111pnilunilcd86vd0vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN22",
+				},
+			},
+			["name"] = "VHS Camera - Record Stop",
+		},
+		["d3111pnilunilcd86vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN21",
+				},
+			},
+			["name"] = "VHS Camera - Record Start",
+		},
 		["d3934pnilu3934cd62vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {

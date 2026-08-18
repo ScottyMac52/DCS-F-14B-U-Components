@@ -45,10 +45,7 @@ local diff = {
 		["d3023pnilunilcd18vd1vpnilvunil"] = {
 			["added"] = {
 				[1] = {
-					["key"] = "JOY_BTN5",
-					["reformers"] = {
-						[1] = "JOY_BTN7",
-					},
+					["key"] = "JOY_BTN6",
 				},
 			},
 			["name"] = "Catapult Salute",
@@ -119,16 +116,14 @@ local diff = {
 				},
 			},
 			["name"] = "Autopilot Reference / Nosewheel Steering Toggle",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_BTN7",
-				},
-			},
 		},
 		["d3086pnilu3086cd22vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
 					["key"] = "JOY_BTN6",
+					["reformers"] = {
+						[1] = "LCtrl",
+					},
 				},
 			},
 			["name"] = "Autopilot Emergency Disconnect Paddle",
@@ -148,6 +143,17 @@ local diff = {
 				},
 			},
 			["name"] = "Trigger First Detent",
+		},
+		["d3091pnilu3091cd78vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN5",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Bombing Tool - [Toggle]",
 		},
 		["dnilp2019u2019cdnilvdnilvp-1vu0"] = {
 			["added"] = {
@@ -180,6 +186,28 @@ local diff = {
 				},
 			},
 			["name"] = "Trim Roll Right Wing Down",
+		},
+		["dnilp3113u3113cd70vdnilvp-1vu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN12",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Trim Rudder Left",
+		},
+		["dnilp3113u3113cd70vdnilvp1vu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN9",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Trim Rudder Right",
 		},
 	},
 }
