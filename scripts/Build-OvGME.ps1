@@ -8,7 +8,8 @@ New-Item -ItemType Directory -Force -Path $dist | Out-Null
 $stage = Join-Path $dist "stage-$Version"
 if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
 $pkgName = 'DCS-F-14BU-Components'
-$pkg = Join-Path $stage $pkgName
+$archiveBase = "$pkgName-$Version-OVGME"
+$pkg = Join-Path $stage $archiveBase
 New-Item -ItemType Directory -Force -Path (Join-Path $pkg "Config/Input/F-14BU/joystick") | Out-Null
 Copy-Item (Join-Path $root 'src/Config/Input/F-14BU/joystick/*') (Join-Path $pkg "Config/Input/F-14BU/joystick/") -Force
 $modSrc = Join-Path $root 'src/Config/Input/F-14BU/modifiers.lua'
@@ -22,7 +23,7 @@ Copy-Item (Join-Path $kb '*') (Join-Path $pkg "KNEEBOARD/F-14BU/") -Force
 $readme = (Get-Content (Join-Path $root 'packaging/ovgme/README.TXT') -Raw) -replace '\{\{VERSION\}\}', $Version
 Set-Content -Path (Join-Path $stage 'README.TXT') -Value $readme -NoNewline
 Set-Content -Path (Join-Path $stage 'VERSION.TXT') -Value $Version -NoNewline
-$zip = Join-Path $dist "$pkgName-$Version-OVGME.zip"
+$zip = Join-Path $dist "$archiveBase.zip"
 if (Test-Path $zip) { Remove-Item $zip -Force }
 Compress-Archive -Path (Join-Path $stage '*') -DestinationPath $zip
 $hash = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLowerInvariant()
