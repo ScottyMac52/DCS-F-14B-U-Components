@@ -3,6 +3,9 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
+$commonRoot = if ($env:DCS_COMMON_ROOT) { $env:DCS_COMMON_ROOT } else { Join-Path $root '.dcs-common' }
+$uiLayerSource = Join-Path $commonRoot 'assets/shared/ui-layer/input/UiLayer'
+if (-not (Test-Path $uiLayerSource)) { throw "Missing shared UI Layer input payload: $uiLayerSource" }
 $dist = Join-Path $root 'dist'
 New-Item -ItemType Directory -Force -Path $dist | Out-Null
 $stage = Join-Path $dist "stage-$Version"
@@ -16,6 +19,8 @@ $modSrc = Join-Path $root 'src/Config/Input/F-14BU/modifiers.lua'
 if (Test-Path $modSrc) {
   Copy-Item $modSrc (Join-Path $pkg "Config/Input/F-14BU/modifiers.lua") -Force
 }
+New-Item -ItemType Directory -Force -Path (Join-Path $pkg 'Config/Input') | Out-Null
+Copy-Item $uiLayerSource (Join-Path $pkg 'Config/Input/UiLayer') -Recurse -Force
 $kb = Join-Path $root 'kneeboard/F-14BU'
 if (-not (Test-Path $kb)) { throw "Missing kneeboard PNG folder: $kb — run npm run build:kneeboard first." }
 New-Item -ItemType Directory -Force -Path (Join-Path $pkg "KNEEBOARD/F-14BU") | Out-Null

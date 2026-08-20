@@ -187,28 +187,6 @@ local diff = {
 			},
 			["name"] = "Trim Roll Right Wing Down",
 		},
-		["dnilp3113u3113cd70vdnilvp-1vu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN12",
-					["reformers"] = {
-						[1] = "JOY_BTN7",
-					},
-				},
-			},
-			["name"] = "Trim Rudder Left",
-		},
-		["dnilp3113u3113cd70vdnilvp1vu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN9",
-					["reformers"] = {
-						[1] = "JOY_BTN7",
-					},
-				},
-			},
-			["name"] = "Trim Rudder Right",
-		},
 	},
 }
 return diff

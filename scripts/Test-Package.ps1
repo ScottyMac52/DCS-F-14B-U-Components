@@ -32,6 +32,12 @@ try {
   if (-not ($entries | Where-Object { $_.StartsWith("${payloadPrefix}Config/Input/F-14BU/joystick/", [System.StringComparison]::Ordinal) })) {
     throw 'OVGME archive is missing the joystick profile payload.'
   }
+  if (-not ($entries | Where-Object { $_.StartsWith("${payloadPrefix}Config/Input/UiLayer/joystick/", [System.StringComparison]::Ordinal) })) {
+    throw 'OVGME archive is missing the shared UI Layer joystick payload.'
+  }
+  if ($entries -notcontains "${payloadPrefix}Config/Input/UiLayer/modifiers.lua") {
+    throw 'OVGME archive is missing the shared UI Layer modifiers.lua.'
+  }
   if (-not ($entries | Where-Object { $_.StartsWith("${payloadPrefix}KNEEBOARD/F-14BU/", [System.StringComparison]::Ordinal) })) {
     throw 'OVGME archive is missing the kneeboard payload.'
   }

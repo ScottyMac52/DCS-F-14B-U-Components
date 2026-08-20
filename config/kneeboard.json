@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "aircraft": "F-14BU",
+  "includeUiLayer": true,
   "profiles": {
     "vkb-f14-gunfighter": "src/Config/Input/F-14BU/joystick/ VKBSim Gunfighter F14   {2D5CEC70-5189-11f1-8001-444553540000}.diff.lua",
     "tm-mfd-1": "src/Config/Input/F-14BU/joystick/F16 MFD 1 {51FA60C0-CB32-11ed-800B-444553540000}.diff.lua",
@@ -17,26 +18,28 @@
   "pages": [
     {
       "file": "01-VKB-F14-GUNFIGHTER",
+      "includeUiLayer": true,
       "deviceId": "vkb-f14-gunfighter",
+      "deviceInstance": null,
       "title": " VKBSim Gunfighter F14",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
-        "vkb-paddle": "Catapult Salute",
+        "vkb-paddle": "Salute",
         "vkb-btn-release": "Pickle",
         "vkb-sw2": "Sidewinder",
         "vkb-sw4": "OFF",
         "vkb-sw1": "Sparrow / Phoenix",
         "vkb-sw3": "Guns",
-        "vkb-pinky": "Phoenix / Sparrow toggle",
-        "vkb-btn-dlc": "DLC Toggle / CDMS",
-        "vkb-trigger-stage2": "Trigger",
-        "vkb-trigger": "Gun camera",
+        "vkb-pinky": "Phoenix / Sparrow",
+        "vkb-btn-dlc": "DLC / CMDS",
+        "vkb-trigger-stage2": "Guns",
+        "vkb-trigger": "Gun Camera",
         "vkb-trim-down": "Trim down",
         "vkb-trim-up": "Trim up",
         "vkb-trim-right": "Trim right",
         "vkb-trim-left": "Trim left",
-        "vkb-axis-dlc": "DLC / Maneuver Flaps",
+        "vkb-axis-dlc": "DLC",
         "vkb-nws": "SHIFT / MODIFIER"
       },
       "modifierCallouts": {
@@ -49,95 +52,110 @@
             "vkb-paddle": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN6",
-              "command": "d3023pnilunilcd18vd1vpnilvunil"
+              "command": "d3023pnilunilcd18vd1vpnilvunil",
+              "label": "Salute"
             },
             "vkb-btn-release": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN3",
-              "command": "d3078pnilu3078cd57vd1vpnilvu0"
+              "command": "d3078pnilu3078cd57vd1vpnilvu0",
+              "label": "Pickle"
             },
             "vkb-sw2": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN14",
-              "command": "d3079pnilunilcd55vd-0.5vpnilvunil"
+              "command": "d3079pnilunilcd55vd-0.5vpnilvunil",
+              "label": "Sidewinder"
             },
             "vkb-sw4": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN16",
-              "command": "d3079pnilunilcd55vd-1vpnilvunil"
+              "command": "d3079pnilunilcd55vd-1vpnilvunil",
+              "label": "OFF"
             },
             "vkb-sw1": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN13",
-              "command": "d3079pnilunilcd55vd0.5vpnilvunil"
+              "command": "d3079pnilunilcd55vd0.5vpnilvunil",
+              "label": "Sparrow / Phoenix"
             },
             "vkb-sw3": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN15",
-              "command": "d3079pnilunilcd55vd1vpnilvunil"
+              "command": "d3079pnilunilcd55vd1vpnilvunil",
+              "label": "Guns"
             },
             "vkb-pinky": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN4",
-              "command": "d3082pnilu3082cd57vd1vpnilvu0"
+              "command": "d3082pnilu3082cd57vd1vpnilvu0",
+              "label": "Phoenix / Sparrow"
             },
             "vkb-btn-dlc": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN5",
-              "command": "d3084pnilu3084cd57vd1vpnilvu0"
+              "command": "d3084pnilu3084cd57vd1vpnilvu0",
+              "label": "DLC / CMDS"
             },
             "vkb-trigger-stage2": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN2",
-              "command": "d3087pnilu3087cd57vd1vpnilvu0"
+              "command": "d3087pnilu3087cd57vd1vpnilvu0",
+              "label": "Guns"
             },
             "vkb-trigger": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN1",
-              "command": "d3088pnilu3088cd57vd1vpnilvu0"
+              "command": "d3088pnilu3088cd57vd1vpnilvu0",
+              "label": "Gun Camera"
             },
             "vkb-trim-down": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN11",
-              "command": "dnilp2019u2019cdnilvdnilvp-1vu0"
+              "command": "dnilp2019u2019cdnilvdnilvp-1vu0",
+              "label": "Trim down"
             },
             "vkb-trim-up": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN10",
-              "command": "dnilp2019u2019cdnilvdnilvp1vu0"
+              "command": "dnilp2019u2019cdnilvdnilvp1vu0",
+              "label": "Trim up"
             },
             "vkb-trim-right": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN9",
-              "command": "dnilp2020u2020cdnilvdnilvp-1vu0"
+              "command": "dnilp2020u2020cdnilvdnilvp-1vu0",
+              "label": "Trim right"
             },
             "vkb-trim-left": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN12",
-              "command": "dnilp2020u2020cdnilvdnilvp1vu0"
+              "command": "dnilp2020u2020cdnilvdnilvp1vu0",
+              "label": "Trim left"
             },
             "vkb-axis-dlc": {
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_RX",
-              "command": "a3083cd57"
+              "command": "a3083cd57",
+              "label": "DLC"
             }
           },
           "labels": {
-            "vkb-paddle": "Catapult Salute",
+            "vkb-paddle": "Salute",
             "vkb-btn-release": "Pickle",
             "vkb-sw2": "Sidewinder",
             "vkb-sw4": "OFF",
             "vkb-sw1": "Sparrow / Phoenix",
             "vkb-sw3": "Guns",
-            "vkb-pinky": "Phoenix / Sparrow toggle",
-            "vkb-btn-dlc": "DLC Toggle / CDMS",
-            "vkb-trigger-stage2": "Trigger",
-            "vkb-trigger": "Gun camera",
+            "vkb-pinky": "Phoenix / Sparrow",
+            "vkb-btn-dlc": "DLC / CMDS",
+            "vkb-trigger-stage2": "Guns",
+            "vkb-trigger": "Gun Camera",
             "vkb-trim-down": "Trim down",
             "vkb-trim-up": "Trim up",
             "vkb-trim-right": "Trim right",
             "vkb-trim-left": "Trim left",
-            "vkb-axis-dlc": "DLC / Maneuver Flaps",
+            "vkb-axis-dlc": "DLC",
             "vkb-nws": "SHIFT / MODIFIER"
           }
         },
@@ -153,6 +171,7 @@
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN3",
               "command": "d3085pnilu3085cd57vd1vpnilvu0",
+              "label": "AP Ref / NWS",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -161,32 +180,15 @@
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN5",
               "command": "d3091pnilu3091cd78vd1vpnilvu0",
-              "modifiers": [
-                "JOY_BTN7"
-              ]
-            },
-            "vkb-trim-left": {
-              "profile": "vkb-f14-gunfighter",
-              "key": "JOY_BTN12",
-              "command": "dnilp3113u3113cd70vdnilvp-1vu0",
-              "modifiers": [
-                "JOY_BTN7"
-              ]
-            },
-            "vkb-trim-right": {
-              "profile": "vkb-f14-gunfighter",
-              "key": "JOY_BTN9",
-              "command": "dnilp3113u3113cd70vdnilvp1vu0",
+              "label": "Bombing Tool",
               "modifiers": [
                 "JOY_BTN7"
               ]
             }
           },
           "labels": {
-            "vkb-btn-release": "NWS / APRef",
-            "vkb-btn-dlc": "Bombing Tool - [Toggle]",
-            "vkb-trim-left": "Trim Rudder Left",
-            "vkb-trim-right": "Trim Rudder Right"
+            "vkb-btn-release": "AP Ref / NWS",
+            "vkb-btn-dlc": "Bombing Tool"
           }
         },
         {
@@ -201,35 +203,38 @@
               "profile": "vkb-f14-gunfighter",
               "key": "JOY_BTN6",
               "command": "d3086pnilu3086cd22vd1vpnilvu0",
+              "label": "AP Paddle",
               "modifiers": [
                 "LCtrl"
               ]
             }
           },
           "labels": {
-            "vkb-paddle": "Autopilot Disconnect"
+            "vkb-paddle": "AP Paddle"
           }
         }
       ]
     },
     {
       "file": "02-TM-MFD-1",
+      "includeUiLayer": true,
       "deviceId": "tm-mfd",
+      "deviceInstance": "MFD1",
       "title": "F16 MFD 1",
       "kicker": "INSTANCE 1",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
-        "mfd-osb-t1": "Set SP 1",
-        "mfd-osb-t2": "Set SP 2",
-        "mfd-osb-t3": "Set SP 3",
-        "mfd-osb-t4": "Set FP",
-        "mfd-osb-t5": "Set IP",
-        "mfd-osb-r1": "Set ST",
-        "mfd-osb-r2": "Set HB",
-        "mfd-osb-r3": "Set Man",
+        "mfd-osb-t1": "SP 1",
+        "mfd-osb-t2": "SP 2",
+        "mfd-osb-t3": "SP 3",
+        "mfd-osb-t4": "FP",
+        "mfd-osb-t5": "IP",
+        "mfd-osb-r1": "ST",
+        "mfd-osb-r2": "HB",
+        "mfd-osb-r3": "MAN",
         "mfd-osb-r4": "VSL High",
         "mfd-osb-r5": "VSL Low",
-        "mfd-osb-b5": "PD-STT / P-STT",
+        "mfd-osb-b5": "PD-STT or P-STT",
         "mfd-osb-b4": "Break Lock",
         "mfd-osb-b3": "Range Auto",
         "mfd-osb-b2": "Range 25",
@@ -238,12 +243,12 @@
         "mfd-osb-l4": "Range 200",
         "mfd-osb-l3": "Range 400",
         "mfd-osb-l2": "STT Lock Ahead",
-        "mfd-osb-l1": "STT Lock Enemy Ahead",
-        "mfd-rocker-gain": "Ground Stabilize",
-        "mfd-rocker-lvl": "Aircraft Stabilize",
+        "mfd-osb-l1": "STT Lock E Ahead",
+        "mfd-rocker-gain": "Ground",
+        "mfd-rocker-lvl": "Aircraft",
         "mfd-rocker-con-up": "TWS Mode",
         "mfd-rocker-con-down": "RWS Mode",
-        "mfd-rocker-brt-up": "CLSN",
+        "mfd-rocker-brt-up": "(CLSN)",
         "mfd-rocker-brt-down": "JA SHORT",
         "mfd-rocker-sym": "JA HOLD",
         "mfd-rocker-int": "JA DOUBLE"
@@ -256,156 +261,184 @@
             "mfd-osb-t1": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN1",
-              "command": "d3566pnilunilcd62vd1vpnilvunil"
+              "command": "d3566pnilunilcd62vd1vpnilvunil",
+              "label": "SP 1"
             },
             "mfd-osb-t2": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN2",
-              "command": "d3567pnilunilcd62vd1vpnilvunil"
+              "command": "d3567pnilunilcd62vd1vpnilvunil",
+              "label": "SP 2"
             },
             "mfd-osb-t3": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN3",
-              "command": "d3568pnilunilcd62vd1vpnilvunil"
+              "command": "d3568pnilunilcd62vd1vpnilvunil",
+              "label": "SP 3"
             },
             "mfd-osb-t4": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN4",
-              "command": "d3569pnilunilcd62vd1vpnilvunil"
+              "command": "d3569pnilunilcd62vd1vpnilvunil",
+              "label": "FP"
             },
             "mfd-osb-t5": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN5",
-              "command": "d3570pnilunilcd62vd1vpnilvunil"
+              "command": "d3570pnilunilcd62vd1vpnilvunil",
+              "label": "IP"
             },
             "mfd-osb-r1": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN6",
-              "command": "d3571pnilunilcd62vd1vpnilvunil"
+              "command": "d3571pnilunilcd62vd1vpnilvunil",
+              "label": "ST"
             },
             "mfd-osb-r2": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN7",
-              "command": "d3572pnilunilcd62vd1vpnilvunil"
+              "command": "d3572pnilunilcd62vd1vpnilvunil",
+              "label": "HB"
             },
             "mfd-osb-r3": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN8",
-              "command": "d3573pnilunilcd62vd1vpnilvunil"
+              "command": "d3573pnilunilcd62vd1vpnilvunil",
+              "label": "MAN"
             },
             "mfd-osb-r4": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN9",
-              "command": "d3574pnilunilcd62vd1vpnilvunil"
+              "command": "d3574pnilunilcd62vd1vpnilvunil",
+              "label": "VSL High"
             },
             "mfd-osb-r5": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN10",
-              "command": "d3575pnilunilcd62vd1vpnilvunil"
+              "command": "d3575pnilunilcd62vd1vpnilvunil",
+              "label": "VSL Low"
             },
             "mfd-osb-b5": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN11",
-              "command": "d3576pnilunilcd62vd1vpnilvunil"
+              "command": "d3576pnilunilcd62vd1vpnilvunil",
+              "label": "PD-STT or P-STT"
             },
             "mfd-osb-b4": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN12",
-              "command": "d3577pnilunilcd62vd1vpnilvunil"
+              "command": "d3577pnilunilcd62vd1vpnilvunil",
+              "label": "Break Lock"
             },
             "mfd-osb-b3": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN13",
-              "command": "d3578pnilunilcd62vd1vpnilvunil"
+              "command": "d3578pnilunilcd62vd1vpnilvunil",
+              "label": "Range Auto"
             },
             "mfd-osb-b2": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN14",
-              "command": "d3579pnilunilcd62vd1vpnilvunil"
+              "command": "d3579pnilunilcd62vd1vpnilvunil",
+              "label": "Range 25"
             },
             "mfd-osb-b1": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN15",
-              "command": "d3580pnilunilcd62vd1vpnilvunil"
+              "command": "d3580pnilunilcd62vd1vpnilvunil",
+              "label": "Range 50"
             },
             "mfd-osb-l5": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN16",
-              "command": "d3581pnilunilcd62vd1vpnilvunil"
+              "command": "d3581pnilunilcd62vd1vpnilvunil",
+              "label": "Range 100"
             },
             "mfd-osb-l4": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN17",
-              "command": "d3582pnilunilcd62vd1vpnilvunil"
+              "command": "d3582pnilunilcd62vd1vpnilvunil",
+              "label": "Range 200"
             },
             "mfd-osb-l3": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN18",
-              "command": "d3583pnilunilcd62vd1vpnilvunil"
+              "command": "d3583pnilunilcd62vd1vpnilvunil",
+              "label": "Range 400"
             },
             "mfd-osb-l2": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN19",
-              "command": "d3584pnilunilcd62vd1vpnilvunil"
+              "command": "d3584pnilunilcd62vd1vpnilvunil",
+              "label": "STT Lock Ahead"
             },
             "mfd-osb-l1": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN20",
-              "command": "d3585pnilunilcd62vd1vpnilvunil"
+              "command": "d3585pnilunilcd62vd1vpnilvunil",
+              "label": "STT Lock E Ahead"
             },
             "mfd-rocker-gain": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN21",
-              "command": "d3587pnilunilcd62vd1vpnilvunil"
+              "command": "d3587pnilunilcd62vd1vpnilvunil",
+              "label": "Ground"
             },
             "mfd-rocker-lvl": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN22",
-              "command": "d3588pnilunilcd62vd1vpnilvunil"
+              "command": "d3588pnilunilcd62vd1vpnilvunil",
+              "label": "Aircraft"
             },
             "mfd-rocker-con-up": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN23",
-              "command": "d3589pnilunilcd62vd1vpnilvunil"
+              "command": "d3589pnilunilcd62vd1vpnilvunil",
+              "label": "TWS Mode"
             },
             "mfd-rocker-con-down": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN24",
-              "command": "d3590pnilunilcd62vd1vpnilvunil"
+              "command": "d3590pnilunilcd62vd1vpnilvunil",
+              "label": "RWS Mode"
             },
             "mfd-rocker-brt-up": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN25",
-              "command": "d3882pnilunilcd62vd1vpnilvunil"
+              "command": "d3882pnilunilcd62vd1vpnilvunil",
+              "label": "(CLSN)"
             },
             "mfd-rocker-brt-down": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN26",
-              "command": "d3935pnilu3935cd62vd1vpnilvu0"
+              "command": "d3935pnilu3935cd62vd1vpnilvu0",
+              "label": "JA SHORT"
             },
             "mfd-rocker-sym": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN27",
-              "command": "d3936pnilu3936cd62vd1vpnilvu0"
+              "command": "d3936pnilu3936cd62vd1vpnilvu0",
+              "label": "JA HOLD"
             },
             "mfd-rocker-int": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN28",
-              "command": "d3937pnilu3937cd62vd1vpnilvu0"
+              "command": "d3937pnilu3937cd62vd1vpnilvu0",
+              "label": "JA DOUBLE"
             }
           },
           "labels": {
-            "mfd-osb-t1": "Set SP 1",
-            "mfd-osb-t2": "Set SP 2",
-            "mfd-osb-t3": "Set SP 3",
-            "mfd-osb-t4": "Set FP",
-            "mfd-osb-t5": "Set IP",
-            "mfd-osb-r1": "Set ST",
-            "mfd-osb-r2": "Set HB",
-            "mfd-osb-r3": "Set Man",
+            "mfd-osb-t1": "SP 1",
+            "mfd-osb-t2": "SP 2",
+            "mfd-osb-t3": "SP 3",
+            "mfd-osb-t4": "FP",
+            "mfd-osb-t5": "IP",
+            "mfd-osb-r1": "ST",
+            "mfd-osb-r2": "HB",
+            "mfd-osb-r3": "MAN",
             "mfd-osb-r4": "VSL High",
             "mfd-osb-r5": "VSL Low",
-            "mfd-osb-b5": "PD-STT / P-STT",
+            "mfd-osb-b5": "PD-STT or P-STT",
             "mfd-osb-b4": "Break Lock",
             "mfd-osb-b3": "Range Auto",
             "mfd-osb-b2": "Range 25",
@@ -414,12 +447,12 @@
             "mfd-osb-l4": "Range 200",
             "mfd-osb-l3": "Range 400",
             "mfd-osb-l2": "STT Lock Ahead",
-            "mfd-osb-l1": "STT Lock Enemy Ahead",
-            "mfd-rocker-gain": "Ground Stabilize",
-            "mfd-rocker-lvl": "Aircraft Stabilize",
+            "mfd-osb-l1": "STT Lock E Ahead",
+            "mfd-rocker-gain": "Ground",
+            "mfd-rocker-lvl": "Aircraft",
             "mfd-rocker-con-up": "TWS Mode",
             "mfd-rocker-con-down": "RWS Mode",
-            "mfd-rocker-brt-up": "CLSN",
+            "mfd-rocker-brt-up": "(CLSN)",
             "mfd-rocker-brt-down": "JA SHORT",
             "mfd-rocker-sym": "JA HOLD",
             "mfd-rocker-int": "JA DOUBLE"
@@ -437,51 +470,58 @@
               "profile": "tm-mfd-1",
               "key": "JOY_BTN20",
               "command": "d3586pnilunilcd62vd1vpnilvunil",
+              "label": "STT Lock F Ahead",
               "modifiers": [
                 "JOY_BTN7"
               ]
             }
           },
           "labels": {
-            "mfd-osb-l1-shifted": "STT Lock Friendly Ahead"
+            "mfd-osb-l1-shifted": "STT Lock F Ahead"
           }
         }
       ]
     },
     {
       "file": "03-TM-MFD-2",
+      "includeUiLayer": true,
       "deviceId": "tm-mfd",
+      "deviceInstance": "MFD2",
       "title": "F16 MFD 2",
       "kicker": "INSTANCE 2",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
-        "mfd-osb-t1": "Catapult Salute",
-        "mfd-osb-t2": "DLC Toggle / CMDS"
+        "mfd-osb-t1": "Salute",
+        "mfd-osb-t2": "DLC / CMDS"
       },
       "modifierCallouts": {},
       "controls": {
         "mfd-osb-t1": {
           "profile": "tm-mfd-2",
           "key": "JOY_BTN1",
-          "command": "d3023pnilunilcd18vd1vpnilvunil"
+          "command": "d3023pnilunilcd18vd1vpnilvunil",
+          "label": "Salute"
         },
         "mfd-osb-t2": {
           "profile": "tm-mfd-2",
           "key": "JOY_BTN2",
-          "command": "d3084pnilu3084cd57vd1vpnilvu0"
+          "command": "d3084pnilu3084cd57vd1vpnilvu0",
+          "label": "DLC / CMDS"
         }
       }
     },
     {
       "file": "04-TM-MFD-3",
+      "includeUiLayer": true,
       "deviceId": "tm-mfd",
+      "deviceInstance": "MFD3",
       "title": "F16 MFD 3",
       "kicker": "INSTANCE 3",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
-        "mfd-rocker-lvl": "VHS Record Stop",
-        "mfd-rocker-gain": "VHS Record Start",
-        "mfd-osb-t1": "JA Context",
+        "mfd-rocker-lvl": "VHS Stop",
+        "mfd-rocker-gain": "VHS Start",
+        "mfd-osb-t1": "JA AUTO",
         "mfd-osb-t2": "JA SHORT",
         "mfd-osb-t3": "JA HOLD",
         "mfd-osb-t4": "JA DOUBLE"
@@ -491,38 +531,46 @@
         "mfd-rocker-lvl": {
           "profile": "tm-mfd-3",
           "key": "JOY_BTN22",
-          "command": "d3111pnilunilcd86vd0vpnilvunil"
+          "command": "d3111pnilunilcd86vd0vpnilvunil",
+          "label": "VHS Stop"
         },
         "mfd-rocker-gain": {
           "profile": "tm-mfd-3",
           "key": "JOY_BTN21",
-          "command": "d3111pnilunilcd86vd1vpnilvunil"
+          "command": "d3111pnilunilcd86vd1vpnilvunil",
+          "label": "VHS Start"
         },
         "mfd-osb-t1": {
           "profile": "tm-mfd-3",
           "key": "JOY_BTN1",
-          "command": "d3934pnilu3934cd62vd1vpnilvu0"
+          "command": "d3934pnilu3934cd62vd1vpnilvu0",
+          "label": "JA AUTO"
         },
         "mfd-osb-t2": {
           "profile": "tm-mfd-3",
           "key": "JOY_BTN2",
-          "command": "d3935pnilu3935cd62vd1vpnilvu0"
+          "command": "d3935pnilu3935cd62vd1vpnilvu0",
+          "label": "JA SHORT"
         },
         "mfd-osb-t3": {
           "profile": "tm-mfd-3",
           "key": "JOY_BTN3",
-          "command": "d3936pnilu3936cd62vd1vpnilvu0"
+          "command": "d3936pnilu3936cd62vd1vpnilvu0",
+          "label": "JA HOLD"
         },
         "mfd-osb-t4": {
           "profile": "tm-mfd-3",
           "key": "JOY_BTN4",
-          "command": "d3937pnilu3937cd62vd1vpnilvu0"
+          "command": "d3937pnilu3937cd62vd1vpnilvu0",
+          "label": "JA DOUBLE"
         }
       }
     },
     {
       "file": "05-MOZA-AB9",
+      "includeUiLayer": true,
       "deviceId": "moza-ab9",
+      "deviceInstance": null,
       "title": "MOZA AB9 FFB Base",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
@@ -532,17 +580,19 @@
     },
     {
       "file": "06-ONYOURTWELVE-PDCP",
+      "includeUiLayer": true,
       "deviceId": "onyourtwelve-pdcp",
+      "deviceInstance": null,
       "title": "OnYourTwelve F-14 PDCP",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
-        "pdcp-pwr-hud": "Power Off",
-        "pdcp-hud-power-on": "HUD Power On",
-        "pdcp-pwr-vdi": "Power Off",
-        "pdcp-vdi-power-on": "VDI Power On",
-        "pdcp-hsd-power-off": "Power Off",
-        "pdcp-hsd-power-on": "HSD/ECM Power On",
+        "pdcp-pwr-hud": "HUD POWER OFF",
+        "pdcp-hud-power-on": "HUD POWER ON",
+        "pdcp-pwr-vdi": "VDI POWER OFF",
+        "pdcp-vdi-power-on": "VDI POWER ON",
+        "pdcp-hsd-power-off": "HSD/ECM POWER OFF",
+        "pdcp-hsd-power-on": "HSD/ECM POWER ON",
         "pdcp-to": "T.O.",
         "pdcp-cruise": "CRUISE",
         "pdcp-aa": "A/A",
@@ -572,153 +622,184 @@
         "pdcp-pwr-hud": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN23",
-          "command": "d3213pnilunilcd40vd0vpnilvunil"
+          "command": "d3213pnilunilcd40vd0vpnilvunil",
+          "label": "HUD POWER OFF"
         },
         "pdcp-hud-power-on": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN24",
-          "command": "d3213pnilunilcd40vd1vpnilvunil"
+          "command": "d3213pnilunilcd40vd1vpnilvunil",
+          "label": "HUD POWER ON"
         },
         "pdcp-pwr-vdi": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN27",
-          "command": "d3214pnilunilcd42vd0vpnilvunil"
+          "command": "d3214pnilunilcd42vd0vpnilvunil",
+          "label": "VDI POWER OFF"
         },
         "pdcp-vdi-power-on": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN28",
-          "command": "d3214pnilunilcd42vd1vpnilvunil"
+          "command": "d3214pnilunilcd42vd1vpnilvunil",
+          "label": "VDI POWER ON"
         },
         "pdcp-hsd-power-off": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN25",
-          "command": "d3215pnilunilcd41vd0vpnilvunil"
+          "command": "d3215pnilunilcd41vd0vpnilvunil",
+          "label": "HSD/ECM POWER OFF"
         },
         "pdcp-hsd-power-on": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN26",
-          "command": "d3215pnilunilcd41vd1vpnilvunil"
+          "command": "d3215pnilunilcd41vd1vpnilvunil",
+          "label": "HSD/ECM POWER ON"
         },
         "pdcp-to": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN1",
-          "command": "d3216pnilunilcd40vd1vpnilvunil"
+          "command": "d3216pnilunilcd40vd1vpnilvunil",
+          "label": "T.O."
         },
         "pdcp-cruise": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN2",
-          "command": "d3217pnilunilcd40vd1vpnilvunil"
+          "command": "d3217pnilunilcd40vd1vpnilvunil",
+          "label": "CRUISE"
         },
         "pdcp-aa": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN3",
-          "command": "d3218pnilunilcd40vd1vpnilvunil"
+          "command": "d3218pnilunilcd40vd1vpnilvunil",
+          "label": "A/A"
         },
         "pdcp-ag": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN4",
-          "command": "d3219pnilunilcd40vd1vpnilvunil"
+          "command": "d3219pnilunilcd40vd1vpnilvunil",
+          "label": "A/G"
         },
         "pdcp-ldg": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN5",
-          "command": "d3220pnilunilcd40vd1vpnilvunil"
+          "command": "d3220pnilunilcd40vd1vpnilvunil",
+          "label": "LDG"
         },
         "pdcp-vdi-mode": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN15",
-          "command": "d3224pnilunilcd42vd0vpnilvunil"
+          "command": "d3224pnilunilcd42vd0vpnilvunil",
+          "label": "VDI NORM"
         },
         "pdcp-vdi-tv": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN16",
-          "command": "d3224pnilunilcd42vd1vpnilvunil"
+          "command": "d3224pnilunilcd42vd1vpnilvunil",
+          "label": "VDI TV"
         },
         "pdcp-hud-night": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN17",
-          "command": "d3225pnilunilcd40vd0vpnilvunil"
+          "command": "d3225pnilunilcd40vd0vpnilvunil",
+          "label": "HUD NIGHT"
         },
         "pdcp-hud-day": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN18",
-          "command": "d3225pnilunilcd40vd1vpnilvunil"
+          "command": "d3225pnilunilcd40vd1vpnilvunil",
+          "label": "HUD DAY"
         },
         "pdcp-hud-dec": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN11",
-          "command": "d3226pnilunilcd40vd0vpnilvunil"
+          "command": "d3226pnilunilcd40vd0vpnilvunil",
+          "label": "HUD DIGITAL"
         },
         "pdcp-hud-analog": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN12",
-          "command": "d3226pnilunilcd40vd1vpnilvunil"
+          "command": "d3226pnilunilcd40vd1vpnilvunil",
+          "label": "HUD ANALOG"
         },
         "pdcp-hud-awl": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN13",
-          "command": "d3227pnilu3227cd40vd0vpnilvu1"
+          "command": "d3227pnilu3227cd40vd0vpnilvu1",
+          "label": "HUD ALT RDR"
         },
         "pdcp-hud-alt-baro": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN14",
-          "command": "d3227pnilu3227cd40vd1vpnilvu0"
+          "command": "d3227pnilu3227cd40vd1vpnilvu0",
+          "label": "HUD ALT BARO"
         },
         "pdcp-hsd-ecm-mode": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN29",
-          "command": "d3235pnilunilcd41vd-1vpnilvunil"
+          "command": "d3235pnilunilcd41vd-1vpnilvunil",
+          "label": "HSD ECM"
         },
         "pdcp-hsd-tid": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN20",
-          "command": "d3235pnilunilcd41vd0vpnilvunil"
+          "command": "d3235pnilunilcd41vd0vpnilvunil",
+          "label": "HSD TID"
         },
         "pdcp-hsd-mode": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN19",
-          "command": "d3235pnilunilcd41vd1vpnilvunil"
+          "command": "d3235pnilunilcd41vd1vpnilvunil",
+          "label": "HSD NAV"
         },
         "pdcp-hsd-ecm": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN21",
-          "command": "d3239pnilunilcd41vd0vpnilvunil"
+          "command": "d3239pnilunilcd41vd0vpnilvunil",
+          "label": "ECM OVERRIDE OFF"
         },
         "pdcp-ecm-on": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN22",
-          "command": "d3239pnilunilcd41vd1vpnilvunil"
+          "command": "d3239pnilunilcd41vd1vpnilvunil",
+          "label": "ECM OVERRIDE ON"
         },
         "pdcp-vdi-awl": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN6",
-          "command": "d3314pnilu3314cd46vd1vpnilvu0"
+          "command": "d3314pnilu3314cd46vd1vpnilvu0",
+          "label": "STEER TACAN"
         },
         "pdcp-steer-dest": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN7",
-          "command": "d3315pnilu3315cd46vd1vpnilvu0"
+          "command": "d3315pnilu3315cd46vd1vpnilvu0",
+          "label": "STEER DEST"
         },
         "pdcp-steer-vec": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN9",
-          "command": "d3316pnilu3316cd46vd1vpnilvu0"
+          "command": "d3316pnilu3316cd46vd1vpnilvu0",
+          "label": "STEER VEC"
         },
         "pdcp-steer-man": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN10",
-          "command": "d3317pnilu3317cd46vd1vpnilvu0"
+          "command": "d3317pnilu3317cd46vd1vpnilvu0",
+          "label": "STEER MAN"
         },
         "pdcp-steer-awl-pcd": {
           "profile": "onyourtwelve-pdcp",
           "key": "JOY_BTN8",
-          "command": "d3318pnilu3318cd46vd1vpnilvu0"
+          "command": "d3318pnilu3318cd46vd1vpnilvu0",
+          "label": "STEER AWL/PCD"
         }
       }
     },
     {
       "file": "07-TM-TPR",
+      "includeUiLayer": true,
       "deviceId": "tm-tpr",
+      "deviceInstance": null,
       "title": "T-Pendular-Rudder",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
@@ -732,23 +813,28 @@
         "tpr-axis-rudder": {
           "profile": "tm-tpr",
           "key": "JOY_Z",
-          "command": "a2003cdnil"
+          "command": "a2003cdnil",
+          "label": "Rudder"
         },
         "tpr-axis-left-brake": {
           "profile": "tm-tpr",
           "key": "JOY_Y",
-          "command": "a2112cdnil"
+          "command": "a2112cdnil",
+          "label": "Wheel Brake Left"
         },
         "tpr-axis-right-brake": {
           "profile": "tm-tpr",
           "key": "JOY_X",
-          "command": "a2113cdnil"
+          "command": "a2113cdnil",
+          "label": "Wheel Brake Right"
         }
       }
     },
     {
       "file": "08-TM-WARTHOG-THROTTLE",
+      "includeUiLayer": true,
       "deviceId": "tm-warthog-throttle",
+      "deviceInstance": null,
       "title": "Throttle - HOTAS Warthog",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
@@ -762,13 +848,13 @@
         "warthog-thr-rdr-alt-normal": "Altitude Hold On",
         "warthog-thr-eac-on": "Autopilot On",
         "warthog-thr-apu-start": "Engine Airstart",
-        "warthog-thr-engine-operate-right-up": "Crank Engine - RIGHT",
-        "warthog-thr-engine-operate-left-up": "Crank Engine - LEFT",
-        "warthog-thr-landing-horn-silence": "Master Caution Reset",
+        "warthog-thr-engine-operate-right-up": "Crank  RIGHT",
+        "warthog-thr-engine-operate-left-up": "Crank LEFT",
+        "warthog-thr-landing-horn-silence": "Master Caution",
         "warthog-thr-left-throttle-button": "PLM button",
         "warthog-thr-left-engine-idle-off": "Left Engine Cutoff",
         "warthog-thr-right-engine-idle-off": "Right Engine Cutoff",
-        "warthog-thr-ap-engage": "Autopilot Heading",
+        "warthog-thr-ap-engage": "AP",
         "warthog-thr-speedbrake-forward": "Speed brake retract",
         "warthog-thr-speedbrake-back": "Speed brake extend"
       },
@@ -780,92 +866,110 @@
             "warthog-thr-china-forward": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN11",
-              "command": "d3024pnilu3024cd17vd1vpnilvu0"
+              "command": "d3024pnilu3024cd17vd1vpnilvu0",
+              "label": "Wing Auto"
             },
             "warthog-thr-boat-forward": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN9",
-              "command": "d3025pnilu3025cd17vd1vpnilvu0"
+              "command": "d3025pnilu3025cd17vd1vpnilvu0",
+              "label": "Wing Forward"
             },
             "warthog-thr-boat-back": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN10",
-              "command": "d3026pnilu3026cd17vd1vpnilvu0"
+              "command": "d3026pnilu3026cd17vd1vpnilvu0",
+              "label": "Wing Aft"
             },
             "warthog-thr-china-back": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN12",
-              "command": "d3027pnilu3027cd17vd1vpnilvu0"
+              "command": "d3027pnilu3027cd17vd1vpnilvu0",
+              "label": "Wing Bomb"
             },
             "warthog-thr-ap-select-down": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN28",
-              "command": "d3037pnilu3037cd22vd-1vpnilvu0"
+              "command": "d3037pnilu3037cd22vd-1vpnilvu0",
+              "label": "Autopilot Vector ACL"
             },
             "warthog-thr-ap-select-up": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN27",
-              "command": "d3037pnilu3037cd22vd1vpnilvu0"
+              "command": "d3037pnilu3037cd22vd1vpnilvu0",
+              "label": "Autopilot Vector VEC/PCD"
             },
             "warthog-thr-rdr-alt-normal": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN25",
-              "command": "d3038pnilu3038cd22vd1vpnilvu-1"
+              "command": "d3038pnilu3038cd22vd1vpnilvu-1",
+              "label": "Altitude Hold On"
             },
             "warthog-thr-eac-on": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN24",
-              "command": "d3040pnilu3040cd22vd1vpnilvu-1"
+              "command": "d3040pnilu3040cd22vd1vpnilvu-1",
+              "label": "Autopilot On"
             },
             "warthog-thr-apu-start": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN20",
-              "command": "d3050pnilu3050cd20vd1vpnilvu0"
+              "command": "d3050pnilu3050cd20vd1vpnilvu0",
+              "label": "Engine Airstart"
             },
             "warthog-thr-engine-operate-right-up": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN32",
-              "command": "d3051pnilu3051cd20vd-1vpnilvu0"
+              "command": "d3051pnilu3051cd20vd-1vpnilvu0",
+              "label": "Crank  RIGHT"
             },
             "warthog-thr-engine-operate-left-up": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN31",
-              "command": "d3051pnilu3051cd20vd1vpnilvu0"
+              "command": "d3051pnilu3051cd20vd1vpnilvu0",
+              "label": "Crank LEFT"
             },
             "warthog-thr-landing-horn-silence": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN21",
-              "command": "d3056pnilu3056cd35vd1vpnilvu0"
+              "command": "d3056pnilu3056cd35vd1vpnilvu0",
+              "label": "Master Caution"
             },
             "warthog-thr-left-throttle-button": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN15",
-              "command": "d3127pnilu3127cd57vd1vpnilvu0"
+              "command": "d3127pnilu3127cd57vd1vpnilvu0",
+              "label": "PLM button"
             },
             "warthog-thr-left-engine-idle-off": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN29",
-              "command": "d3128pnilu3128cd20vd1vpnilvu0"
+              "command": "d3128pnilu3128cd20vd1vpnilvu0",
+              "label": "Left Engine Cutoff"
             },
             "warthog-thr-right-engine-idle-off": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN30",
-              "command": "d3129pnilu3129cd20vd1vpnilvu0"
+              "command": "d3129pnilu3129cd20vd1vpnilvu0",
+              "label": "Right Engine Cutoff"
             },
             "warthog-thr-ap-engage": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN26",
-              "command": "d3744pnilunilcd22vd1vpnilvunil"
+              "command": "d3744pnilunilcd22vd1vpnilvunil",
+              "label": "AP"
             },
             "warthog-thr-speedbrake-forward": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN7",
-              "command": "dnilp3020u3020cd18vdnilvp-1vu0"
+              "command": "dnilp3020u3020cd18vdnilvp-1vu0",
+              "label": "Speed brake retract"
             },
             "warthog-thr-speedbrake-back": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN8",
-              "command": "dnilp3020u3020cd18vdnilvp1vu0"
+              "command": "dnilp3020u3020cd18vdnilvp1vu0",
+              "label": "Speed brake extend"
             }
           },
           "labels": {
@@ -878,13 +982,13 @@
             "warthog-thr-rdr-alt-normal": "Altitude Hold On",
             "warthog-thr-eac-on": "Autopilot On",
             "warthog-thr-apu-start": "Engine Airstart",
-            "warthog-thr-engine-operate-right-up": "Crank Engine - RIGHT",
-            "warthog-thr-engine-operate-left-up": "Crank Engine - LEFT",
-            "warthog-thr-landing-horn-silence": "Master Caution Reset",
+            "warthog-thr-engine-operate-right-up": "Crank  RIGHT",
+            "warthog-thr-engine-operate-left-up": "Crank LEFT",
+            "warthog-thr-landing-horn-silence": "Master Caution",
             "warthog-thr-left-throttle-button": "PLM button",
             "warthog-thr-left-engine-idle-off": "Left Engine Cutoff",
             "warthog-thr-right-engine-idle-off": "Right Engine Cutoff",
-            "warthog-thr-ap-engage": "Autopilot Heading",
+            "warthog-thr-ap-engage": "AP",
             "warthog-thr-speedbrake-forward": "Speed brake retract",
             "warthog-thr-speedbrake-back": "Speed brake extend"
           }
@@ -901,6 +1005,7 @@
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN16",
               "command": "d3007pnilu3007cd14vd0vpnilvu1",
+              "label": "Stow Ramps Left",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -909,6 +1014,7 @@
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN17",
               "command": "d3008pnilu3008cd14vd0vpnilvu1",
+              "label": "Stow Ramps Right",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -917,6 +1023,7 @@
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN15",
               "command": "d3046pnilunilcd20vd1vpnilvunil",
+              "label": "Auto Throttle",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -925,6 +1032,7 @@
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN24",
               "command": "d3107pnilunilcd83vd1vpnilvunil",
+              "label": "Pointer",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -933,6 +1041,7 @@
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN26",
               "command": "d3126pnilu3126cd57vd1vpnilvu0",
+              "label": "CAGE-SEAM",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -941,17 +1050,18 @@
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN1",
               "command": "d3749pnilunilcd2vd1vpnilvunil",
+              "label": "Tomcat Ball",
               "modifiers": [
                 "JOY_BTN7"
               ]
             }
           },
           "labels": {
-            "warthog-thr-fuel-flow-left": "Stow Inlet Left",
-            "warthog-thr-fuel-flow-right": "Stow Inlet Right",
+            "warthog-thr-fuel-flow-left": "Stow Ramps Left",
+            "warthog-thr-fuel-flow-right": "Stow Ramps Right",
             "warthog-thr-left-throttle-button": "Auto Throttle",
-            "warthog-thr-eac-on": "Pointer On/Off",
-            "warthog-thr-ap-engage": "CAGE-SEAM button",
+            "warthog-thr-eac-on": "Pointer",
+            "warthog-thr-ap-engage": "CAGE-SEAM",
             "warthog-thr-slew-push": "Tomcat Ball"
           }
         }
@@ -959,7 +1069,9 @@
     },
     {
       "file": "09-VIPER-TQS-MISSION-PACK",
+      "includeUiLayer": true,
       "deviceId": "viper-tqs-mission-pack",
+      "deviceInstance": null,
       "title": "Viper TQS",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
@@ -969,7 +1081,9 @@
     },
     {
       "file": "10-WINCTRL-PTO2",
+      "includeUiLayer": true,
       "deviceId": "winctrl-pto2",
+      "deviceInstance": null,
       "title": "WINCTRL CarrierAce PTO 2",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
@@ -986,116 +1100,137 @@
         "pto2-button-34": "Hook Extend",
         "pto2-button-7": "Flaps - DOWN",
         "pto2-button-5": "Flaps - UP",
-        "pto2-button-2": "Master Caution Reset",
+        "pto2-button-2": "Master Caution",
         "pto2-button-16": "Refuel Probe Retract",
         "pto2-button-14": "Refuel Probe extend",
         "pto2-button-9": "Lights Taxi OFF",
         "pto2-button-8": "Lights Taxi ON",
-        "pto2-button-13": "Lights Hook Bypass CARRIER",
-        "pto2-button-12": "Lights Hook Bypass FIELD"
+        "pto2-button-13": "Hook bypass carrier",
+        "pto2-button-12": "Hook bypass field"
       },
       "modifierCallouts": {},
       "controls": {
         "pto2-button-39": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN39",
-          "command": "d3013pnilunilcd18vd0vpnilvunil"
+          "command": "d3013pnilunilcd18vd0vpnilvunil",
+          "label": "Parking brake pull"
         },
         "pto2-button-38": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN38",
-          "command": "d3013pnilunilcd18vd1vpnilvunil"
+          "command": "d3013pnilunilcd18vd1vpnilvunil",
+          "label": "Parking brake stow"
         },
         "pto2-button-11": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN11",
-          "command": "d3014pnilunilcd18vd0vpnilvunil"
+          "command": "d3014pnilunilcd18vd0vpnilvunil",
+          "label": "Antiskid & Spoiler BK - Off"
         },
         "pto2-button-10": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN10",
-          "command": "d3014pnilunilcd18vd1vpnilvunil"
+          "command": "d3014pnilunilcd18vd1vpnilvunil",
+          "label": "Antiskid & Spoiler BK - Both"
         },
         "pto2-button-35": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN35",
-          "command": "d3016pnilunilcd18vd0vpnilvunil"
+          "command": "d3016pnilunilcd18vd0vpnilvunil",
+          "label": "Gears Up"
         },
         "pto2-button-37": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN37",
-          "command": "d3016pnilunilcd18vd1vpnilvunil"
+          "command": "d3016pnilunilcd18vd1vpnilvunil",
+          "label": "Gears Down"
         },
         "pto2-button-4": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN4",
-          "command": "d3019pnilu3019cd18vd-1vpnilvu0"
+          "command": "d3019pnilu3019cd18vd-1vpnilvu0",
+          "label": "Nose strut - KNEEL"
         },
         "pto2-button-3": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN3",
-          "command": "d3019pnilu3019cd18vd1vpnilvu0"
+          "command": "d3019pnilu3019cd18vd1vpnilvu0",
+          "label": "Nose strut - EXTEND"
         },
         "pto2-button-32": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN32",
-          "command": "d3021pnilunilcd18vd0vpnilvunil"
+          "command": "d3021pnilunilcd18vd0vpnilvunil",
+          "label": "Hook Retract"
         },
         "pto2-button-34": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN34",
-          "command": "d3021pnilunilcd18vd1vpnilvunil"
+          "command": "d3021pnilunilcd18vd1vpnilvunil",
+          "label": "Hook Extend"
         },
         "pto2-button-7": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN7",
-          "command": "d3044pnilu3044cd19vd0.5vpnilvu0.65"
+          "command": "d3044pnilu3044cd19vd0.5vpnilvu0.65",
+          "label": "Flaps - DOWN"
         },
         "pto2-button-5": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN5",
-          "command": "d3044pnilu3044cd19vd0.8vpnilvu0.65"
+          "command": "d3044pnilu3044cd19vd0.8vpnilvu0.65",
+          "label": "Flaps - UP"
         },
         "pto2-button-2": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN2",
-          "command": "d3056pnilu3056cd35vd1vpnilvu0"
+          "command": "d3056pnilu3056cd35vd1vpnilvu0",
+          "label": "Master Caution"
         },
         "pto2-button-16": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN16",
-          "command": "d3068pnilunilcd21vd-1vpnilvunil"
+          "command": "d3068pnilunilcd21vd-1vpnilvunil",
+          "label": "Refuel Probe Retract"
         },
         "pto2-button-14": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN14",
-          "command": "d3068pnilunilcd21vd1vpnilvunil"
+          "command": "d3068pnilunilcd21vd1vpnilvunil",
+          "label": "Refuel Probe extend"
         },
         "pto2-button-9": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN9",
-          "command": "d3171pnilunilcd12vd0vpnilvunil"
+          "command": "d3171pnilunilcd12vd0vpnilvunil",
+          "label": "Lights Taxi OFF"
         },
         "pto2-button-8": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN8",
-          "command": "d3171pnilunilcd12vd1vpnilvunil"
+          "command": "d3171pnilunilcd12vd1vpnilvunil",
+          "label": "Lights Taxi ON"
         },
         "pto2-button-13": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN13",
-          "command": "d3211pnilunilcd26vd0vpnilvunil"
+          "command": "d3211pnilunilcd26vd0vpnilvunil",
+          "label": "Hook bypass carrier"
         },
         "pto2-button-12": {
           "profile": "winctrl-pto2",
           "key": "JOY_BTN12",
-          "command": "d3211pnilunilcd26vd1vpnilvunil"
+          "command": "d3211pnilunilcd26vd1vpnilvunil",
+          "label": "Hook bypass field"
         }
       }
     },
     {
       "file": "11-WINCTRL-ICP",
+      "includeUiLayer": true,
       "deviceId": "winctrl-icp",
+      "deviceInstance": null,
       "title": "WINCTRL ViperAce ICP",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
