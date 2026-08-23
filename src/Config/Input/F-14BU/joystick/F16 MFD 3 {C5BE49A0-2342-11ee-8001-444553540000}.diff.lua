@@ -50,6 +50,22 @@ local diff = {
 			},
 			["name"] = "VHS Camera - Record Start",
 		},
+		["d3133pnilu3133cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN25",
+				},
+			},
+			["name"] = "ACM Cover Open, else Closed",
+		},
+		["d3186pnilu3186cd12vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN27",
+				},
+			},
+			["name"] = "Ejection Seat Safety - ARMED else OFF (2-way Switch)",
+		},
 		["d3934pnilu3934cd62vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
@@ -81,6 +97,22 @@ local diff = {
 				},
 			},
 			["name"] = "Jester Context Action DOUBLE (button, direct bind)",
+		},
+		["dnilp3396unilcd2vdnilvp-1vu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN24",
+				},
+			},
+			["name"] = "ALR-67 Volume Dec",
+		},
+		["dnilp3396unilcd2vdnilvp1vu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN23",
+				},
+			},
+			["name"] = "ALR-67 Volume Inc",
 		},
 	},
 }
