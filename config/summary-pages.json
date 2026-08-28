@@ -1,0 +1,27 @@
+[
+  {
+    "type": "summary",
+    "file": "00-F14BU-CONTROL-OVERVIEW",
+    "title": "F-14B(U) CONTROL OVERVIEW",
+    "kicker": "VKB F-14 GUNFIGHTER • SHARED UI LAYER • MODULE BINDINGS",
+    "items": [
+      { "key": "STICK", "text": "VKB F-14 Gunfighter provides the primary Tomcat stick controls and shared UI Layer functions.", "accent": "gold" },
+      { "key": "SHIFT", "text": "VKB_F14_BTN7 is the shared hold modifier used for applicable shifted aircraft and UI Layer functions.", "accent": "cyan" },
+      { "key": "MFD", "text": "MFD 1, MFD 2 and MFD 3 retain their module-specific functions and applicable UI Layer overlays.", "accent": "gold" },
+      { "key": "VOICE", "text": "Warthog microphone switch PTT is handled by the bundled AutoHotKey VAICOM bridge.", "accent": "cyan" }
+    ]
+  },
+  {
+    "type": "summary",
+    "file": "01-VAICOM-OVERVIEW",
+    "title": "VAICOM PRO + WARTHOG PTT",
+    "kicker": "AUTOHOTKEY V2 • VOICEATTACK / VAICOM PRO",
+    "items": [
+      { "key": "TX1", "text": "Warthog MIC forward / Joy6 -> Left Ctrl + Left Alt + Left Shift + 1", "accent": "gold" },
+      { "key": "TX2", "text": "Warthog MIC right / Joy3 -> Left Ctrl + Left Alt + Left Shift + 2", "accent": "cyan" },
+      { "key": "TX3", "text": "Warthog MIC down / Joy4 -> Left Ctrl + Left Alt + Left Shift + 3", "accent": "gold" },
+      { "key": "TX4", "text": "Warthog MIC left / Joy5 -> Left Ctrl + Left Alt + Left Shift + 4", "accent": "cyan" },
+      { "key": "TX5", "text": "Warthog MIC push / Joy2 -> Left Ctrl + Left Alt + Left Shift + 5", "accent": "gold" }
+    ]
+  }
+]
