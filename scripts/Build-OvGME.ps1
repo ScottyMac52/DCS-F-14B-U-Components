@@ -4,7 +4,9 @@ param(
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $commonRoot = if ($env:DCS_COMMON_ROOT) { $env:DCS_COMMON_ROOT } else { Join-Path $root '.dcs-common' }
+$uiLayerSource = Join-Path $commonRoot 'assets/shared/ui-layer/input/UiLayer'
 $uiLayerPackager = Join-Path $commonRoot 'scripts/package-ui-layer-input.mjs'
+if (-not (Test-Path $uiLayerSource)) { throw "Missing shared UI Layer input payload: $uiLayerSource" }
 if (-not (Test-Path $uiLayerPackager)) { throw "Missing shared UI Layer packager: $uiLayerPackager" }
 $dist = Join-Path $root 'dist'
 New-Item -ItemType Directory -Force -Path $dist | Out-Null
@@ -13,16 +15,17 @@ if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
 $pkgName = 'DCS-F-14BU-Components'
 $archiveBase = "$pkgName-$Version-OVGME"
 $pkg = Join-Path $stage $archiveBase
+$consumerJoystick = Join-Path $root 'src/Config/Input/F-14BU/joystick'
 New-Item -ItemType Directory -Force -Path (Join-Path $pkg "Config/Input/F-14BU/joystick") | Out-Null
-Copy-Item (Join-Path $root 'src/Config/Input/F-14BU/joystick/*') (Join-Path $pkg "Config/Input/F-14BU/joystick/") -Force
+Copy-Item (Join-Path $consumerJoystick '*') (Join-Path $pkg "Config/Input/F-14BU/joystick/") -Force
 $modSrc = Join-Path $root 'src/Config/Input/F-14BU/modifiers.lua'
 if (Test-Path $modSrc) {
   Copy-Item $modSrc (Join-Path $pkg "Config/Input/F-14BU/modifiers.lua") -Force
 }
 New-Item -ItemType Directory -Force -Path (Join-Path $pkg 'Config/Input') | Out-Null
 $uiLayerDestination = Join-Path $pkg 'Config/Input/UiLayer'
-& node $uiLayerPackager $commonRoot (Join-Path $root 'src/Config/Input/F-14BU/joystick') $uiLayerDestination
-if ($LASTEXITCODE -ne 0) { throw "Shared UI Layer packaging failed with exit code $LASTEXITCODE." }
+& node $uiLayerPackager $commonRoot $consumerJoystick $uiLayerDestination
+if ($LASTEXITCODE -ne 0) { throw "UI Layer packaging failed with exit code $LASTEXITCODE" }
 $kb = Join-Path $root 'kneeboard/F-14BU'
 if (-not (Test-Path $kb)) { throw "Missing kneeboard PNG folder: $kb — run npm run build:kneeboard first." }
 New-Item -ItemType Directory -Force -Path (Join-Path $pkg "KNEEBOARD/F-14BU") | Out-Null

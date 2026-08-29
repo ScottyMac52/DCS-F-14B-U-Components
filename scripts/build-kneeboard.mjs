@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
+import { mkdirSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve, basename } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import sharp from 'sharp';
@@ -18,10 +18,6 @@ const { renderKneeboard } = await import(
 );
 
 const rawConfig = JSON.parse(readFileSync(join(root, 'config/kneeboard.json'), 'utf8'));
-const summaryConfigPath = join(root, 'config/summary-pages.json');
-if (existsSync(summaryConfigPath)) {
-  rawConfig.summaryPages = JSON.parse(readFileSync(summaryConfigPath, 'utf8'));
-}
 const config = loadProfileDrivenConfig('config/kneeboard.json', { consumerRoot: root, commonRoot });
 
 const aircraftFolder = config.aircraft.replace(/[^a-zA-Z0-9-]/g, '');
