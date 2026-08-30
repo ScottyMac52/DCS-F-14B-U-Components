@@ -16,6 +16,22 @@ local diff = {
 				},
 			},
 		},
+		["a2001cdnil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_Y",
+				},
+			},
+			["name"] = "Pitch",
+		},
+		["a2002cdnil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_X",
+				},
+			},
+			["name"] = "Roll",
+		},
 	},
 }
 return diff

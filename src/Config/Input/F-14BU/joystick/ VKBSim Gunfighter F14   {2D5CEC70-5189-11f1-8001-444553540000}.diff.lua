@@ -90,14 +90,6 @@ local diff = {
 			},
 			["name"] = "Weapon Selector Gun",
 		},
-		["d3082pnilu3082cd57vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN4",
-				},
-			},
-			["name"] = "Weapon Selector press",
-		},
 		["d3084pnilu3084cd57vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
@@ -106,86 +98,13 @@ local diff = {
 			},
 			["name"] = "DLC Toggle / Countermeasure Dispense",
 		},
-		["d3085pnilu3085cd57vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN3",
-					["reformers"] = {
-						[1] = "JOY_BTN7",
-					},
-				},
-			},
-			["name"] = "Autopilot Reference / Nosewheel Steering Toggle",
-		},
-		["d3086pnilu3086cd22vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN6",
-					["reformers"] = {
-						[1] = "LCtrl",
-					},
-				},
-			},
-			["name"] = "Autopilot Emergency Disconnect Paddle",
-		},
 		["d3087pnilu3087cd57vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN2",
-				},
-			},
-			["name"] = "Trigger",
-		},
-		["d3088pnilu3088cd57vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
 					["key"] = "JOY_BTN1",
 				},
 			},
-			["name"] = "Trigger First Detent",
-		},
-		["d3091pnilu3091cd78vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN5",
-					["reformers"] = {
-						[1] = "JOY_BTN7",
-					},
-				},
-			},
-			["name"] = "Bombing Tool - [Toggle]",
-		},
-		["dnilp2019u2019cdnilvdnilvp-1vu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN11",
-				},
-			},
-			["name"] = "Trim Pitch Down",
-		},
-		["dnilp2019u2019cdnilvdnilvp1vu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN10",
-				},
-			},
-			["name"] = "Trim Pitch Up",
-		},
-		["dnilp2020u2020cdnilvdnilvp-1vu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN9",
-				},
-			},
-			["name"] = "Trim Roll Left Wing Down",
-		},
-		["dnilp2020u2020cdnilvdnilvp1vu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN12",
-				},
-			},
-			["name"] = "Trim Roll Right Wing Down",
+			["name"] = "Trigger",
 		},
 	},
 }
