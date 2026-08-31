@@ -81,6 +81,14 @@ local diff = {
 			},
 			["name"] = "Toggle Auto Throttle",
 		},
+		["d3050pnilu3050cd20vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN20",
+				},
+			},
+			["name"] = "Engine Airstart - ON else NORM (2-way Switch)",
+		},
 		["d3051pnilu3051cd20vd-1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
@@ -97,16 +105,38 @@ local diff = {
 			},
 			["name"] = "Crank Engine - LEFT else OFF (3-way Switch Down)",
 		},
+		["d3051pnilunilcd20vd0vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN18",
+				},
+				[2] = {
+					["key"] = "JOY_BTN19",
+				},
+			},
+			["name"] = "Crank Engine - OFF",
+		},
 		["d3067pnilu3067cd21vd1vpnilvu-1"] = {
 			["added"] = {
 				[1] = {
-					["key"] = "JOY_BTN31",
+					["key"] = "JOY_BTN17",
 					["reformers"] = {
 						[1] = "JOY_BTN7",
 					},
 				},
 			},
 			["name"] = "Fueldump Dump, else Off",
+		},
+		["d3086pnilu3086cd22vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN21",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Autopilot Emergency Disconnect Paddle",
 		},
 		["d3107pnilunilcd83vd1vpnilvunil"] = {
 			["added"] = {
@@ -115,6 +145,57 @@ local diff = {
 				},
 			},
 			["name"] = "Toggle Pointer On/Off",
+		},
+		["d3128pnilu3128cd20vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN30",
+				},
+			},
+			["name"] = "Left Engine Cutoff",
+		},
+		["d3129pnilu3129cd20vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN29",
+				},
+			},
+			["name"] = "Right Engine Cutoff",
+		},
+		["d3137pnilu3137cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN24",
+				},
+			},
+			["name"] = "Master Arm On and Cover Open, else Safe and Closed",
+		},
+		["d3143pnilu3143cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN11",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Target designate up / VSL HI",
+		},
+		["d3144pnilu3144cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN9",
+				},
+			},
+			["name"] = "Target designate fwd / PAL",
+		},
+		["d3145pnilu3145cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN10",
+				},
+			},
+			["name"] = "Target designate down / VSL LO",
 		},
 		["dnilp3020u3020cd18vdnilvp-1vu0"] = {
 			["added"] = {

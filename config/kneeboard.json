@@ -196,10 +196,10 @@
         "mfd-osb-t1": "Set SP 1",
         "mfd-osb-t2": "Set SP 2",
         "mfd-osb-t3": "Set SP 3",
-        "mfd-osb-t4": "Set Fixed Point",
-        "mfd-osb-t5": "Set Initial Point",
-        "mfd-osb-r1": "Set Surface Target",
-        "mfd-osb-r2": "Set Home Base",
+        "mfd-osb-t4": "Set FP",
+        "mfd-osb-t5": "Set IP",
+        "mfd-osb-r1": "Set ST",
+        "mfd-osb-r2": "Set HB",
         "mfd-osb-r3": "Set Man",
         "mfd-osb-r4": "VSL High",
         "mfd-osb-r5": "VSL Low",
@@ -249,25 +249,25 @@
               "profile": "tm-mfd-1",
               "key": "JOY_BTN4",
               "command": "d3569pnilunilcd62vd1vpnilvunil",
-              "label": "Set Fixed Point"
+              "label": "Set FP"
             },
             "mfd-osb-t5": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN5",
               "command": "d3570pnilunilcd62vd1vpnilvunil",
-              "label": "Set Initial Point"
+              "label": "Set IP"
             },
             "mfd-osb-r1": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN6",
               "command": "d3571pnilunilcd62vd1vpnilvunil",
-              "label": "Set Surface Target"
+              "label": "Set ST"
             },
             "mfd-osb-r2": {
               "profile": "tm-mfd-1",
               "key": "JOY_BTN7",
               "command": "d3572pnilunilcd62vd1vpnilvunil",
-              "label": "Set Home Base"
+              "label": "Set HB"
             },
             "mfd-osb-r3": {
               "profile": "tm-mfd-1",
@@ -400,10 +400,10 @@
             "mfd-osb-t1": "Set SP 1",
             "mfd-osb-t2": "Set SP 2",
             "mfd-osb-t3": "Set SP 3",
-            "mfd-osb-t4": "Set Fixed Point",
-            "mfd-osb-t5": "Set Initial Point",
-            "mfd-osb-r1": "Set Surface Target",
-            "mfd-osb-r2": "Set Home Base",
+            "mfd-osb-t4": "Set FP",
+            "mfd-osb-t5": "Set IP",
+            "mfd-osb-r1": "Set ST",
+            "mfd-osb-r2": "Set HB",
             "mfd-osb-r3": "Set Man",
             "mfd-osb-r4": "VSL High",
             "mfd-osb-r5": "VSL Low",
@@ -439,7 +439,7 @@
               "profile": "tm-mfd-1",
               "key": "JOY_BTN20",
               "command": "d3586pnilunilcd62vd1vpnilvunil",
-              "label": "Lock Friendly Ahead",
+              "label": "Lock Friend Ahead",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -482,7 +482,7 @@
             }
           },
           "labels": {
-            "mfd-osb-l1-shifted": "Lock Friendly Ahead",
+            "mfd-osb-l1-shifted": "Lock Friend Ahead",
             "mfd-rocker-lvl": "RWR Bright Down Slow",
             "mfd-rocker-brt-down": "RWR Bright Down Fast",
             "mfd-rocker-gain": "RWR Bright Up Slow",
@@ -501,6 +501,7 @@
       "kicker": "INSTANCE 2",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
+        "mfd-osb-t3": "Catapult",
         "mfd-osb-r3": "Park Menu",
         "mfd-osb-r1": "Helpers",
         "mfd-osb-r2": "Messages",
@@ -508,6 +509,7 @@
         "mfd-rocker-int": " Missile Padlock",
         "mfd-rocker-sym": "All Missile Padlock",
         "mfd-osb-t1": "Salute",
+        "mfd-osb-t5": "MASTER RESET",
         "mfd-osb-l3": "Play",
         "mfd-osb-l4": "Stop",
         "mfd-osb-l2": "FFWD",
@@ -530,6 +532,12 @@
         {
           "id": "base",
           "controls": {
+            "mfd-osb-t3": {
+              "profile": "tm-mfd-2",
+              "key": "JOY_BTN3",
+              "command": "d120pnilunilcdnilvdnilvpnilvunil",
+              "label": "Catapult"
+            },
             "mfd-osb-r3": {
               "profile": "tm-mfd-2",
               "key": "JOY_BTN8",
@@ -571,6 +579,12 @@
               "key": "JOY_BTN1",
               "command": "d3023pnilunilcd18vd1vpnilvunil",
               "label": "Salute"
+            },
+            "mfd-osb-t5": {
+              "profile": "tm-mfd-2",
+              "key": "JOY_BTN5",
+              "command": "d3058pnilu3058cd23vd1vpnilvu0",
+              "label": "MASTER RESET"
             },
             "mfd-osb-l3": {
               "profile": "tm-mfd-2",
@@ -670,6 +684,7 @@
             }
           },
           "labels": {
+            "mfd-osb-t3": "Catapult",
             "mfd-osb-r3": "Park Menu",
             "mfd-osb-r1": "Helpers",
             "mfd-osb-r2": "Messages",
@@ -677,6 +692,7 @@
             "mfd-rocker-int": " Missile Padlock",
             "mfd-rocker-sym": "All Missile Padlock",
             "mfd-osb-t1": "Salute",
+            "mfd-osb-t5": "MASTER RESET",
             "mfd-osb-l3": "Play",
             "mfd-osb-l4": "Stop",
             "mfd-osb-l2": "FFWD",
@@ -703,6 +719,15 @@
             "JOY_BTN7"
           ],
           "controls": {
+            "mfd-osb-t3-shifted": {
+              "profile": "tm-mfd-2",
+              "key": "JOY_BTN3",
+              "command": "d1560pnilunilcdnilvdnilvpnilvunil",
+              "label": "ReArm and Refuel",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
             "mfd-rocker-sym": {
               "profile": "tm-mfd-2",
               "key": "JOY_BTN21",
@@ -750,6 +775,7 @@
             }
           },
           "labels": {
+            "mfd-osb-t3-shifted": "ReArm and Refuel",
             "mfd-rocker-sym": "Stop Padlock",
             "mfd-rocker-brt-up": "TACAN T/R",
             "mfd-rocker-brt-down": "TACAN OFF",
@@ -773,6 +799,8 @@
         "mfd-rocker-int": "Seat Down",
         "mfd-rocker-brt-up": "ACM Cover",
         "mfd-rocker-gain": "ESeat ARMED",
+        "mfd-osb-r1": "Next WP",
+        "mfd-osb-r2": "Prev WP",
         "mfd-osb-t1": "JA Context",
         "mfd-osb-t2": "JA SHORT",
         "mfd-osb-t3": "JA HOLD",
@@ -805,6 +833,18 @@
           "key": "JOY_BTN27",
           "command": "d3186pnilu3186cd12vd1vpnilvu0",
           "label": "ESeat ARMED"
+        },
+        "mfd-osb-r1": {
+          "profile": "tm-mfd-3",
+          "key": "JOY_BTN6",
+          "command": "d3591pnilunilcd46vd1vpnilvu0",
+          "label": "Next WP"
+        },
+        "mfd-osb-r2": {
+          "profile": "tm-mfd-3",
+          "key": "JOY_BTN7",
+          "command": "d3592pnilunilcd46vd1vpnilvu0",
+          "label": "Prev WP"
         },
         "mfd-osb-t1": {
           "profile": "tm-mfd-3",
@@ -1078,13 +1118,13 @@
       },
       "modifierCallouts": {},
       "controls": {
-        "tpr-axis-rudder": {
+         "tpr-axis-rudder": {
           "profile": "tm-tpr",
           "key": "JOY_Z",
           "command": "a2003cdnil",
           "label": "Rudder"
         },
-          "tpr-axis-left-brake": {
+        "tpr-axis-left-brake": {
           "profile": "tm-tpr",
           "key": "JOY_Y",
           "command": "a2112cdnil",
@@ -1113,10 +1153,18 @@
         "warthog-thr-ap-select-down": "AP Hold On",
         "warthog-thr-ap-select-up": "Heading Hold GT",
         "warthog-thr-ap-engage": "AP",
-        "warthog-thr-left-throttle-button": "AUto Throttle",
+        "warthog-thr-left-throttle-button": "Auto Throttle",
+        "warthog-thr-apu-start": "Eng Airstart ON",
         "warthog-thr-engine-operate-right-up": "Crank Eng Right",
         "warthog-thr-engine-operate-left-up": "Crank Eng Left",
+        "warthog-thr-engine-operate-left-down": "Crank Engine OFF",
+        "warthog-thr-engine-operate-right-down": "Crank Engine OFF",
         "warthog-thr-rdr-alt-normal": "Pointer",
+        "warthog-thr-right-engine-idle-off": "Right engine idle/off",
+        "warthog-thr-left-engine-idle-off": "Left engine idle/off",
+        "warthog-thr-eac-on": "Master Arm ",
+        "warthog-thr-boat-forward": "TD PAL",
+        "warthog-thr-boat-back": "TD VSL LO",
         "warthog-thr-speedbrake-forward": "SBrake Retract",
         "warthog-thr-speedbrake-back": "SBrake Extend"
       },
@@ -1159,7 +1207,13 @@
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN15",
               "command": "d3046pnilunilcd20vd1vpnilvunil",
-              "label": "AUto Throttle"
+              "label": "Auto Throttle"
+            },
+            "warthog-thr-apu-start": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN20",
+              "command": "d3050pnilu3050cd20vd1vpnilvu0",
+              "label": "Eng Airstart ON"
             },
             "warthog-thr-engine-operate-right-up": {
               "profile": "tm-warthog-throttle",
@@ -1173,11 +1227,53 @@
               "command": "d3051pnilu3051cd20vd1vpnilvu0",
               "label": "Crank Eng Left"
             },
+            "warthog-thr-engine-operate-left-down": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN18",
+              "command": "d3051pnilunilcd20vd0vpnilvunil",
+              "label": "Crank Engine OFF"
+            },
+            "warthog-thr-engine-operate-right-down": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN19",
+              "command": "d3051pnilunilcd20vd0vpnilvunil",
+              "label": "Crank Engine OFF"
+            },
             "warthog-thr-rdr-alt-normal": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN25",
               "command": "d3107pnilunilcd83vd1vpnilvunil",
               "label": "Pointer"
+            },
+            "warthog-thr-right-engine-idle-off": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN30",
+              "command": "d3128pnilu3128cd20vd1vpnilvu0",
+              "label": "Right engine idle/off"
+            },
+            "warthog-thr-left-engine-idle-off": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN29",
+              "command": "d3129pnilu3129cd20vd1vpnilvu0",
+              "label": "Left engine idle/off"
+            },
+            "warthog-thr-eac-on": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN24",
+              "command": "d3137pnilu3137cd55vd1vpnilvu0",
+              "label": "Master Arm "
+            },
+            "warthog-thr-boat-forward": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN9",
+              "command": "d3144pnilu3144cd55vd1vpnilvu0",
+              "label": "TD PAL"
+            },
+            "warthog-thr-boat-back": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN10",
+              "command": "d3145pnilu3145cd55vd1vpnilvu0",
+              "label": "TD VSL LO"
             },
             "warthog-thr-speedbrake-forward": {
               "profile": "tm-warthog-throttle",
@@ -1198,10 +1294,18 @@
             "warthog-thr-ap-select-down": "AP Hold On",
             "warthog-thr-ap-select-up": "Heading Hold GT",
             "warthog-thr-ap-engage": "AP",
-            "warthog-thr-left-throttle-button": "AUto Throttle",
+            "warthog-thr-left-throttle-button": "Auto Throttle",
+            "warthog-thr-apu-start": "Eng Airstart ON",
             "warthog-thr-engine-operate-right-up": "Crank Eng Right",
             "warthog-thr-engine-operate-left-up": "Crank Eng Left",
+            "warthog-thr-engine-operate-left-down": "Crank Engine OFF",
+            "warthog-thr-engine-operate-right-down": "Crank Engine OFF",
             "warthog-thr-rdr-alt-normal": "Pointer",
+            "warthog-thr-right-engine-idle-off": "Right engine idle/off",
+            "warthog-thr-left-engine-idle-off": "Left engine idle/off",
+            "warthog-thr-eac-on": "Master Arm ",
+            "warthog-thr-boat-forward": "TD PAL",
+            "warthog-thr-boat-back": "TD VSL LO",
             "warthog-thr-speedbrake-forward": "SBrake Retract",
             "warthog-thr-speedbrake-back": "SBrake Extend"
           }
@@ -1241,11 +1345,29 @@
                 "JOY_BTN7"
               ]
             },
-            "warthog-thr-engine-operate-left-up": {
+            "warthog-thr-fuel-flow-right": {
               "profile": "tm-warthog-throttle",
-              "key": "JOY_BTN31",
+              "key": "JOY_BTN17",
               "command": "d3067pnilu3067cd21vd1vpnilvu-1",
               "label": "Fuel Dump",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "warthog-thr-landing-horn-silence": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN21",
+              "command": "d3086pnilu3086cd22vd1vpnilvu0",
+              "label": "AP E Discon",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "warthog-thr-china-forward": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN11",
+              "command": "d3143pnilu3143cd55vd1vpnilvu0",
+              "label": "TD VSL HI",
               "modifiers": [
                 "JOY_BTN7"
               ]
@@ -1255,7 +1377,9 @@
             "warthog-thr-boat-forward": "AP Vector ACL",
             "warthog-thr-boat-back": "AP Vector OFF",
             "warthog-thr-ap-engage": "Heading Hold On",
-            "warthog-thr-engine-operate-left-up": "Fuel Dump"
+            "warthog-thr-fuel-flow-right": "Fuel Dump",
+            "warthog-thr-landing-horn-silence": "AP E Discon",
+            "warthog-thr-china-forward": "TD VSL HI"
           }
         }
       ]
@@ -1465,9 +1589,340 @@
       "title": "WINCTRL ViperAce ICP",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
-      "labels": {},
+      "labels": {
+        "winctrl-icp-btn-07": "Shortcut  1",
+        "winctrl-icp-btn-08": "Shortcut  2",
+        "winctrl-icp-btn-09": "Shortcut  3",
+        "winctrl-icp-btn-11": "Shortcut  4",
+        "winctrl-icp-btn-12": "Shortcut  5",
+        "winctrl-icp-btn-13": "Shortcut  6",
+        "winctrl-icp-btn-15": "Shortcut  7",
+        "winctrl-icp-btn-16": "Shortcut  8",
+        "winctrl-icp-btn-17": "Shortcut  9",
+        "winctrl-icp-btn-18": "Shortcut 10",
+        "winctrl-icp-btn-30": "KB Next Page",
+        "winctrl-icp-btn-31": "KB Previous Page",
+        "winctrl-icp-btn-14": "KB Make Shortcut",
+        "winctrl-icp-btn-04": "ILS Power",
+        "winctrl-icp-btn-29": "Score window",
+        "winctrl-icp-btn-25": "HSD Head Down (Fast)",
+        "winctrl-icp-btn-23": "HSD Head Up (Fast)",
+        "winctrl-icp-btn-24": "HSD Course Down (Fast)",
+        "winctrl-icp-btn-22": "HSD Course Up (Fast)",
+        "winctrl-icp-btn-20": "TACAN Volume Dec",
+        "winctrl-icp-btn-19": "TACAN Volume Inc",
+        "winctrl-icp-axis-x": "HSD Brightness",
+        "winctrl-icp-axis-y": "HUD Brightness",
+        "winctrl-icp-axis-ry": "VDI Screen Brightness",
+        "winctrl-icp-axis-rx": "VDI Screen Contrast"
+      },
       "modifierCallouts": {},
-      "controls": {}
+      "layers": [
+        {
+          "id": "base",
+          "controls": {
+            "winctrl-icp-btn-07": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN7",
+              "command": "d2620pnilunilcdnilvd0vpnilvunil",
+              "label": "Shortcut  1"
+            },
+            "winctrl-icp-btn-08": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN8",
+              "command": "d2620pnilunilcdnilvd1vpnilvunil",
+              "label": "Shortcut  2"
+            },
+            "winctrl-icp-btn-09": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN9",
+              "command": "d2620pnilunilcdnilvd2vpnilvunil",
+              "label": "Shortcut  3"
+            },
+            "winctrl-icp-btn-11": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN11",
+              "command": "d2620pnilunilcdnilvd3vpnilvunil",
+              "label": "Shortcut  4"
+            },
+            "winctrl-icp-btn-12": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN12",
+              "command": "d2620pnilunilcdnilvd4vpnilvunil",
+              "label": "Shortcut  5"
+            },
+            "winctrl-icp-btn-13": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN13",
+              "command": "d2620pnilunilcdnilvd5vpnilvunil",
+              "label": "Shortcut  6"
+            },
+            "winctrl-icp-btn-15": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN15",
+              "command": "d2620pnilunilcdnilvd6vpnilvunil",
+              "label": "Shortcut  7"
+            },
+            "winctrl-icp-btn-16": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN16",
+              "command": "d2620pnilunilcdnilvd7vpnilvunil",
+              "label": "Shortcut  8"
+            },
+            "winctrl-icp-btn-17": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN17",
+              "command": "d2620pnilunilcdnilvd8vpnilvunil",
+              "label": "Shortcut  9"
+            },
+            "winctrl-icp-btn-18": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN18",
+              "command": "d2620pnilunilcdnilvd9vpnilvunil",
+              "label": "Shortcut 10"
+            },
+            "winctrl-icp-btn-30": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN30",
+              "command": "d3001pnilunilcd61vd1vpnilvunil",
+              "label": "KB Next Page"
+            },
+            "winctrl-icp-btn-31": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN31",
+              "command": "d3002pnilunilcd61vd1vpnilvunil",
+              "label": "KB Previous Page"
+            },
+            "winctrl-icp-btn-14": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN14",
+              "command": "d3004pnilunilcd61vd1vpnilvunil",
+              "label": "KB Make Shortcut"
+            },
+            "winctrl-icp-btn-04": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN4",
+              "command": "d3319pnilu3319cd48vd1vpnilvu0",
+              "label": "ILS Power"
+            },
+            "winctrl-icp-btn-29": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN29",
+              "command": "d360pnilunilcdnilvdnilvpnilvunil",
+              "label": "Score window"
+            },
+            "winctrl-icp-btn-25": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN25",
+              "command": "dnilp3241unilcd41vdnilvp-0.003vunil",
+              "label": "HSD Head Down (Fast)"
+            },
+            "winctrl-icp-btn-23": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN23",
+              "command": "dnilp3241unilcd41vdnilvp0.003vunil",
+              "label": "HSD Head Up (Fast)"
+            },
+            "winctrl-icp-btn-24": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN24",
+              "command": "dnilp3242unilcd41vdnilvp-0.002vunil",
+              "label": "HSD Course Down (Fast)"
+            },
+            "winctrl-icp-btn-22": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN22",
+              "command": "dnilp3242unilcd41vdnilvp0.002vunil",
+              "label": "HSD Course Up (Fast)"
+            },
+            "winctrl-icp-btn-20": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN20",
+              "command": "dnilp3329unilcd47vdnilvp-1vu0",
+              "label": "TACAN Volume Dec"
+            },
+            "winctrl-icp-btn-19": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN19",
+              "command": "dnilp3329unilcd47vdnilvp1vu0",
+              "label": "TACAN Volume Inc"
+            },
+            "winctrl-icp-axis-x": {
+              "profile": "winctrl-icp",
+              "key": "JOY_X",
+              "command": "a3775cd41",
+              "label": "HSD Brightness"
+            },
+            "winctrl-icp-axis-y": {
+              "profile": "winctrl-icp",
+              "key": "JOY_Y",
+              "command": "a3785cd40",
+              "label": "HUD Brightness"
+            },
+            "winctrl-icp-axis-ry": {
+              "profile": "winctrl-icp",
+              "key": "JOY_RY",
+              "command": "a3787cd42",
+              "label": "VDI Screen Brightness"
+            },
+            "winctrl-icp-axis-rx": {
+              "profile": "winctrl-icp",
+              "key": "JOY_RX",
+              "command": "a3788cd42",
+              "label": "VDI Screen Contrast"
+            }
+          },
+          "labels": {
+            "winctrl-icp-btn-07": "Shortcut  1",
+            "winctrl-icp-btn-08": "Shortcut  2",
+            "winctrl-icp-btn-09": "Shortcut  3",
+            "winctrl-icp-btn-11": "Shortcut  4",
+            "winctrl-icp-btn-12": "Shortcut  5",
+            "winctrl-icp-btn-13": "Shortcut  6",
+            "winctrl-icp-btn-15": "Shortcut  7",
+            "winctrl-icp-btn-16": "Shortcut  8",
+            "winctrl-icp-btn-17": "Shortcut  9",
+            "winctrl-icp-btn-18": "Shortcut 10",
+            "winctrl-icp-btn-30": "KB Next Page",
+            "winctrl-icp-btn-31": "KB Previous Page",
+            "winctrl-icp-btn-14": "KB Make Shortcut",
+            "winctrl-icp-btn-04": "ILS Power",
+            "winctrl-icp-btn-29": "Score window",
+            "winctrl-icp-btn-25": "HSD Head Down (Fast)",
+            "winctrl-icp-btn-23": "HSD Head Up (Fast)",
+            "winctrl-icp-btn-24": "HSD Course Down (Fast)",
+            "winctrl-icp-btn-22": "HSD Course Up (Fast)",
+            "winctrl-icp-btn-20": "TACAN Volume Dec",
+            "winctrl-icp-btn-19": "TACAN Volume Inc",
+            "winctrl-icp-axis-x": "HSD Brightness",
+            "winctrl-icp-axis-y": "HUD Brightness",
+            "winctrl-icp-axis-ry": "VDI Screen Brightness",
+            "winctrl-icp-axis-rx": "VDI Screen Contrast"
+          }
+        },
+        {
+          "id": "JOY_BTN7",
+          "file": "09-WINCTRL-ICP-JOY-BTN7",
+          "title": "WINCTRL ViperAce ICP • JOY_BTN7",
+          "activators": [
+            "JOY_BTN7"
+          ],
+          "controls": {
+            "winctrl-icp-btn-29": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN29",
+              "command": "d1587pnilunilcdnilvdnilvpnilvunil",
+              "label": "KB ON/OFF",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-btn-31": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN31",
+              "command": "d3005pnilunilcd61vd-1vpnilvunil",
+              "label": "KB Prev Shortcut",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-btn-30": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN30",
+              "command": "d3005pnilunilcd61vd1vpnilvunil",
+              "label": "KB Next Shortcut",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-btn-25": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN25",
+              "command": "dnilp3241unilcd41vdnilvp-0.00075vunil",
+              "label": "HSD Head Down (Slow)",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-btn-23": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN23",
+              "command": "dnilp3241unilcd41vdnilvp0.00075vunil",
+              "label": "HSD Head Up (Slow)",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-btn-24": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN24",
+              "command": "dnilp3242unilcd41vdnilvp-0.0005vunil",
+              "label": "HSD Course Down (Slow)",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-btn-22": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN22",
+              "command": "dnilp3242unilcd41vdnilvp0.0005vunil",
+              "label": "HSD Course Up (Slow)",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-axis-x": {
+              "profile": "winctrl-icp",
+              "key": "JOY_X",
+              "command": "a3179cd12",
+              "label": "Instrument Light Intensity",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-axis-ry": {
+              "profile": "winctrl-icp",
+              "key": "JOY_RY",
+              "command": "a3180cd12",
+              "label": "Console Light Intensity",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-axis-rx": {
+              "profile": "winctrl-icp",
+              "key": "JOY_RX",
+              "command": "a3181cd12",
+              "label": "Formation Light Intensity",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "winctrl-icp-axis-y": {
+              "profile": "winctrl-icp",
+              "key": "JOY_Y",
+              "command": "a3781cd2",
+              "label": "ALR-67 Volume",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            }
+          },
+          "labels": {
+            "winctrl-icp-btn-29": "KB ON/OFF",
+            "winctrl-icp-btn-31": "KB Prev Shortcut",
+            "winctrl-icp-btn-30": "KB Next Shortcut",
+            "winctrl-icp-btn-25": "HSD Head Down (Slow)",
+            "winctrl-icp-btn-23": "HSD Head Up (Slow)",
+            "winctrl-icp-btn-24": "HSD Course Down (Slow)",
+            "winctrl-icp-btn-22": "HSD Course Up (Slow)",
+            "winctrl-icp-axis-x": "Instrument Light Intensity",
+            "winctrl-icp-axis-ry": "Console Light Intensity",
+            "winctrl-icp-axis-rx": "Formation Light Intensity",
+            "winctrl-icp-axis-y": "ALR-67 Volume"
+          }
+        }
+      ]
     },
     {
       "file": "05-MOZA-AB9",

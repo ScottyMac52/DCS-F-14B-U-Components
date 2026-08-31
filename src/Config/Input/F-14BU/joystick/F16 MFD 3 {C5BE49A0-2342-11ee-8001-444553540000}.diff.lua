@@ -32,6 +32,22 @@ local diff = {
 			},
 			["name"] = "Ejection Seat Safety - ARMED else OFF (2-way Switch)",
 		},
+		["d3591pnilunilcd46vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN6",
+				},
+			},
+			["name"] = "Next Waypoint",
+		},
+		["d3592pnilunilcd46vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN7",
+				},
+			},
+			["name"] = "Previous Waypoint",
+		},
 		["d3934pnilu3934cd62vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {

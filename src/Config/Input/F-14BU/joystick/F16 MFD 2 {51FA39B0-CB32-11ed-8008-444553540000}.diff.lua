@@ -1,5 +1,24 @@
 local diff = {
 	["keyDiffs"] = {
+		["d120pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN3",
+				},
+			},
+			["name"] = "Catapult Hook up",
+		},
+		["d1560pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN3",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Rearming and Refueling Window",
+		},
 		["d1896pnilunilcdnilvdnilvpnilvunil"] = {
 			["added"] = {
 				[1] = {
@@ -66,6 +85,14 @@ local diff = {
 				},
 			},
 			["name"] = "Catapult Salute",
+		},
+		["d3058pnilu3058cd23vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN5",
+				},
+			},
+			["name"] = "MASTER RESET",
 		},
 		["d3070pnilunilcd56vd1vpnilvunil"] = {
 			["added"] = {
