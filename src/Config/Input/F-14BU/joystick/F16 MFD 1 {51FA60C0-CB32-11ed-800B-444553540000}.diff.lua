@@ -1,38 +1,4 @@
 local diff = {
-	["axisDiffs"] = {
-		["a2001cdnil"] = {
-			["name"] = "Pitch",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_Y",
-				},
-			},
-		},
-		["a2002cdnil"] = {
-			["name"] = "Roll",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_X",
-				},
-			},
-		},
-		["a2003cdnil"] = {
-			["name"] = "Rudder",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_RZ",
-				},
-			},
-		},
-		["a2004cdnil"] = {
-			["name"] = "Throttle Both",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_Z",
-				},
-			},
-		},
-	},
 	["keyDiffs"] = {
 		["d3566pnilunilcd62vd1vpnilvunil"] = {
 			["added"] = {
@@ -268,6 +234,50 @@ local diff = {
 				},
 			},
 			["name"] = "Jester Context Action DOUBLE (button, direct bind)",
+		},
+		["dnilp3264unilcd54vdnilvp-0.5vunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN28",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "RWR Brightness - DECREASE (Slow)",
+		},
+		["dnilp3264unilcd54vdnilvp-2vunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN26",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "RWR Brightness - DECREASE (Fast)",
+		},
+		["dnilp3264unilcd54vdnilvp0.5vunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN27",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "RWR Brightness - INCREASE (Slow)",
+		},
+		["dnilp3264unilcd54vdnilvp2vunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN25",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "RWR Brightness - INCREASE (Fast)",
 		},
 	},
 }

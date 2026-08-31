@@ -1,39 +1,64 @@
 local diff = {
-	["axisDiffs"] = {
-		["a2001cdnil"] = {
-			["name"] = "Pitch",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_Y",
-				},
-			},
-		},
-		["a2002cdnil"] = {
-			["name"] = "Roll",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_X",
-				},
-			},
-		},
-		["a2003cdnil"] = {
-			["name"] = "Rudder",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_RZ",
-				},
-			},
-		},
-		["a2004cdnil"] = {
-			["name"] = "Throttle Both",
-			["removed"] = {
-				[1] = {
-					["key"] = "JOY_Z",
-				},
-			},
-		},
-	},
 	["keyDiffs"] = {
+		["d1896pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN8",
+				},
+			},
+			["name"] = "Carrier Parking Menu",
+		},
+		["d1920pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN6",
+				},
+			},
+			["name"] = "Carrier Helpers Toggle",
+		},
+		["d1923pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN7",
+				},
+			},
+			["name"] = "Carrier Messages Toggle",
+		},
+		["d1924pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN9",
+				},
+			},
+			["name"] = "Carrier Teleport To Parking",
+		},
+		["d20pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN21",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Unlock view (stop padlock)",
+		},
+		["d258pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN22",
+				},
+			},
+			["name"] = "Threat missile padlock",
+		},
+		["d259pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN21",
+				},
+			},
+			["name"] = "All missiles padlock",
+		},
 		["d3023pnilunilcd18vd1vpnilvunil"] = {
 			["added"] = {
 				[1] = {
@@ -41,6 +66,38 @@ local diff = {
 				},
 			},
 			["name"] = "Catapult Salute",
+		},
+		["d3070pnilunilcd56vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN18",
+				},
+			},
+			["name"] = "Play",
+		},
+		["d3071pnilunilcd56vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN17",
+				},
+			},
+			["name"] = "Stop",
+		},
+		["d3072pnilunilcd56vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN19",
+				},
+			},
+			["name"] = "Fast Forward",
+		},
+		["d3073pnilunilcd56vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN20",
+				},
+			},
+			["name"] = "Fast Backward",
 		},
 		["d3074pnilunilcd56vd1vpnilvunil"] = {
 			["added"] = {
@@ -152,21 +209,35 @@ local diff = {
 			},
 			["name"] = "TACAN MODE - NORMAL",
 		},
-		["dnilp3329unilcd47vdnilvp-1vu0"] = {
+		["d3591pnilunilcd46vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
-					["key"] = "JOY_BTN22",
+					["key"] = "JOY_BTN27",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
 				},
 			},
-			["name"] = "TACAN Volume Dec",
+			["name"] = "Next Waypoint",
 		},
-		["dnilp3329unilcd47vdnilvp1vu0"] = {
+		["d3592pnilunilcd46vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
-					["key"] = "JOY_BTN21",
+					["key"] = "JOY_BTN28",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
 				},
 			},
-			["name"] = "TACAN Volume Inc",
+			["name"] = "Previous Waypoint",
+		},
+		["d3730pnilunilcd56vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN16",
+				},
+			},
+			["name"] = "Switch Side",
 		},
 	},
 }

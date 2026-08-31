@@ -48,13 +48,21 @@ local diff = {
 			},
 			["name"] = "Gears Down",
 		},
-		["d3019pnilu3019cd18vd-1vpnilvu0"] = {
+		["d3019pnilunilcd18vd-1vpnilvunil"] = {
 			["added"] = {
 				[1] = {
 					["key"] = "JOY_BTN4",
 				},
 			},
-			["name"] = "Nose strut - KNEEL else OFF (3-way Switch Down)",
+			["name"] = "Nose strut kneel",
+		},
+		["d3019pnilunilcd18vd1vpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN3",
+				},
+			},
+			["name"] = "Nose strut extend",
 		},
 		["d3021pnilunilcd18vd0vpnilvunil"] = {
 			["added"] = {
@@ -111,6 +119,17 @@ local diff = {
 				},
 			},
 			["name"] = "Refuel Probe extend, Refuel All",
+		},
+		["d3142pnilu3142cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN22",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Emergency Jettison Switch",
 		},
 		["d3171pnilunilcd12vd0vpnilvunil"] = {
 			["added"] = {
