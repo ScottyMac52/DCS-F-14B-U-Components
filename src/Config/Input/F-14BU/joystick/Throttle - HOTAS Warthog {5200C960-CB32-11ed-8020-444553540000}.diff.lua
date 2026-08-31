@@ -1,20 +1,58 @@
 local diff = {
 	["keyDiffs"] = {
-		["d3007pnilu3007cd14vd0vpnilvu1"] = {
+		["d3007pnilu3007cd14vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
 					["key"] = "JOY_BTN16",
 				},
 			},
-			["name"] = "Stow Inlet Ramps Left Switch - AUTO else STOW (2-way Switch)",
+			["name"] = "Stow Inlet Ramps Left Switch - STOW else AUTO (2-way Switch)",
 		},
-		["d3008pnilu3008cd14vd0vpnilvu1"] = {
+		["d3008pnilu3008cd14vd1vpnilvu0"] = {
 			["added"] = {
 				[1] = {
 					["key"] = "JOY_BTN17",
 				},
 			},
-			["name"] = "Stow Inlet Ramps Right Switch - AUTO else STOW (2-way Switch)",
+			["name"] = "Stow Inlet Ramps Right Switch - STOW else AUTO (2-way Switch)",
+		},
+		["d3024pnilu3024cd17vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN11",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Wing Sweep Auto Mode",
+		},
+		["d3025pnilu3025cd17vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN11",
+				},
+			},
+			["name"] = "Wing Sweep Forward",
+		},
+		["d3026pnilu3026cd17vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN12",
+				},
+			},
+			["name"] = "Wing Sweep Aft",
+		},
+		["d3027pnilu3027cd17vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN12",
+					["reformers"] = {
+						[1] = "JOY_BTN7",
+					},
+				},
+			},
+			["name"] = "Wing Sweep Bomb Mode",
 		},
 		["d3037pnilunilcd22vd-1vpnilvunil"] = {
 			["added"] = {
@@ -169,33 +207,6 @@ local diff = {
 				},
 			},
 			["name"] = "Master Arm On and Cover Open, else Safe and Closed",
-		},
-		["d3143pnilu3143cd55vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN11",
-					["reformers"] = {
-						[1] = "JOY_BTN7",
-					},
-				},
-			},
-			["name"] = "Target designate up / VSL HI",
-		},
-		["d3144pnilu3144cd55vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN9",
-				},
-			},
-			["name"] = "Target designate fwd / PAL",
-		},
-		["d3145pnilu3145cd55vd1vpnilvu0"] = {
-			["added"] = {
-				[1] = {
-					["key"] = "JOY_BTN10",
-				},
-			},
-			["name"] = "Target designate down / VSL LO",
 		},
 		["dnilp3020u3020cd18vdnilvp-1vu0"] = {
 			["added"] = {

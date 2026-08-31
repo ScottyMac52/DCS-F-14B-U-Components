@@ -121,6 +121,14 @@ local diff = {
 			},
 			["name"] = "Kneeboard ON/OFF",
 		},
+		["d22pnilunilcdnilvdnilvpnilvunil"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN21",
+				},
+			},
+			["name"] = "Toggle tracking launched weapon",
+		},
 		["d2620pnilunilcdnilvd0vpnilvunil"] = {
 			["added"] = {
 				[1] = {
@@ -246,6 +254,30 @@ local diff = {
 				},
 			},
 			["name"] = "Kneeboard Next Shortcut",
+		},
+		["d3143pnilu3143cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN32",
+				},
+			},
+			["name"] = "Target designate up / VSL HI",
+		},
+		["d3144pnilu3144cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN33",
+				},
+			},
+			["name"] = "Target designate fwd / PAL",
+		},
+		["d3145pnilu3145cd55vd1vpnilvu0"] = {
+			["added"] = {
+				[1] = {
+					["key"] = "JOY_BTN34",
+				},
+			},
+			["name"] = "Target designate down / VSL LO",
 		},
 		["d3319pnilu3319cd48vd1vpnilvu0"] = {
 			["added"] = {

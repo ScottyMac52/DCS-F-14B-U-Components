@@ -1118,7 +1118,7 @@
       },
       "modifierCallouts": {},
       "controls": {
-         "tpr-axis-rudder": {
+        "tpr-axis-rudder": {
           "profile": "tm-tpr",
           "key": "JOY_Z",
           "command": "a2003cdnil",
@@ -1148,8 +1148,10 @@
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
-        "warthog-thr-fuel-flow-left": "Stow Inlet Left Auto",
-        "warthog-thr-fuel-flow-right": "Stow Inlet Right Auto",
+        "warthog-thr-fuel-flow-left": "Stow Left Inlet Ramp",
+        "warthog-thr-fuel-flow-right": "Stow Right Inlet Ramp",
+        "warthog-thr-china-forward": "Wing FWD",
+        "warthog-thr-china-back": "Wing AFT",
         "warthog-thr-ap-select-down": "AP Hold On",
         "warthog-thr-ap-select-up": "Heading Hold GT",
         "warthog-thr-ap-engage": "AP",
@@ -1163,8 +1165,6 @@
         "warthog-thr-right-engine-idle-off": "Right engine idle/off",
         "warthog-thr-left-engine-idle-off": "Left engine idle/off",
         "warthog-thr-eac-on": "Master Arm ",
-        "warthog-thr-boat-forward": "TD PAL",
-        "warthog-thr-boat-back": "TD VSL LO",
         "warthog-thr-speedbrake-forward": "SBrake Retract",
         "warthog-thr-speedbrake-back": "SBrake Extend"
       },
@@ -1176,14 +1176,26 @@
             "warthog-thr-fuel-flow-left": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN16",
-              "command": "d3007pnilu3007cd14vd0vpnilvu1",
-              "label": "Stow Inlet Left Auto"
+              "command": "d3007pnilu3007cd14vd1vpnilvu0",
+              "label": "Stow Left Inlet Ramp"
             },
             "warthog-thr-fuel-flow-right": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN17",
-              "command": "d3008pnilu3008cd14vd0vpnilvu1",
-              "label": "Stow Inlet Right Auto"
+              "command": "d3008pnilu3008cd14vd1vpnilvu0",
+              "label": "Stow Right Inlet Ramp"
+            },
+            "warthog-thr-china-forward": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN11",
+              "command": "d3025pnilu3025cd17vd1vpnilvu0",
+              "label": "Wing FWD"
+            },
+            "warthog-thr-china-back": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN12",
+              "command": "d3026pnilu3026cd17vd1vpnilvu0",
+              "label": "Wing AFT"
             },
             "warthog-thr-ap-select-down": {
               "profile": "tm-warthog-throttle",
@@ -1263,18 +1275,6 @@
               "command": "d3137pnilu3137cd55vd1vpnilvu0",
               "label": "Master Arm "
             },
-            "warthog-thr-boat-forward": {
-              "profile": "tm-warthog-throttle",
-              "key": "JOY_BTN9",
-              "command": "d3144pnilu3144cd55vd1vpnilvu0",
-              "label": "TD PAL"
-            },
-            "warthog-thr-boat-back": {
-              "profile": "tm-warthog-throttle",
-              "key": "JOY_BTN10",
-              "command": "d3145pnilu3145cd55vd1vpnilvu0",
-              "label": "TD VSL LO"
-            },
             "warthog-thr-speedbrake-forward": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN7",
@@ -1289,8 +1289,10 @@
             }
           },
           "labels": {
-            "warthog-thr-fuel-flow-left": "Stow Inlet Left Auto",
-            "warthog-thr-fuel-flow-right": "Stow Inlet Right Auto",
+            "warthog-thr-fuel-flow-left": "Stow Left Inlet Ramp",
+            "warthog-thr-fuel-flow-right": "Stow Right Inlet Ramp",
+            "warthog-thr-china-forward": "Wing FWD",
+            "warthog-thr-china-back": "Wing AFT",
             "warthog-thr-ap-select-down": "AP Hold On",
             "warthog-thr-ap-select-up": "Heading Hold GT",
             "warthog-thr-ap-engage": "AP",
@@ -1304,8 +1306,6 @@
             "warthog-thr-right-engine-idle-off": "Right engine idle/off",
             "warthog-thr-left-engine-idle-off": "Left engine idle/off",
             "warthog-thr-eac-on": "Master Arm ",
-            "warthog-thr-boat-forward": "TD PAL",
-            "warthog-thr-boat-back": "TD VSL LO",
             "warthog-thr-speedbrake-forward": "SBrake Retract",
             "warthog-thr-speedbrake-back": "SBrake Extend"
           }
@@ -1318,6 +1318,24 @@
             "JOY_BTN7"
           ],
           "controls": {
+            "warthog-thr-china-forward": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN11",
+              "command": "d3024pnilu3024cd17vd1vpnilvu0",
+              "label": "Wing Auto",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
+            "warthog-thr-china-back": {
+              "profile": "tm-warthog-throttle",
+              "key": "JOY_BTN12",
+              "command": "d3027pnilu3027cd17vd1vpnilvu0",
+              "label": "Wing Bomb",
+              "modifiers": [
+                "JOY_BTN7"
+              ]
+            },
             "warthog-thr-boat-forward": {
               "profile": "tm-warthog-throttle",
               "key": "JOY_BTN9",
@@ -1362,24 +1380,16 @@
               "modifiers": [
                 "JOY_BTN7"
               ]
-            },
-            "warthog-thr-china-forward": {
-              "profile": "tm-warthog-throttle",
-              "key": "JOY_BTN11",
-              "command": "d3143pnilu3143cd55vd1vpnilvu0",
-              "label": "TD VSL HI",
-              "modifiers": [
-                "JOY_BTN7"
-              ]
             }
           },
           "labels": {
+            "warthog-thr-china-forward": "Wing Auto",
+            "warthog-thr-china-back": "Wing Bomb",
             "warthog-thr-boat-forward": "AP Vector ACL",
             "warthog-thr-boat-back": "AP Vector OFF",
             "warthog-thr-ap-engage": "Heading Hold On",
             "warthog-thr-fuel-flow-right": "Fuel Dump",
-            "warthog-thr-landing-horn-silence": "AP E Discon",
-            "warthog-thr-china-forward": "TD VSL HI"
+            "warthog-thr-landing-horn-silence": "AP E Discon"
           }
         }
       ]
@@ -1590,6 +1600,7 @@
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "labels default to the imported DCS command name and remain editable; deviceLabel contains the canonical DCS-Common hardware label. keep callout IDs in sync with controls. You can also set \"label\" on a controls entry.",
       "labels": {
+        "winctrl-icp-btn-21": "Track Launched",
         "winctrl-icp-btn-07": "Shortcut  1",
         "winctrl-icp-btn-08": "Shortcut  2",
         "winctrl-icp-btn-09": "Shortcut  3",
@@ -1603,6 +1614,9 @@
         "winctrl-icp-btn-30": "KB Next Page",
         "winctrl-icp-btn-31": "KB Previous Page",
         "winctrl-icp-btn-14": "KB Make Shortcut",
+        "winctrl-icp-btn-32": "TD VSL HI",
+        "winctrl-icp-btn-33": "TD PAL",
+        "winctrl-icp-btn-34": "TD VSL LO",
         "winctrl-icp-btn-04": "ILS Power",
         "winctrl-icp-btn-29": "Score window",
         "winctrl-icp-btn-25": "HSD Head Down (Fast)",
@@ -1621,6 +1635,12 @@
         {
           "id": "base",
           "controls": {
+            "winctrl-icp-btn-21": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN21",
+              "command": "d22pnilunilcdnilvdnilvpnilvunil",
+              "label": "Track Launched"
+            },
             "winctrl-icp-btn-07": {
               "profile": "winctrl-icp",
               "key": "JOY_BTN7",
@@ -1699,6 +1719,24 @@
               "command": "d3004pnilunilcd61vd1vpnilvunil",
               "label": "KB Make Shortcut"
             },
+            "winctrl-icp-btn-32": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN32",
+              "command": "d3143pnilu3143cd55vd1vpnilvu0",
+              "label": "TD VSL HI"
+            },
+            "winctrl-icp-btn-33": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN33",
+              "command": "d3144pnilu3144cd55vd1vpnilvu0",
+              "label": "TD PAL"
+            },
+            "winctrl-icp-btn-34": {
+              "profile": "winctrl-icp",
+              "key": "JOY_BTN34",
+              "command": "d3145pnilu3145cd55vd1vpnilvu0",
+              "label": "TD VSL LO"
+            },
             "winctrl-icp-btn-04": {
               "profile": "winctrl-icp",
               "key": "JOY_BTN4",
@@ -1773,6 +1811,7 @@
             }
           },
           "labels": {
+            "winctrl-icp-btn-21": "Track Launched",
             "winctrl-icp-btn-07": "Shortcut  1",
             "winctrl-icp-btn-08": "Shortcut  2",
             "winctrl-icp-btn-09": "Shortcut  3",
@@ -1786,6 +1825,9 @@
             "winctrl-icp-btn-30": "KB Next Page",
             "winctrl-icp-btn-31": "KB Previous Page",
             "winctrl-icp-btn-14": "KB Make Shortcut",
+            "winctrl-icp-btn-32": "TD VSL HI",
+            "winctrl-icp-btn-33": "TD PAL",
+            "winctrl-icp-btn-34": "TD VSL LO",
             "winctrl-icp-btn-04": "ILS Power",
             "winctrl-icp-btn-29": "Score window",
             "winctrl-icp-btn-25": "HSD Head Down (Fast)",
