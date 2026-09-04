@@ -18,13 +18,19 @@
     {
       "type": "summary",
       "file": "00-F14BU-CONTROL-OVERVIEW",
-      "title": "F-14B(U) CONTROL OVERVIEW",
-      "kicker": "VKB F-14 GUNFIGHTER • SHARED UI LAYER • MODULE BINDINGS",
+      "title": "F-14B(U) USED DEVICES",
+      "kicker": "PHYSICAL CONTROLLERS USED BY THIS CONFIGURATION",
       "items": [
-        { "key": "STICK", "text": "VKB F-14 Gunfighter provides the primary Tomcat stick controls and shared UI Layer functions.", "accent": "gold" },
-        { "key": "SHIFT", "text": "VKB_F14_BTN7 is the shared hold modifier used for applicable shifted aircraft and UI Layer functions.", "accent": "cyan" },
-        { "key": "MFD", "text": "MFD 1, MFD 2 and MFD 3 retain their module-specific functions and applicable UI Layer overlays.", "accent": "gold" },
-        { "key": "VOICE", "text": "Warthog microphone switch PTT is handled by the bundled AutoHotKey VAICOM bridge.", "accent": "cyan" }
+        { "key": "STICK", "text": "VKB F-14 Gunfighter", "accent": "gold" },
+        { "key": "MFD 1", "text": "Thrustmaster Cougar MFD 1", "accent": "cyan" },
+        { "key": "MFD 2", "text": "Thrustmaster Cougar MFD 2", "accent": "gold" },
+        { "key": "MFD 3", "text": "Thrustmaster Cougar MFD 3", "accent": "cyan" },
+        { "key": "PDCP", "text": "OnYourTwelve F-14 PDCP", "accent": "gold" },
+        { "key": "PEDALS", "text": "Thrustmaster TPR", "accent": "cyan" },
+        { "key": "THROTTLE", "text": "Thrustmaster HOTAS Warthog Throttle", "accent": "gold" },
+        { "key": "PTO2", "text": "WINCTRL CarrierAce PTO 2", "accent": "cyan" },
+        { "key": "ICP", "text": "WINCTRL ViperAce ICP", "accent": "gold" },
+        { "key": "FFB BASE", "text": "MOZA AB9 FFB Base", "accent": "cyan" }
       ]
     },
     {
