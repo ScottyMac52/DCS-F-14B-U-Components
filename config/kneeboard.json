@@ -21,16 +21,16 @@
       "title": "F-14B(U) USED DEVICES",
       "kicker": "PHYSICAL CONTROLLERS USED BY THIS CONFIGURATION",
       "items": [
-        { "key": "STICK", "text": "VKB F-14 Gunfighter", "accent": "gold" },
-        { "key": "MFD 1", "text": "Thrustmaster Cougar MFD 1", "accent": "cyan" },
-        { "key": "MFD 2", "text": "Thrustmaster Cougar MFD 2", "accent": "gold" },
-        { "key": "MFD 3", "text": "Thrustmaster Cougar MFD 3", "accent": "cyan" },
-        { "key": "PDCP", "text": "OnYourTwelve F-14 PDCP", "accent": "gold" },
-        { "key": "PEDALS", "text": "Thrustmaster TPR", "accent": "cyan" },
-        { "key": "THROTTLE", "text": "Thrustmaster HOTAS Warthog Throttle", "accent": "gold" },
-        { "key": "PTO2", "text": "WINCTRL CarrierAce PTO 2", "accent": "cyan" },
-        { "key": "ICP", "text": "WINCTRL ViperAce ICP", "accent": "gold" },
-        { "key": "FFB BASE", "text": "MOZA AB9 FFB Base", "accent": "cyan" }
+        { "key": "STICK", "text": "VKB F-14 Gunfighter • flight controls • weapons • trim • DLC / maneuver flaps • AP / NWS", "accent": "gold" },
+        { "key": "MFD 1", "text": "Cougar MFD 1 • Jester commands • steerpoints / navigation • radar • target locks • RWR brightness", "accent": "cyan" },
+        { "key": "MFD 2", "text": "Cougar MFD 2 • carrier / ground services • TACAN / waypoints • padlock views • playback controls", "accent": "gold" },
+        { "key": "MFD 3", "text": "Cougar MFD 3 • Jester context commands • waypoint stepping • seat / ACM safety • ALR-67 volume", "accent": "cyan" },
+        { "key": "PDCP", "text": "OnYourTwelve F-14 PDCP • HUD / VDI / HSD power and modes • navigation steering • ECM override", "accent": "gold" },
+        { "key": "PEDALS", "text": "Thrustmaster TPR • rudder • left and right wheel brakes", "accent": "cyan" },
+        { "key": "THROTTLE", "text": "Warthog Throttle • engine controls • wing sweep • autopilot • speed brakes • armament • fuel / inlet ramps", "accent": "gold" },
+        { "key": "PTO2", "text": "WINCTRL CarrierAce PTO 2 • gear / flaps / hook • brakes / antiskid • refueling • taxi lights • ejection", "accent": "cyan" },
+        { "key": "ICP", "text": "WINCTRL ViperAce ICP • Jester shortcuts • kneeboard • target designation • HSD / TACAN • cockpit lighting", "accent": "gold" },
+        { "key": "FFB BASE", "text": "MOZA AB9 FFB Base • force-feedback pitch and roll axes", "accent": "cyan" }
       ]
     },
     {
