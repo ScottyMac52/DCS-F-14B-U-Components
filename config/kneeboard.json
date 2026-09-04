@@ -29,7 +29,7 @@
         { "key": "PEDALS", "text": "TPR • rudder • left/right wheel brakes", "accent": "cyan" },
         { "key": "THROTTLE", "text": "Engines • wing sweep • AP • speedbrakes • arm/fuel", "accent": "gold" },
         { "key": "PTO2", "text": "Gear/flaps/hook • brakes • refuel • lights • eject", "accent": "cyan" },
-        { "key": "ICP", "text": "Jester • kneeboard • targeting • HSD/TACAN • lights", "accent": "gold" },
+        { "key": "ICP", "text": "Jester • kneeboard • targets • TACAN • lighting", "accent": "gold" },
         { "key": "FFB BASE", "text": "MOZA AB9 • force-feedback pitch and roll", "accent": "cyan" }
       ]
     },
