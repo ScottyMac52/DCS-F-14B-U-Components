@@ -21,16 +21,16 @@
       "title": "F-14B(U) USED DEVICES",
       "kicker": "PHYSICAL CONTROLLERS USED BY THIS CONFIGURATION",
       "items": [
-        { "key": "STICK", "text": "VKB F-14 Gunfighter • flight controls • weapons • trim • DLC / maneuver flaps • AP / NWS", "accent": "gold" },
-        { "key": "MFD 1", "text": "Cougar MFD 1 • Jester commands • steerpoints / navigation • radar • target locks • RWR brightness", "accent": "cyan" },
-        { "key": "MFD 2", "text": "Cougar MFD 2 • carrier / ground services • TACAN / waypoints • padlock views • playback controls", "accent": "gold" },
-        { "key": "MFD 3", "text": "Cougar MFD 3 • Jester context commands • waypoint stepping • seat / ACM safety • ALR-67 volume", "accent": "cyan" },
-        { "key": "PDCP", "text": "OnYourTwelve F-14 PDCP • HUD / VDI / HSD power and modes • navigation steering • ECM override", "accent": "gold" },
-        { "key": "PEDALS", "text": "Thrustmaster TPR • rudder • left and right wheel brakes", "accent": "cyan" },
-        { "key": "THROTTLE", "text": "Warthog Throttle • engine controls • wing sweep • autopilot • speed brakes • armament • fuel / inlet ramps", "accent": "gold" },
-        { "key": "PTO2", "text": "WINCTRL CarrierAce PTO 2 • gear / flaps / hook • brakes / antiskid • refueling • taxi lights • ejection", "accent": "cyan" },
-        { "key": "ICP", "text": "WINCTRL ViperAce ICP • Jester shortcuts • kneeboard • target designation • HSD / TACAN • cockpit lighting", "accent": "gold" },
-        { "key": "FFB BASE", "text": "MOZA AB9 FFB Base • force-feedback pitch and roll axes", "accent": "cyan" }
+        { "key": "STICK", "text": "VKB F-14 • flight • weapons • trim • DLC • AP/NWS", "accent": "gold" },
+        { "key": "MFD 1", "text": "Jester • steerpoints • radar • targeting • RWR", "accent": "cyan" },
+        { "key": "MFD 2", "text": "Carrier/ground • TACAN • waypoints • views • media", "accent": "gold" },
+        { "key": "MFD 3", "text": "Jester context • waypoints • seat/ACM • ALR-67", "accent": "cyan" },
+        { "key": "PDCP", "text": "HUD/VDI/HSD • steering • ECM override", "accent": "gold" },
+        { "key": "PEDALS", "text": "TPR • rudder • left/right wheel brakes", "accent": "cyan" },
+        { "key": "THROTTLE", "text": "Engines • wing sweep • AP • speedbrakes • arm/fuel", "accent": "gold" },
+        { "key": "PTO2", "text": "Gear/flaps/hook • brakes • refuel • lights • eject", "accent": "cyan" },
+        { "key": "ICP", "text": "Jester • kneeboard • targeting • HSD/TACAN • lights", "accent": "gold" },
+        { "key": "FFB BASE", "text": "MOZA AB9 • force-feedback pitch and roll", "accent": "cyan" }
       ]
     },
     {
