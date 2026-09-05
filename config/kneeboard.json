@@ -14,6 +14,39 @@
     "winctrl-icp": "src/Config/Input/F-14BU/joystick/WINCTRL ViperAce ICP {3731E2E0-4D98-11f1-8001-444553540000}.diff.lua",
     "tm-warthog-throttle": "src/Config/Input/F-14BU/joystick/Throttle - HOTAS Warthog {5200C960-CB32-11ed-8020-444553540000}.diff.lua"
   },
+  "summaryPages": [
+    {
+      "type": "summary",
+      "file": "00-F14BU-CONTROL-OVERVIEW",
+      "title": "F-14B(U) USED DEVICES",
+      "kicker": "PHYSICAL CONTROLLERS USED BY THIS CONFIGURATION",
+      "items": [
+        { "key": "STICK", "text": "VKB F-14 • flight • weapons • trim • DLC • AP/NWS", "accent": "orange" },
+        { "key": "MFD 1", "text": "Jester • steerpoints • radar • targeting • RWR", "accent": "blue" },
+        { "key": "MFD 2", "text": "Carrier/ground • TACAN • waypoints • views • media", "accent": "blue" },
+        { "key": "MFD 3", "text": "Jester context • waypoints • seat/ACM • ALR-67", "accent": "blue" },
+        { "key": "PDCP", "text": "HUD/VDI/HSD • steering • ECM override", "accent": "purple" },
+        { "key": "PEDALS", "text": "TPR • rudder • left/right wheel brakes", "accent": "blue" },
+        { "key": "THROTTLE", "text": "Engines • wing sweep • AP • speedbrakes • arm/fuel", "accent": "blue" },
+        { "key": "PTO2", "text": "Gear/flaps/hook • brakes • refuel • lights • eject", "accent": "cyan" },
+        { "key": "ICP", "text": "Jester • kneeboard • targets • TACAN • lighting", "accent": "cyan" },
+        { "key": "FFB BASE", "text": "MOZA AB9 • force-feedback pitch and roll", "accent": "red" }
+      ]
+    },
+    {
+      "type": "summary",
+      "file": "01-VAICOM-OVERVIEW",
+      "title": "VAICOM PRO + WARTHOG PTT",
+      "kicker": "AUTOHOTKEY V2 • VOICEATTACK / VAICOM PRO",
+      "items": [
+        { "key": "TX1", "text": "Warthog MIC forward / Joy6 -> Left Ctrl + Left Alt + Left Shift + 1", "accent": "blue" },
+        { "key": "TX2", "text": "Warthog MIC right / Joy3 -> Left Ctrl + Left Alt + Left Shift + 2", "accent": "blue" },
+        { "key": "TX3", "text": "Warthog MIC down / Joy4 -> Left Ctrl + Left Alt + Left Shift + 3", "accent": "blue" },
+        { "key": "TX4", "text": "Warthog MIC left / Joy5 -> Left Ctrl + Left Alt + Left Shift + 4", "accent": "blue" },
+        { "key": "TX5", "text": "Warthog MIC push / Joy2 -> Left Ctrl + Left Alt + Left Shift + 5", "accent": "blue" }
+      ]
+    }
+  ],
   "pages": [
     {
       "file": "01-VKB-F14-GUNFIGHTER",
