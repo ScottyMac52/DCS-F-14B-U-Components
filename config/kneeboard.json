@@ -21,16 +21,16 @@
       "title": "F-14B(U) USED DEVICES",
       "kicker": "PHYSICAL CONTROLLERS USED BY THIS CONFIGURATION",
       "items": [
-        { "key": "STICK", "text": "VKB F-14 • flight • weapons • trim • DLC • AP/NWS", "accent": "gold" },
-        { "key": "MFD 1", "text": "Jester • steerpoints • radar • targeting • RWR", "accent": "cyan" },
-        { "key": "MFD 2", "text": "Carrier/ground • TACAN • waypoints • views • media", "accent": "gold" },
-        { "key": "MFD 3", "text": "Jester context • waypoints • seat/ACM • ALR-67", "accent": "cyan" },
-        { "key": "PDCP", "text": "HUD/VDI/HSD • steering • ECM override", "accent": "gold" },
-        { "key": "PEDALS", "text": "TPR • rudder • left/right wheel brakes", "accent": "cyan" },
-        { "key": "THROTTLE", "text": "Engines • wing sweep • AP • speedbrakes • arm/fuel", "accent": "gold" },
+        { "key": "STICK", "text": "VKB F-14 • flight • weapons • trim • DLC • AP/NWS", "accent": "orange" },
+        { "key": "MFD 1", "text": "Jester • steerpoints • radar • targeting • RWR", "accent": "blue" },
+        { "key": "MFD 2", "text": "Carrier/ground • TACAN • waypoints • views • media", "accent": "blue" },
+        { "key": "MFD 3", "text": "Jester context • waypoints • seat/ACM • ALR-67", "accent": "blue" },
+        { "key": "PDCP", "text": "HUD/VDI/HSD • steering • ECM override", "accent": "purple" },
+        { "key": "PEDALS", "text": "TPR • rudder • left/right wheel brakes", "accent": "blue" },
+        { "key": "THROTTLE", "text": "Engines • wing sweep • AP • speedbrakes • arm/fuel", "accent": "blue" },
         { "key": "PTO2", "text": "Gear/flaps/hook • brakes • refuel • lights • eject", "accent": "cyan" },
-        { "key": "ICP", "text": "Jester • kneeboard • targets • TACAN • lighting", "accent": "gold" },
-        { "key": "FFB BASE", "text": "MOZA AB9 • force-feedback pitch and roll", "accent": "cyan" }
+        { "key": "ICP", "text": "Jester • kneeboard • targets • TACAN • lighting", "accent": "cyan" },
+        { "key": "FFB BASE", "text": "MOZA AB9 • force-feedback pitch and roll", "accent": "red" }
       ]
     },
     {
@@ -39,11 +39,11 @@
       "title": "VAICOM PRO + WARTHOG PTT",
       "kicker": "AUTOHOTKEY V2 • VOICEATTACK / VAICOM PRO",
       "items": [
-        { "key": "TX1", "text": "Warthog MIC forward / Joy6 -> Left Ctrl + Left Alt + Left Shift + 1", "accent": "gold" },
-        { "key": "TX2", "text": "Warthog MIC right / Joy3 -> Left Ctrl + Left Alt + Left Shift + 2", "accent": "cyan" },
-        { "key": "TX3", "text": "Warthog MIC down / Joy4 -> Left Ctrl + Left Alt + Left Shift + 3", "accent": "gold" },
-        { "key": "TX4", "text": "Warthog MIC left / Joy5 -> Left Ctrl + Left Alt + Left Shift + 4", "accent": "cyan" },
-        { "key": "TX5", "text": "Warthog MIC push / Joy2 -> Left Ctrl + Left Alt + Left Shift + 5", "accent": "gold" }
+        { "key": "TX1", "text": "Warthog MIC forward / Joy6 -> Left Ctrl + Left Alt + Left Shift + 1", "accent": "blue" },
+        { "key": "TX2", "text": "Warthog MIC right / Joy3 -> Left Ctrl + Left Alt + Left Shift + 2", "accent": "blue" },
+        { "key": "TX3", "text": "Warthog MIC down / Joy4 -> Left Ctrl + Left Alt + Left Shift + 3", "accent": "blue" },
+        { "key": "TX4", "text": "Warthog MIC left / Joy5 -> Left Ctrl + Left Alt + Left Shift + 4", "accent": "blue" },
+        { "key": "TX5", "text": "Warthog MIC push / Joy2 -> Left Ctrl + Left Alt + Left Shift + 5", "accent": "blue" }
       ]
     }
   ],
