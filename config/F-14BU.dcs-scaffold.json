@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "name": "F-14BU",
+  "import": {
+    "target": "consumer",
+    "profilesDirectory": "C:\\Users\\vyper\\Saved Games\\DCS.openbeta\\Config\\Input\\F-14BU\\joystick",
+    "modifiersPath": "C:\\Users\\vyper\\Saved Games\\DCS.openbeta\\Config\\Input\\F-14BU\\modifiers.lua",
+    "mozaGrip": "standalone",
+    "commonRoot": "C:\\Users\\vyper\\Source\\repos\\DCS-Common",
+    "outputDirectory": "C:\\Users\\vyper\\Source\\repos\\DCS-F-14B-U-Components",
+    "displayName": "F-14BU",
+    "inputModuleId": "F-14BU",
+    "kneeboardId": "F-14BU"
+  },
+  "decisions": {
+    "instanceRoles": {},
+    "semanticModifiers": {
+      "JOY_BTN7": "JOY_BTN7",
+      "LAlt": "LAlt",
+      "LCtrl": "LCtrl",
+      "LShift": "LShift",
+      "LWin": "LWin",
+      "RAlt": "RAlt",
+      "RCtrl": "RCtrl",
+      "RShift": "RShift",
+      "RWin": "RWin"
+    },
+    "removedProfiles": []
+  }
+}
