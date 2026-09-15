@@ -12,7 +12,7 @@ const { loadProfileDrivenConfig, parseDcsDiffLua } = await import(
 
 const profiles = {
   throttle: 'src/Config/Input/F-14BU/joystick/Throttle - HOTAS Warthog {5200C960-CB32-11ed-8020-444553540000}.diff.lua',
-  grip: 'src/Config/Input/F-14BU/joystick/ VKBSim Gunfighter F14   {2D5CEC70-5189-11f1-8001-444553540000}.diff.lua',
+  grip: 'src/Config/Input/F-14BU/joystick/VKBSim Gunfighter F14 {2D5CEC70-5189-11f1-8001-444553540000}.diff.lua',
 };
 
 function bindings(profile) {
