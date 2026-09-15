@@ -3,7 +3,7 @@
   "aircraft": "F-14BU",
   "includeUiLayer": true,
   "profiles": {
-    "vkb-f14-gunfighter": "src/Config/Input/F-14BU/joystick/ VKBSim Gunfighter F14   {2D5CEC70-5189-11f1-8001-444553540000}.diff.lua",
+    "vkb-f14-gunfighter": "src/Config/Input/F-14BU/joystick/VKBSim Gunfighter F14 {2D5CEC70-5189-11f1-8001-444553540000}.diff.lua",
     "tm-mfd-1": "src/Config/Input/F-14BU/joystick/F16 MFD 1 {51FA60C0-CB32-11ed-800B-444553540000}.diff.lua",
     "tm-mfd-2": "src/Config/Input/F-14BU/joystick/F16 MFD 2 {51FA39B0-CB32-11ed-8008-444553540000}.diff.lua",
     "tm-mfd-3": "src/Config/Input/F-14BU/joystick/F16 MFD 3 {C5BE49A0-2342-11ee-8001-444553540000}.diff.lua",
@@ -114,7 +114,7 @@
       "includeUiLayer": true,
       "deviceId": "vkb-f14-gunfighter",
       "deviceInstance": null,
-      "title": " VKBSim Gunfighter F14",
+      "title": "VKBSim Gunfighter F14",
       "kicker": "SCAFFOLD DRAFT",
       "_comment": "binding labels are stored once in the root labels dictionary; page labels are reserved for non-binding callouts. keep callout IDs in sync with controls.",
       "modifierCallouts": {
@@ -222,7 +222,7 @@
         {
           "id": "JOY_BTN7",
           "file": "01-VKB-F14-GUNFIGHTER-JOY-BTN7",
-          "title": " VKBSim Gunfighter F14 • JOY_BTN7",
+          "title": "VKBSim Gunfighter F14 • JOY_BTN7",
           "activators": [
             "JOY_BTN7"
           ],
@@ -1721,7 +1721,7 @@
     "JOY_BTN7": [
       {
         "nativeName": "JOY_BTN7",
-        "device": " VKBSim Gunfighter F14   {2D5CEC70-5189-11f1-8001-444553540000}",
+        "device": "VKBSim Gunfighter F14 {2D5CEC70-5189-11f1-8001-444553540000}",
         "key": "JOY_BTN7",
         "mode": "hold"
       }
