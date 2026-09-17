@@ -1,39 +1,28 @@
 # OpenKneeboard and VAICOM PRO
 
-## Control philosophy
+## Included kneeboard tab
 
-VAICOM PRO remains the primary interface for conversational Jester and radio operations. Physical controls provide deterministic, time-critical actions:
+The OvGME package installs 12 numbered PNG reference pages into `KNEEBOARD\F-14BU`. OpenKneeboard should discover the directory through its DCS Aircraft tab; otherwise add it as a Folder tab.
 
-- MFD 1: direct Jester navigation/radar/context commands without opening the wheel
-- MFD 2: carrier and airframe actions
-- MFD 3: pilot-to-Jester LANTIRN context actions using VR gaze; no direct RIO-seat pod commands
-- Warthog MIC switch: TX1-TX5 through AutoHotKey and VoiceAttack
+Planned generated pages:
 
-## OpenKneeboard tab
+- `00-F14BU-CONTROL-OVERVIEW.png`
+- `01-VAICOM-OVERVIEW.png`
+- `01-VKB-F14-GUNFIGHTER.png`
+- `02-TM-MFD-1.png`
+- `03-TM-MFD-2.png`
+- `04-TM-MFD-3.png`
+- `05-MOZA-AB9.png`
+- `06-ONYOURTWELVE-PDCP.png`
+- `07-TM-TPR.png`
+- `08-TM-WARTHOG-THROTTLE.png`
+- `09-WINCTRL-PTO2.png`
+- `10-WINCTRL-ICP.png`
 
-The OVGME package installs nine numbered PNG pages into:
+## VAICOM PRO
 
-`KNEEBOARD\\F-14BU`
+This repository contains `autohotkey/dcs-Warthog.ahk`. Review each script header for its physical joystick inputs and configure the same chords in VoiceAttack/VAICOM. Joystick numbers are installation-specific.
 
-The numeric prefixes preserve page order. Use the DCS Aircraft tab when detection works; otherwise add the directory as a Folder tab.
+## Optional VoiceAttack navigation
 
-## Optional VoiceAttack commands
-
-OpenKneeboard installs remote-control executables under:
-
-`C:\\Program Files\\OpenKneeboard\\utilities`
-
-These commands can be added to the existing VoiceAttack profile without changing VAICOM's TX bindings:
-
-| Suggested phrase | Program |
-|---|---|
-| Kneeboard next page | `OpenKneeboard-RemoteControl-NEXT_PAGE.exe` |
-| Kneeboard previous page | `OpenKneeboard-RemoteControl-PREVIOUS_PAGE.exe` |
-| Kneeboard next tab | `OpenKneeboard-RemoteControl-NEXT_TAB.exe` |
-| Kneeboard previous tab | `OpenKneeboard-RemoteControl-PREVIOUS_TAB.exe` |
-| Kneeboard brighter | `OpenKneeboard-RemoteControl-INCREASE_BRIGHTNESS.exe` |
-| Kneeboard dimmer | `OpenKneeboard-RemoteControl-DECREASE_BRIGHTNESS.exe` |
-| Kneeboard night | `OpenKneeboard-RemoteControl-ENABLE_TINT.exe` |
-| Kneeboard day | `OpenKneeboard-RemoteControl-DISABLE_TINT.exe` |
-
-Use phrases that do not overlap with VAICOM keywords.
+OpenKneeboard remote-control programs are normally under `C:\Program Files\OpenKneeboard\utilities`. Useful commands include `NEXT_PAGE`, `PREVIOUS_PAGE`, `NEXT_TAB`, `PREVIOUS_TAB`, `INCREASE_BRIGHTNESS`, `DECREASE_BRIGHTNESS`, `ENABLE_TINT`, and `DISABLE_TINT`. Use phrases that do not overlap VAICOM keywords.

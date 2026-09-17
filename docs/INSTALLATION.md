@@ -1,52 +1,36 @@
-# Installation
+# Installing DCS-F-14BU-Components
 
-## Release package
+## Requirements
 
-Download `Scott-F-14BU-Complete-Package-<version>.zip` from the repository's GitHub Releases page. It contains:
+- DCS World with the F-14BU module installed.
+- OvGME configured with the DCS Saved Games directory as its root.
+- The hardware profiles you intend to use.
+- OpenKneeboard, VoiceAttack, VAICOM PRO, and AutoHotkey are optional.
 
-- `OVGME` — the directly installable DCS profiles and kneeboard ZIP
-- `AutoHotKey` — the VAICOM PRO transmit bridge
-- `Documentation` — installation, control mappings, and OpenKneeboard guidance
-- `SHA256SUMS.txt` — hashes for the included installable files
+## Back up existing controls
 
-The direct `Scott-F-14BU-Control-Profiles-<version>.zip` release asset is identical to the ZIP inside the complete package.
+Before enabling the package, copy these folders somewhere outside Saved Games:
 
-## OVGME
+```text
+Saved Games\DCS\Config\Input\F-14BU
+Saved Games\DCS\Config\Input\UiLayer
+Saved Games\DCS\KNEEBOARD\F-14BU
+```
 
-Create an OVGME configuration with:
+## Install with OvGME
 
-- Root folder: `C:\\Users\\vyper\\Saved Games\\DCS.openbeta`
-- Mods folder: any dedicated OVGME repository folder
-- Backup folder: OVGME default or a dedicated empty folder
+1. Download `DCS-F-14BU-Components-<version>-OVGME.zip` from the repository release.
+2. Add it to the OvGME configuration rooted at your DCS Saved Games directory.
+3. Enable the package.
+4. In DCS, open **Options → Controls → F-14BU** and verify the expected device columns.
+5. Confirm that the numbered kneeboard pages appear in game or OpenKneeboard.
 
-Copy `OVGME/Scott-F-14BU-Control-Profiles-<version>.zip` into the mods folder, refresh OVGME, close DCS, and enable the package.
+The archive writes `Config/Input/F-14BU`, the applicable `Config/Input/UiLayer` profiles, and `KNEEBOARD/F-14BU`.
 
-The package installs:
+## Device GUIDs
 
-- `Config\\Input\\F-14BU\\joystick` — control profiles
-- `KNEEBOARD\\F-14BU` — OpenKneeboard/DCS reference pages
+DCS embeds a Windows device-instance GUID in each `.diff.lua` filename. If your GUID differs, use DCS **Load profile** for the matching device or re-scaffold when the repository should adopt a newly captured device set.
 
-## Warthog throttle
+## Remove or restore
 
-The package installs the Warthog throttle profile automatically using its DCS device filename:
-
-`Config\\Input\\F-14BU\\joystick\\Throttle - HOTAS Warthog {5200C960-CB32-11ed-8020-444553540000}.diff.lua`
-
-After enabling the package, open DCS controls for the F-14B(U) and confirm `JOY_BTN2` through `JOY_BTN6` have no DCS assignments. Those inputs remain reserved for AutoHotKey and VAICOM PRO.
-
-## OpenKneeboard
-
-OpenKneeboard should discover the pages through its DCS Aircraft tab. If the new aircraft identifier is not mapped automatically:
-
-1. Open **Settings → Tabs**.
-2. Add a **Folder** tab.
-3. Select `C:\\Users\\vyper\\Saved Games\\DCS.openbeta\\KNEEBOARD\\F-14BU`.
-4. Name the tab `F-14B(U) Controls`.
-
-Do not edit OpenKneeboard's internal JSON settings directly.
-
-## AutoHotKey and VAICOM
-
-Run `autohotkey\\dcs-Warthog.ahk` with AutoHotKey v2.0. It bridges Warthog device 12 to the five VoiceAttack/VAICOM TX key chords.
-
-Close DCS before enabling or disabling the OVGME package.
+Disable the package in OvGME before installing another version. Restore the backed-up folders to return to the pre-package state.
